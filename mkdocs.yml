@@ -1,0 +1,53 @@
+site_name: ML & AI Fundamentals
+site_description: Полное руководство по основам машинного обучения и искусственного интеллекта
+site_author: DaniilGavrin
+repo_url: https://github.com/DaniilGavrin/ml-ai-fundamentals
+repo_name: DaniilGavrin/ml-ai-fundamentals
+
+theme:
+  name: material
+  language: ru
+  palette:
+    primary: indigo
+    accent: indigo
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+
+nav:
+  - Главная: index.md
+  - Основы ML: ml-basics.md
+  - Нейронные сети: neural-networks.md
+  - Глубокое обучение: deep-learning.md
+  - Обработка данных: data-processing.md
+  - Моделирование: modeling.md
+  - Этика и безопасность: ethics-security.md
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem
+  - pymdownx.details
+  - pymdownx.emoji
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - pymdownx.tilde
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/DaniilGavrin
