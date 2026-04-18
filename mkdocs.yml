@@ -29,6 +29,11 @@ nav:
     - Подготовка данных: fundamentals/data-prep.md
     - Инженерия признаков: fundamentals/feature-engineering.md
     - Оценка моделей: fundamentals/model-evaluation.md
+    - Алгоритмы ML: fundamentals/ml-algorithms.md
+    - Линейные модели: fundamentals/linear-models.md
+    - Деревья решений: fundamentals/decision-trees.md
+    - Кластеризация: fundamentals/clustering.md
+    - Снижение размерности: fundamentals/dimensionality-reduction.md
   
   - Нейронные сети:
     - Обзор раздела: neural-networks.md
