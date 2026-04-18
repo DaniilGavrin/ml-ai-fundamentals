@@ -22,12 +22,45 @@ theme:
 
 nav:
   - Главная: index.md
-  - Основы ML: ml-basics.md
-  - Нейронные сети: neural-networks.md
-  - Глубокое обучение: deep-learning.md
-  - Обработка данных: data-processing.md
-  - Моделирование: modeling.md
-  - Этика и безопасность: ethics-security.md
+  
+  - Основы ML:
+    - Обзор раздела: fundamentals.md
+    - Введение в ML: fundamentals/ml-basics.md
+    - Подготовка данных: fundamentals/data-prep.md
+    - Инженерия признаков: fundamentals/feature-engineering.md
+    - Оценка моделей: fundamentals/model-evaluation.md
+  
+  - Нейронные сети:
+    - Обзор раздела: neural-networks.md
+    - Перцептрон: neural-networks/perceptron.md
+    - Многослойные сети: neural-networks/multilayer.md
+    - Функции активации: neural-networks/activation-functions.md
+    - Обратное распространение: neural-networks/backpropagation.md
+  
+  - Глубокое обучение:
+    - Обзор раздела: deep-learning.md
+    - Сверточные сети (CNN): deep-learning/cnn.md
+    - Рекуррентные сети (RNN): deep-learning/rnn.md
+    - Трансформеры: deep-learning/transformers.md
+    - Автоэнкодеры: deep-learning/autoencoders.md
+  
+  - Обработка данных:
+    - Обзор раздела: data-processing.md
+    - EDA: data-processing/eda.md
+    - Визуализация: data-processing/visualization.md
+    - Feature Engineering: data-processing/feature-engineering.md
+  
+  - Моделирование:
+    - Обзор раздела: modeling.md
+    - Классические алгоритмы: modeling/classical-algorithms.md
+    - Ансамбли: modeling/ensembles.md
+    - Оптимизация гиперпараметров: modeling/hyperparameter-tuning.md
+  
+  - Этика и безопасность:
+    - Обзор раздела: ethics-security.md
+    - Bias и Fairness: ethics-security/bias-fairness.md
+    - Приватность: ethics-security/privacy.md
+    - Безопасность ML: ethics-security/ml-security.md
 
 markdown_extensions:
   - admonition
