@@ -1,0 +1,5323 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>ML & AI Fundamentals - Complete Guide</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; }
+        code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; }
+        pre { background: #f4f4f4; padding: 15px; overflow-x: auto; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background: #4CAF50; color: white; }
+        blockquote { border-left: 4px solid #4CAF50; margin: 0; padding-left: 20px; }
+        @media print { body { max-width: none; } }
+    </style>
+</head>
+<body>
+<p>================================================================================</p>
+<h1 id="ml-ai-fundamentals">ML &amp; AI Fundamentals</h1>
+<p>Добро пожаловать в полное руководство по основам машинного обучения и искусственного интеллекта!</p>
+<h2 id="_1">📚 Что внутри?</h2>
+<p>Это фундаментальное руководство охватывает ключевые концепции ML и AI, которые остаются актуальными независимо от изменений в фреймворках и библиотеках.</p>
+<h3 id="_2">Основные разделы:</h3>
+<ol>
+<li><strong><a href="ml-basics.md">Основы ML</a></strong> - типы обучения, метрики качества, кросс-валидация, bias-variance tradeoff</li>
+<li><strong><a href="neural-networks.md">Нейронные сети</a></strong> - перцептрон, функции активации, backpropagation, оптимизаторы</li>
+<li><strong><a href="deep-learning.md">Глубокое обучение</a></strong> - CNN, RNN, LSTM, Transformers, Attention mechanisms</li>
+<li><strong><a href="data-processing.md">Обработка данных</a></strong> - feature engineering, нормализация, аугментация, работа с пропусками</li>
+<li><strong><a href="modeling.md">Моделирование</a></strong> - регуляризация, ансамбли, hyperparameter tuning, evaluation strategies</li>
+<li><strong><a href="ethics-security.md">Этика и безопасность</a></strong> - fairness, interpretability, adversarial attacks, privacy</li>
+</ol>
+<h2 id="_3">🎯 Для кого это?</h2>
+<ul>
+<li><strong>Новички</strong> - получите прочную основу для понимания ML/AI</li>
+<li><strong>Практикующие специалисты</strong> - освежите фундаментальные знания</li>
+<li><strong>Преподаватели</strong> - используйте как структурированный материал для обучения</li>
+</ul>
+<h2 id="_4">🚀 Быстрый старт</h2>
+<pre><code class="language-bash"># Клонирование репозитория
+git clone https://github.com/DaniilGavrin/ml-ai-fundamentals.git
+
+# Установка зависимостей
+pip install mkdocs mkdocs-material pymdown-extensions
+
+# Запуск локального сервера
+mkdocs serve
+</code></pre>
+<h2 id="_5">📖 Форматы</h2>
+<ul>
+<li><strong>Онлайн-документация</strong> - этот сайт с удобной навигацией</li>
+<li><strong>PDF-версия</strong> - полная шпаргалка для печати (доступна в релизах)</li>
+</ul>
+<hr />
+<p><em>Руководство создано для долгосрочного использования и будет обновляться с сохранением фундаментальной основы.</em></p>
+<p>================================================================================</p>
+<h1 id="_6">Основы машинного обучения</h1>
+<p>Добро пожаловать в раздел основ машинного обучения! Здесь вы найдете comprehensive руководство по ключевым концепциям, алгоритмам и методам ML.</p>
+<h2 id="_7">Что вы изучите</h2>
+<h3 id="_8">📚 Базовые концепции</h3>
+<ul>
+<li><a href="fundamentals/ml-basics.md">Введение в ML</a> — что такое машинное обучение, типы задач, основные термины</li>
+<li><a href="fundamentals/data-prep.md">Подготовка данных</a> — очистка, обработка пропусков, масштабирование</li>
+<li><a href="fundamentals/feature-engineering.md">Инженерия признаков</a> — создание, отбор и трансформация признаков</li>
+<li><a href="fundamentals/model-evaluation.md">Оценка моделей</a> — метрики, кросс-валидация, анализ ошибок</li>
+</ul>
+<h3 id="_9">🔧 Алгоритмы машинного обучения</h3>
+<ul>
+<li><a href="fundamentals/ml-algorithms.md">Обзор алгоритмов</a> — классификация методов, когда какой использовать</li>
+<li><a href="fundamentals/linear-models.md">Линейные модели</a> — линейная и логистическая регрессия, регуляризация</li>
+<li><a href="fundamentals/decision-trees.md">Деревья и ансамбли</a> — деревья решений, случайный лес, градиентный бустинг</li>
+<li><a href="fundamentals/clustering.md">Кластеризация</a> — k-means, иерархическая, DBSCAN</li>
+<li><a href="fundamentals/dimensionality-reduction.md">Снижение размерности</a> — PCA, t-SNE, UMAP</li>
+</ul>
+<h2 id="_10">Путь изучения</h2>
+<pre><code>1. Начните с &quot;Введения в ML&quot; для понимания базовых концепций
+2. Изучите &quot;Подготовку данных&quot; — это 80% успеха в ML
+3. Освойте &quot;Инженерию признаков&quot; для улучшения моделей
+4. Разберитесь с &quot;Оценкой моделей&quot; для правильного измерения качества
+5. Переходите к алгоритмам: от линейных моделей к ансамблям
+6. Изучите методы обучения без учителя (кластеризация, снижение размерности)
+</code></pre>
+<h2 id="_11">Ключевые темы</h2>
+<table>
+<thead>
+<tr>
+<th>Тема</th>
+<th>Описание</th>
+<th>Сложность</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Подготовка данных</td>
+<td>Очистка, трансформация, масштабирование</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td>Инженерия признаков</td>
+<td>Создание и отбор признаков</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td>Линейные модели</td>
+<td>Быстрые и интерпретируемые базовые модели</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td>Деревья решений</td>
+<td>Интуитивно понятные нелинейные модели</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td>Ансамбли</td>
+<td>Комбинация моделей для высокой точности</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td>Кластеризация</td>
+<td>Группировка данных без меток</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td>Снижение размерности</td>
+<td>Визуализация и сжатие данных</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_12">Практические рекомендации</h2>
+<ol>
+<li><strong>Всегда начинайте с простых моделей</strong> — линейная регрессия или логистическая регрессия как базлайн</li>
+<li><strong>Уделяйте время подготовке данных</strong> — качественные данные важнее сложных алгоритмов</li>
+<li><strong>Используйте кросс-валидацию</strong> — для надежной оценки качества</li>
+<li><strong>Интерпретируйте результаты</strong> — понимайте, почему модель делает такие предсказания</li>
+<li><strong>Экспериментируйте с ансамблями</strong> — Random Forest и Gradient Boosting часто дают лучший результат</li>
+</ol>
+<h2 id="_13">Следующие шаги</h2>
+<p>После изучения основ переходите к:
+- <a href="neural-networks.md">Нейронным сетям</a> — основы глубокого обучения
+- <a href="deep-learning/deep-learning.md">Глубокому обучению</a> — CNN, RNN, Transformers
+- <a href="data-processing/data-processing.md">Обработке данных</a> — EDA и визуализация
+- <a href="modeling/modeling.md">Моделированию</a> — продвинутые техники</p>
+<h2 id="_14">Ресурсы</h2>
+<ul>
+<li><a href="https://scikit-learn.org/">Scikit-learn документация</a></li>
+<li><a href="https://www.kaggle.com/learn">Kaggle Learn</a></li>
+<li><a href="https://www.coursera.org/learn/machine-learning">Coursera: Machine Learning by Andrew Ng</a></li>
+</ul>
+<p>================================================================================</p>
+<h1 id="_15">Методы кластеризации</h1>
+<h2 id="_16">Обзор</h2>
+<p>Кластеризация — это задача обучения без учителя, целью которой является группировка схожих объектов в кластеры так, чтобы объекты внутри одного кластера были более похожи друг на друга, чем на объекты из других кластеров.</p>
+<h2 id="k-means-k-">K-Means (K-средних)</h2>
+<h3 id="_17">Принцип работы</h3>
+<ol>
+<li>Инициализировать K центроидов случайным образом</li>
+<li>Назначить каждый объект ближайшему центроиду</li>
+<li>Пересчитать центроиды как среднее точек в кластере</li>
+<li>Повторять шаги 2-3 до сходимости</li>
+</ol>
+<h3 id="_18">Формула</h3>
+<p>Минимизируется сумма квадратов расстояний:</p>
+<pre><code>J = Σᵢ Σⱼ ||xⱼ⁽ⁱ⁾ - μᵢ||²
+</code></pre>
+<h3 id="_19">Гиперпараметры</h3>
+<ul>
+<li><code>n_clusters</code>: количество кластеров (K)</li>
+<li><code>init</code>: метод инициализации ('k-means++', 'random')</li>
+<li><code>max_iter</code>: максимальное количество итераций</li>
+<li><code>n_init</code>: количество запусков алгоритма</li>
+</ul>
+<h3 id="_20">Выбор количества кластеров</h3>
+<ul>
+<li><strong>Метод локтя</strong>: поиск "излома" на графике inertia</li>
+<li><strong>Silhouette score</strong>: оценка качества разделения</li>
+<li><strong>Gap statistic</strong>: сравнение с равномерным распределением</li>
+</ul>
+<h3 id="_21">Преимущества и недостатки</h3>
+<table>
+<thead>
+<tr>
+<th>Преимущества</th>
+<th>Недостатки</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Простота и скорость</td>
+<td>Нужно задавать K</td>
+</tr>
+<tr>
+<td>Масштабируемость</td>
+<td>Чувствителен к выбросам</td>
+</tr>
+<tr>
+<td>Сходимость гарантирована</td>
+<td>Предполагает сферические кластеры</td>
+</tr>
+<tr>
+<td></td>
+<td>Чувствителен к инициализации</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_22">Иерархическая кластеризация</h2>
+<h3 id="_23">Принцип работы</h3>
+<p>Строит древовидную структуру кластеров (дендрограмму).</p>
+<h3 id="_24">Типы</h3>
+<ul>
+<li><strong>Агломеративная</strong> (bottom-up): каждый объект — отдельный кластер, затем объединяем</li>
+<li><strong>Дивизивная</strong> (top-down): все объекты в одном кластере, затем разделяем</li>
+</ul>
+<h3 id="linkage">Методы связи (Linkage)</h3>
+<ul>
+<li><strong>Single</strong>: минимальное расстояние между кластерами</li>
+<li><strong>Complete</strong>: максимальное расстояние</li>
+<li><strong>Average</strong>: среднее расстояние</li>
+<li><strong>Ward</strong>: минимизация дисперсии внутри кластеров</li>
+</ul>
+<h3 id="_25">Преимущества и недостатки</h3>
+<table>
+<thead>
+<tr>
+<th>Преимущества</th>
+<th>Недостатки</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Не нужно задавать K</td>
+<td>O(n³) сложность</td>
+</tr>
+<tr>
+<td>Дендрограмма для визуализации</td>
+<td>Не масштабируется</td>
+</tr>
+<tr>
+<td>Любая форма кластеров</td>
+<td>Чувствительна к шуму</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dbscan-density-based-spatial-clustering">DBSCAN (Density-Based Spatial Clustering)</h2>
+<h3 id="_26">Принцип работы</h3>
+<p>Группирует точки, находящиеся в областях высокой плотности.</p>
+<h3 id="_27">Термины</h3>
+<ul>
+<li><strong>Core point</strong>: точка с min_samples соседей в eps-окрестности</li>
+<li><strong>Border point</strong>: имеет меньше соседей, но достижима из core point</li>
+<li><strong>Noise point</strong>: выбросы, не принадлежащие ни одному кластеру</li>
+</ul>
+<h3 id="_28">Гиперпараметры</h3>
+<ul>
+<li><code>eps</code>: радиус окрестности</li>
+<li><code>min_samples</code>: минимальное количество точек для core point</li>
+</ul>
+<h3 id="_29">Преимущества и недостатки</h3>
+<table>
+<thead>
+<tr>
+<th>Преимущества</th>
+<th>Недостатки</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Не нужно задавать K</td>
+<td>Чувствителен к параметрам</td>
+</tr>
+<tr>
+<td>Находит кластеры любой формы</td>
+<td>Плохо работает с разной плотностью</td>
+</tr>
+<tr>
+<td>Устойчив к выбросам</td>
+<td>Не подходит для данных высокой размерности</td>
+</tr>
+<tr>
+<td>Определяет шум</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_30">Сравнение методов</h2>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>Форма кластеров</th>
+<th>Нужно ли K</th>
+<th>Выбросы</th>
+<th>Масштабируемость</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>K-Means</td>
+<td>Сферические</td>
+<td>Да</td>
+<td>Нет</td>
+<td>Высокая</td>
+</tr>
+<tr>
+<td>Hierarchical</td>
+<td>Любая</td>
+<td>Нет</td>
+<td>Нет</td>
+<td>Низкая</td>
+</tr>
+<tr>
+<td>DBSCAN</td>
+<td>Любая</td>
+<td>Нет</td>
+<td>Да</td>
+<td>Средняя</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_31">Метрики оценки кластеризации</h2>
+<h3 id="_32">Внешние метрики (если известны истинные метки)</h3>
+<ul>
+<li><strong>Adjusted Rand Index (ARI)</strong></li>
+<li><strong>Normalized Mutual Information (NMI)</strong></li>
+<li><strong>Fowlkes-Mallows Index</strong></li>
+</ul>
+<h3 id="_33">Внутренние метрики (без истинных меток)</h3>
+<ul>
+<li><strong>Silhouette Coefficient</strong>: от -1 до 1, чем больше, тем лучше</li>
+<li><strong>Calinski-Harabasz Index</strong>: отношение межкластерной дисперсии к внутрикластерной</li>
+<li><strong>Davies-Bouldin Index</strong>: чем меньше, тем лучше</li>
+</ul>
+<h2 id="_34">Пример кода</h2>
+<pre><code class="language-python">from sklearn.cluster import KMeans, AgglomerativeClustering, DBSCAN
+from sklearn.metrics import silhouette_score, calinski_harabasz_score
+import matplotlib.pyplot as plt
+import scipy.cluster.hierarchy as sch
+
+# K-Means
+kmeans = KMeans(n_clusters=3, init='k-means++', random_state=42)
+kmeans_labels = kmeans.fit_predict(X)
+kmeans_centers = kmeans.cluster_centers_
+
+# Оценка качества
+sil_score = silhouette_score(X, kmeans_labels)
+ch_score = calinski_harabasz_score(X, kmeans_labels)
+
+# Выбор оптимального K (метод локтя)
+inertias = []
+for k in range(1, 11):
+    km = KMeans(n_clusters=k, random_state=42)
+    km.fit(X)
+    inertias.append(km.inertia_)
+
+plt.plot(range(1, 11), inertias, 'bo-')
+plt.xlabel('Количество кластеров')
+plt.ylabel('Inertia')
+plt.title('Метод локтя')
+plt.show()
+
+# Иерархическая кластеризация
+hc = AgglomerativeClustering(n_clusters=3, linkage='ward')
+hc_labels = hc.fit_predict(X)
+
+# Дендрограмма
+dendrogram = sch.dendrogram(sch.linkage(X, method='ward'))
+plt.title('Дендрограмма')
+plt.xlabel('Образцы')
+plt.ylabel('Расстояние')
+plt.show()
+
+# DBSCAN
+dbscan = DBSCAN(eps=0.5, min_samples=5)
+dbscan_labels = dbscan.fit_predict(X)
+# -1 обозначает выбросы
+</code></pre>
+<h2 id="_35">Практические советы</h2>
+<ol>
+<li><strong>Стандартизируйте данные</strong> перед кластеризацией</li>
+<li><strong>Начните с K-Means</strong> как базового метода</li>
+<li><strong>Используйте силуэтный коэффициент</strong> для выбора K</li>
+<li><strong>DBSCAN</strong> хорош для данных с выбросами и сложной формой</li>
+<li><strong>Визуализируйте результаты</strong> с помощью PCA или t-SNE</li>
+<li><strong>Проверьте устойчивость</strong> кластеризации на подвыборках</li>
+</ol>
+<h2 id="_36">Применение</h2>
+<ul>
+<li>Сегментация клиентов</li>
+<li>Группировка документов</li>
+<li>Обнаружение аномалий</li>
+<li>Сжатие изображений</li>
+<li>Биоинформатика</li>
+</ul>
+<h2 id="_37">См. также</h2>
+<ul>
+<li><a href="dimensionality-reduction.md">Снижение размерности</a></li>
+<li><a href="../data-processing/eda.md">EDA</a></li>
+<li><a href="../data-processing/visualization.md">Визуализация</a></li>
+</ul>
+<p>================================================================================</p>
+<h1 id="_38">Подготовка данных</h1>
+<p>Подготовка данных — критически важный этап в машинном обучении, который часто занимает до 80% времени проекта.</p>
+<h2 id="1">1. Сбор данных</h2>
+<h3 id="_39">Источники данных</h3>
+<ul>
+<li><strong>Базы данных</strong>: SQL, NoSQL хранилища</li>
+<li><strong>Файлы</strong>: CSV, JSON, XML, Excel</li>
+<li><strong>API</strong>: REST, GraphQL endpoints</li>
+<li><strong>Веб-скрапинг</strong>: парсинг веб-страниц</li>
+<li><strong>Стриминг</strong>: Kafka, RabbitMQ</li>
+</ul>
+<h3 id="_40">Пример загрузки данных</h3>
+<pre><code class="language-python">import pandas as pd
+
+# Из CSV
+df = pd.read_csv('data.csv')
+
+# Из Excel
+df = pd.read_excel('data.xlsx')
+
+# Из JSON
+df = pd.read_json('data.json')
+
+# Из SQL
+import sqlite3
+conn = sqlite3.connect('database.db')
+df = pd.read_sql_query('SELECT * FROM table', conn)
+</code></pre>
+<h2 id="2">2. Очистка данных</h2>
+<h3 id="_41">Обработка пропусков</h3>
+<pre><code class="language-python"># Проверка пропусков
+df.isnull().sum()
+
+# Удаление строк с пропусками
+df.dropna()
+
+# Заполнение средним/медианой
+df['column'].fillna(df['column'].mean(), inplace=True)
+df['column'].fillna(df['column'].median(), inplace=True)
+
+# Заполнение модой (для категориальных)
+df['column'].fillna(df['column'].mode()[0], inplace=True)
+
+# Интерполяция
+df.interpolate(method='linear', inplace=True)
+</code></pre>
+<h3 id="_42">Обработка дубликатов</h3>
+<pre><code class="language-python"># Поиск дубликатов
+df.duplicated().sum()
+
+# Удаление дубликатов
+df.drop_duplicates(inplace=True)
+</code></pre>
+<h3 id="_43">Обработка выбросов</h3>
+<pre><code class="language-python">from scipy import stats
+import numpy as np
+
+# Метод Z-score
+z_scores = np.abs(stats.zscore(df['column']))
+outliers = df[z_scores &gt; 3]
+
+# Метод IQR
+Q1 = df['column'].quantile(0.25)
+Q3 = df['column'].quantile(0.75)
+IQR = Q3 - Q1
+outliers = df[(df['column'] &lt; Q1 - 1.5*IQR) | (df['column'] &gt; Q3 + 1.5*IQR)]
+
+# Winsorization (ограничение выбросов)
+from scipy.stats.mstats import winsorize
+df['column'] = winsorize(df['column'], limits=[0.05, 0.05])
+</code></pre>
+<h2 id="3">3. Преобразование данных</h2>
+<h3 id="_44">Нормализация и стандартизация</h3>
+<pre><code class="language-python">from sklearn.preprocessing import MinMaxScaler, StandardScaler
+
+# Мин-макс нормализация [0, 1]
+scaler = MinMaxScaler()
+df_normalized = scaler.fit_transform(df[['column']])
+
+# Стандартизация (Z-score normalization)
+scaler = StandardScaler()
+df_standardized = scaler.fit_transform(df[['column']])
+</code></pre>
+<h3 id="_45">Кодирование категориальных признаков</h3>
+<pre><code class="language-python">from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+
+# Label Encoding (для порядковых)
+le = LabelEncoder()
+df['category_encoded'] = le.fit_transform(df['category'])
+
+# One-Hot Encoding (для номинальных)
+df_encoded = pd.get_dummies(df, columns=['category'])
+
+# Target Encoding
+def target_encode(df, column, target):
+    mean_target = df.groupby(column)[target].mean()
+    return df[column].map(mean_target)
+</code></pre>
+<h3 id="_46">Преобразование признаков</h3>
+<pre><code class="language-python"># Логарифмическое преобразование
+df['log_column'] = np.log1p(df['column'])
+
+# Квадратный корень
+df['sqrt_column'] = np.sqrt(df['column'])
+
+# Полиномиальные признаки
+from sklearn.preprocessing import PolynomialFeatures
+poly = PolynomialFeatures(degree=2)
+X_poly = poly.fit_transform(X)
+</code></pre>
+<h2 id="4">4. Разделение данных</h2>
+<pre><code class="language-python">from sklearn.model_selection import train_test_split
+
+# Базовое разделение
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, 
+    test_size=0.2, 
+    random_state=42,
+    stratify=y  # Для сохранения распределения классов
+)
+
+# Разделение на train/validation/test
+X_temp, X_test, y_temp, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_val, y_train, y_val = train_test_split(X_temp, y_temp, test_size=0.25, random_state=42)
+</code></pre>
+<h2 id="5">5. Балансировка классов</h2>
+<pre><code class="language-python">from imblearn.over_sampling import SMOTE
+from imblearn.under_sampling import RandomUnderSampler
+
+# SMOTE (Synthetic Minority Over-sampling)
+smote = SMOTE(random_state=42)
+X_resampled, y_resampled = smote.fit_resample(X, y)
+
+# Random Undersampling
+rus = RandomUnderSampler(random_state=42)
+X_resampled, y_resampled = rus.fit_resample(X, y)
+
+# Комбинированный подход
+from imblearn.combine import SMOTETomek
+smote_tomek = SMOTETomek(random_state=42)
+X_resampled, y_resampled = smote_tomek.fit_resample(X, y)
+</code></pre>
+<h2 id="-">Чек-лист подготовки данных</h2>
+<ul>
+<li>[ ] Проверить типы данных</li>
+<li>[ ] Обработать пропуски</li>
+<li>[ ] Удалить дубликаты</li>
+<li>[ ] Обработать выбросы</li>
+<li>[ ] Закодировать категориальные признаки</li>
+<li>[ ] Нормализовать/стандартизировать числовые признаки</li>
+<li>[ ] Сбалансировать классы (если нужно)</li>
+<li>[ ] Разделить на train/validation/test</li>
+</ul>
+<h2 id="_47">Рекомендации</h2>
+<ol>
+<li><strong>Всегда сохраняйте исходные данные</strong> — работайте с копиями</li>
+<li><strong>Документируйте все преобразования</strong> — для воспроизводимости</li>
+<li><strong>Проверяйте распределения</strong> — до и после преобразований</li>
+<li><strong>Избегайте data leakage</strong> — fit на train, transform на test</li>
+<li><strong>Автоматизируйте пайплайн</strong> — используйте sklearn Pipeline</li>
+</ol>
+<p>================================================================================</p>
+<h1 id="_48">Деревья решений и ансамбли</h1>
+<h2 id="_49">Обзор</h2>
+<p>Деревья решений — это алгоритмы, которые строят модель в виде древовидной структуры для принятия решений на основе признаков данных.</p>
+<h2 id="_50">Деревья решений</h2>
+<h3 id="_51">Принцип работы</h3>
+<p>Дерево рекурсивно разделяет данные по признакам, максимизируя "чистоту" узлов.</p>
+<h3 id="_52">Критерии разделения</h3>
+<ul>
+<li><strong>Для классификации</strong>:</li>
+<li>Entropy (Информационный выигрыш)</li>
+<li>Gini Impurity</li>
+<li><strong>Для регрессии</strong>:</li>
+<li>MSE (Mean Squared Error)</li>
+<li>MAE (Mean Absolute Error)</li>
+</ul>
+<h3 id="_53">Алгоритм построения</h3>
+<ol>
+<li>Выбрать лучший признак для разделения</li>
+<li>Разделить данные на подмножества</li>
+<li>Рекурсивно повторять для каждого подмножества</li>
+<li>Остановиться при выполнении критериев остановки</li>
+</ol>
+<h3 id="_54">Критерии остановки</h3>
+<ul>
+<li>Максимальная глубина</li>
+<li>Минимальное количество_samples в узле</li>
+<li>Минимальное улучшение функции потерь</li>
+</ul>
+<h3 id="_55">Преимущества и недостатки</h3>
+<table>
+<thead>
+<tr>
+<th>Преимущества</th>
+<th>Недостатки</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Интерпретируемость</td>
+<td>Склонность к переобучению</td>
+</tr>
+<tr>
+<td>Не требуют масштабирования</td>
+<td>Нестабильность к шуму</td>
+</tr>
+<tr>
+<td>Работают с категориальными данными</td>
+<td>Предпочтение признакам с большим количеством значений</td>
+</tr>
+<tr>
+<td>Визуализация</td>
+<td>Плохая экстраполяция</td>
+</tr>
+</tbody>
+</table>
+<h2 id="random-forest">Случайный лес (Random Forest)</h2>
+<h3 id="_56">Принцип работы</h3>
+<p>Ансамбль из множества деревьев, обученных на:
+- Бутстрэп выборках (bagging)
+- Случайных подмножествах признаков</p>
+<h3 id="_57">Как работает</h3>
+<pre><code>Результат = Мода(предсказания всех деревьев)  # для классификации
+Результат = Среднее(предсказания всех деревьев)  # для регрессии
+</code></pre>
+<h3 id="_58">Гиперпараметры</h3>
+<ul>
+<li><code>n_estimators</code>: количество деревьев</li>
+<li><code>max_depth</code>: максимальная глубина</li>
+<li><code>max_features</code>: количество признаков для рассмотрения</li>
+<li><code>min_samples_split</code>: минимальное количество образцов для разделения</li>
+<li><code>min_samples_leaf</code>: минимальное количество образцов в листе</li>
+</ul>
+<h3 id="_59">Преимущества</h3>
+<ul>
+<li>Уменьшает переобучение</li>
+<li>Высокая точность</li>
+<li>Оценка важности признаков</li>
+<li>Работает с пропусками</li>
+</ul>
+<h2 id="gradient-boosting">Градиентный бустинг (Gradient Boosting)</h2>
+<h3 id="_60">Принцип работы</h3>
+<p>Последовательное обучение деревьев, где каждое новое дерево исправляет ошибки предыдущих.</p>
+<h3 id="_61">Алгоритм</h3>
+<ol>
+<li>Обучить первое дерево на исходных данных</li>
+<li>Вычислить ошибки (остатки)</li>
+<li>Обучить следующее дерево на остатках</li>
+<li>Повторять N раз</li>
+<li>Объединить предсказания с весами</li>
+</ol>
+<h3 id="_62">Популярные реализации</h3>
+<h4 id="xgboost">XGBoost</h4>
+<ul>
+<li>Регуляризация L1/L2</li>
+<li>Параллелизация</li>
+<li>Работа с пропусками</li>
+<li>Early stopping</li>
+</ul>
+<h4 id="lightgbm">LightGBM</h4>
+<ul>
+<li>Градиентная однобоковая выборка (GOSS)</li>
+<li>Эксклюзивное связывание признаков (EFB)</li>
+<li>Быстрее XGBoost на больших данных</li>
+</ul>
+<h4 id="catboost">CatBoost</h4>
+<ul>
+<li>Обработка категориальных признаков</li>
+<li>Упорядоченный бустинг</li>
+<li>Симметричные деревья</li>
+</ul>
+<h3 id="_63">Гиперпараметры градиентного бустинга</h3>
+<ul>
+<li><code>learning_rate</code>: темп обучения (0.01-0.3)</li>
+<li><code>n_estimators</code>: количество деревьев</li>
+<li><code>max_depth</code>: глубина деревьев (3-8)</li>
+<li><code>subsample</code>: доля выборки для каждого дерева</li>
+<li><code>colsample_bytree</code>: доля признаков</li>
+</ul>
+<h2 id="_64">Сравнение методов</h2>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>Точность</th>
+<th>Скорость обучения</th>
+<th>Интерпретируемость</th>
+<th>Переобучение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Дерево решений</td>
+<td>Низкая</td>
+<td>Очень быстро</td>
+<td>Отличная</td>
+<td>Высокое</td>
+</tr>
+<tr>
+<td>Random Forest</td>
+<td>Высокая</td>
+<td>Быстро</td>
+<td>Средняя</td>
+<td>Низкое</td>
+</tr>
+<tr>
+<td>Gradient Boosting</td>
+<td>Очень высокая</td>
+<td>Медленно</td>
+<td>Низкая</td>
+<td>Среднее</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_65">Пример кода</h2>
+<pre><code class="language-python">from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+from xgboost import XGBClassifier
+from lightgbm import LGBMClassifier
+
+# Дерево решений
+dt = DecisionTreeClassifier(max_depth=5, criterion='gini')
+dt.fit(X_train, y_train)
+
+# Случайный лес
+rf = RandomForestClassifier(n_estimators=100, max_depth=10, random_state=42)
+rf.fit(X_train, y_train)
+
+# Градиентный бустинг
+gb = GradientBoostingClassifier(n_estimators=100, learning_rate=0.1, max_depth=3)
+gb.fit(X_train, y_train)
+
+# XGBoost
+xgb = XGBClassifier(n_estimators=100, learning_rate=0.1, max_depth=5)
+xgb.fit(X_train, y_train)
+
+# LightGBM
+lgbm = LGBMClassifier(n_estimators=100, learning_rate=0.1, max_depth=-1)
+lgbm.fit(X_train, y_train)
+
+# Важность признаков
+importances = rf.feature_importances_
+</code></pre>
+<h2 id="_66">Практические советы</h2>
+<ol>
+<li><strong>Начните с Random Forest</strong> как базового метода</li>
+<li><strong>Используйте GridSearchCV</strong> для подбора гиперпараметров</li>
+<li><strong>Градиентный бустинг</strong> дает лучшую точность, но требует тонкой настройки</li>
+<li><strong>CatBoost</strong> лучше всего работает с категориальными признаками</li>
+<li><strong>Early stopping</strong> помогает избежать переобучения в бустинге</li>
+</ol>
+<h2 id="_67">См. также</h2>
+<ul>
+<li><a href="ml-algorithms.md">Алгоритмы ML</a></li>
+<li><a href="model-evaluation.md">Оценка моделей</a></li>
+<li><a href="../modeling/hyperparameter-tuning.md">Оптимизация гиперпараметров</a></li>
+</ul>
+<p>================================================================================</p>
+<h1 id="_68">Методы снижения размерности</h1>
+<h2 id="_69">Обзор</h2>
+<p>Снижение размерности — это процесс уменьшения количества признаков в данных при сохранении важной информации. Используется для:
+- Визуализации данных
+- Ускорения обучения моделей
+- Борьбы с проклятием размерности
+- Удаления шума и коррелированных признаков</p>
+<h2 id="pca-principal-component-analysis">PCA (Principal Component Analysis)</h2>
+<h3 id="_70">Принцип работы</h3>
+<p>PCA находит новые оси (главные компоненты), которые:
+1. Максимально сохраняют дисперсию данных
+2. Ортогональны друг другу</p>
+<h3 id="_71">Алгоритм</h3>
+<ol>
+<li>Стандартизировать данные</li>
+<li>Вычислить ковариационную матрицу</li>
+<li>Найти собственные значения и собственные векторы</li>
+<li>Отсортировать по убыванию собственных значений</li>
+<li>Выбрать top-k компонент</li>
+</ol>
+<h3 id="_72">Выбор количества компонент</h3>
+<ul>
+<li><strong>Объясненная дисперсия</strong>: выбрать k, чтобы сохранить 95% дисперсии</li>
+<li><strong>Каменистая осыпь (Scree plot)</strong>: поиск "излома" на графике</li>
+</ul>
+<h3 id="_73">Преимущества и недостатки</h3>
+<table>
+<thead>
+<tr>
+<th>Преимущества</th>
+<th>Недостатки</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Линейная сложность</td>
+<td>Только линейные зависимости</td>
+</tr>
+<tr>
+<td>Сохраняет глобальную структуру</td>
+<td>Чувствителен к выбросам</td>
+</tr>
+<tr>
+<td>Уникальное решение</td>
+<td>Трудно интерпретировать компоненты</td>
+</tr>
+</tbody>
+</table>
+<h2 id="t-sne-t-distributed-stochastic-neighbor-embedding">t-SNE (t-Distributed Stochastic Neighbor Embedding)</h2>
+<h3 id="_74">Принцип работы</h3>
+<p>t-SNE сохраняет локальные структуры данных, моделируя сходства между точками в исходном и низкоразмерном пространствах.</p>
+<h3 id="_75">Ключевые идеи</h3>
+<ul>
+<li>Использует распределение Стьюдента для тяжеловесных хвостов</li>
+<li>Минимизирует KL-дивергенцию между распределениями</li>
+<li>Хорошо сохраняет локальные кластеры</li>
+</ul>
+<h3 id="_76">Гиперпараметры</h3>
+<ul>
+<li><code>n_components</code>: целевая размерность (обычно 2 или 3)</li>
+<li><code>perplexity</code>: баланс локальной/глобальной структуры (5-50)</li>
+<li><code>learning_rate</code>: темп обучения (10-1000)</li>
+<li><code>n_iter</code>: количество итераций (минимум 250)</li>
+</ul>
+<h3 id="_77">Преимущества и недостатки</h3>
+<table>
+<thead>
+<tr>
+<th>Преимущества</th>
+<th>Недостатки</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Сохраняет локальную структуру</td>
+<td>Вычислительно сложный O(n²)</td>
+</tr>
+<tr>
+<td>Визуализация кластеров</td>
+<td>Не сохраняет глобальную структуру</td>
+</tr>
+<tr>
+<td>Работает с нелинейными данными</td>
+<td>Результаты зависят от параметров</td>
+</tr>
+<tr>
+<td></td>
+<td>Не подходит для новых данных</td>
+</tr>
+</tbody>
+</table>
+<h2 id="umap-uniform-manifold-approximation-and-projection">UMAP (Uniform Manifold Approximation and Projection)</h2>
+<h3 id="_78">Принцип работы</h3>
+<p>UMAP строит топологическое представление данных, предполагая, что данные лежат на многообразии.</p>
+<h3 id="_79">Ключевые идеи</h3>
+<ul>
+<li>Теория римановой геометрии</li>
+<li>Сохраняет как локальную, так и глобальную структуру</li>
+<li>Быстрее t-SNE</li>
+</ul>
+<h3 id="_80">Гиперпараметры</h3>
+<ul>
+<li><code>n_components</code>: целевая размерность</li>
+<li><code>n_neighbors</code>: баланс локальной/глобальной структуры (5-50)</li>
+<li><code>min_dist</code>: минимальное расстояние между точками (0.0-0.99)</li>
+<li><code>metric</code>: метрика расстояния</li>
+</ul>
+<h3 id="_81">Преимущества и недостатки</h3>
+<table>
+<thead>
+<tr>
+<th>Преимущества</th>
+<th>Недостатки</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Быстрее t-SNE</td>
+<td>Сложнее в настройке</td>
+</tr>
+<tr>
+<td>Сохраняет глобальную структуру</td>
+<td></td>
+</tr>
+<tr>
+<td>Масштабируемость</td>
+<td></td>
+</tr>
+<tr>
+<td>Может трансформировать новые данные</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_82">Сравнение методов</h2>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>Тип</th>
+<th>Скорость</th>
+<th>Локальная структура</th>
+<th>Глобальная структура</th>
+<th>Новые данные</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PCA</td>
+<td>Линейный</td>
+<td>Очень быстро</td>
+<td>Средне</td>
+<td>Хорошо</td>
+<td>Да</td>
+</tr>
+<tr>
+<td>t-SNE</td>
+<td>Нелинейный</td>
+<td>Медленно</td>
+<td>Отлично</td>
+<td>Плохо</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>UMAP</td>
+<td>Нелинейный</td>
+<td>Быстро</td>
+<td>Отлично</td>
+<td>Хорошо</td>
+<td>Да</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_83">Другие методы</h2>
+<h3 id="lda-linear-discriminant-analysis">LDA (Linear Discriminant Analysis)</h3>
+<ul>
+<li>Обучение с учителем</li>
+<li>Максимизирует разделимость классов</li>
+<li>Для классификации</li>
+</ul>
+<h3 id="kernel-pca">Kernel PCA</h3>
+<ul>
+<li>Нелинейное расширение PCA</li>
+<li>Использует kernel trick</li>
+<li>Для нелинейных зависимостей</li>
+</ul>
+<h3 id="autoencoders">Autoencoders</h3>
+<ul>
+<li>Нейросетевой подход</li>
+<li>Нелинейное снижение размерности</li>
+<li>Гибкая архитектура</li>
+</ul>
+<h2 id="_84">Пример кода</h2>
+<pre><code class="language-python">from sklearn.decomposition import PCA
+from sklearn.manifold import TSNE
+import umap
+import matplotlib.pyplot as plt
+
+# PCA
+pca = PCA(n_components=2)
+X_pca = pca.fit_transform(X_scaled)
+
+# Объясненная дисперсия
+explained_variance = pca.explained_variance_ratio_
+cumulative_variance = explained_variance.cumsum()
+
+# Scree plot
+plt.plot(range(1, len(explained_variance)+1), cumulative_variance, 'bo-')
+plt.xlabel('Количество компонент')
+plt.ylabel('Накопленная дисперсия')
+plt.axhline(y=0.95, color='r', linestyle='--', label='95%')
+plt.legend()
+plt.show()
+
+# t-SNE
+tsne = TSNE(n_components=2, perplexity=30, n_iter=1000, random_state=42)
+X_tsne = tsne.fit_transform(X_scaled)
+
+# Визуализация
+plt.scatter(X_tsne[:, 0], X_tsne[:, 1], c=y, cmap='viridis', alpha=0.6)
+plt.title('t-SNE визуализация')
+plt.colorbar()
+plt.show()
+
+# UMAP
+umap_model = umap.UMAP(n_components=2, n_neighbors=15, min_dist=0.1, random_state=42)
+X_umap = umap_model.fit_transform(X_scaled)
+
+# Визуализация
+plt.scatter(X_umap[:, 0], X_umap[:, 1], c=y, cmap='viridis', alpha=0.6)
+plt.title('UMAP визуализация')
+plt.colorbar()
+plt.show()
+
+# Трансформация новых данных (только PCA и UMAP)
+X_new_pca = pca.transform(X_new)
+X_new_umap = umap_model.transform(X_new)
+</code></pre>
+<h2 id="_85">Практические советы</h2>
+<ol>
+<li><strong>Всегда стандартизируйте данные</strong> перед PCA</li>
+<li><strong>Начните с PCA</strong> как базового метода</li>
+<li><strong>Используйте t-SNE/UMAP</strong> для визуализации</li>
+<li><strong>Подбирайте perplexity</strong> для t-SNE экспериментально</li>
+<li><strong>Сохраняйте обученные модели</strong> для трансформации новых данных</li>
+<li><strong>Интерпретируйте компоненты</strong> через loadings (PCA)</li>
+</ol>
+<h2 id="_86">Применение</h2>
+<ul>
+<li>Визуализация высокоразмерных данных</li>
+<li>Предобработка для других алгоритмов</li>
+<li>Сжатие признаков</li>
+<li>Удаление шума</li>
+<li>Исследовательский анализ</li>
+</ul>
+<h2 id="_87">См. также</h2>
+<ul>
+<li><a href="clustering.md">Кластеризация</a></li>
+<li><a href="../data-processing/eda.md">EDA</a></li>
+<li><a href="../data-processing/visualization.md">Визуализация</a></li>
+<li><a href="feature-engineering.md">Инженерия признаков</a></li>
+</ul>
+<p>================================================================================</p>
+<h1 id="_88">Инженерия признаков</h1>
+<p>Инженерия признаков (Feature Engineering) — процесс создания новых признаков из существующих данных для улучшения качества моделей машинного обучения.</p>
+<h2 id="1_1">1. Создание признаков</h2>
+<h3 id="_89">Извлечение из дат и времени</h3>
+<pre><code class="language-python">import pandas as pd
+
+df['date'] = pd.to_datetime(df['timestamp'])
+
+# Извлечение компонентов
+df['year'] = df['date'].dt.year
+df['month'] = df['date'].dt.month
+df['day'] = df['date'].dt.day
+df['dayofweek'] = df['date'].dt.dayofweek  # 0=понедельник
+df['hour'] = df['date'].dt.hour
+df['is_weekend'] = (df['dayofweek'] &gt;= 5).astype(int)
+
+# Циклическое кодирование
+df['month_sin'] = np.sin(2 * np.pi * df['month'] / 12)
+df['month_cos'] = np.cos(2 * np.pi * df['month'] / 12)
+df['hour_sin'] = np.sin(2 * np.pi * df['hour'] / 24)
+df['hour_cos'] = np.cos(2 * np.pi * df['hour'] / 24)
+</code></pre>
+<h3 id="_90">Извлечение из текста</h3>
+<pre><code class="language-python"># Длина текста
+df['text_length'] = df['text'].str.len()
+
+# Количество слов
+df['word_count'] = df['text'].str.split().str.len()
+
+# Количество предложений
+df['sentence_count'] = df['text'].str.count(r'[.!?]')
+
+# Средняя длина слова
+df['avg_word_length'] = df['text'].apply(
+    lambda x: np.mean([len(w) for w in x.split()]) if x else 0
+)
+
+# Наличие заглавных букв
+df['has_uppercase'] = df['text'].str.contains('[A-ZА-Я]').astype(int)
+
+# TF-IDF векторизация
+from sklearn.feature_extraction.text import TfidfVectorizer
+tfidf = TfidfVectorizer(max_features=100, ngram_range=(1, 2))
+tfidf_matrix = tfidf.fit_transform(df['text'])
+</code></pre>
+<h3 id="_91">Извлечение из чисел</h3>
+<pre><code class="language-python"># Бининг (разбиение на интервалы)
+df['age_group'] = pd.cut(df['age'], bins=[0, 18, 35, 55, 100], 
+                          labels=['young', 'adult', 'middle', 'senior'])
+
+# Квантильное разбиение
+df['income_quartile'] = pd.qcut(df['income'], q=4, labels=['Q1', 'Q2', 'Q3', 'Q4'])
+
+# Логарифмическое преобразование
+df['log_income'] = np.log1p(df['income'])
+
+# Отношения и взаимодействия
+df['debt_to_income'] = df['debt'] / df['income']
+df['price_per_sqm'] = df['price'] / df['area']
+</code></pre>
+<h3 id="_92">Агрегированные признаки</h3>
+<pre><code class="language-python"># Групповые статистики
+group_stats = df.groupby('category')['value'].agg(['mean', 'std', 'min', 'max', 'count'])
+df = df.merge(group_stats, on='category', suffixes=('', '_cat'))
+
+# Скользящие средние (для временных рядов)
+df['moving_avg_7'] = df['value'].rolling(window=7).mean()
+df['moving_avg_30'] = df['value'].rolling(window=30).mean()
+
+# Лаговые признаки
+df['lag_1'] = df['value'].shift(1)
+df['lag_7'] = df['value'].shift(7)
+
+# Разности
+df['diff_1'] = df['value'].diff(1)
+df['diff_7'] = df['value'].diff(7)
+</code></pre>
+<h2 id="2_1">2. Отбор признаков</h2>
+<h3 id="_93">Фильтрация по дисперсии</h3>
+<pre><code class="language-python">from sklearn.feature_selection import VarianceThreshold
+
+# Удаление признаков с низкой дисперсией
+selector = VarianceThreshold(threshold=0.01)
+X_filtered = selector.fit_transform(X)
+</code></pre>
+<h3 id="_94">Корреляционный анализ</h3>
+<pre><code class="language-python">import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Матрица корреляций
+corr_matrix = df.corr()
+
+# Визуализация
+plt.figure(figsize=(12, 10))
+sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', center=0)
+plt.show()
+
+# Удаление сильно коррелирующих признаков
+corr_threshold = 0.95
+upper_tri = corr_matrix.where(np.triu(np.ones(corr_matrix.shape), k=1).astype(bool))
+to_drop = [column for column in upper_tri.columns if any(abs(upper_tri[column]) &gt; corr_threshold)]
+df_reduced = df.drop(columns=to_drop)
+</code></pre>
+<h3 id="feature-importance">Важность признаков (Feature Importance)</h3>
+<pre><code class="language-python">from sklearn.ensemble import RandomForestClassifier
+from sklearn.feature_selection import SelectFromModel
+
+# На основе случайного леса
+rf = RandomForestClassifier(n_estimators=100, random_state=42)
+rf.fit(X_train, y_train)
+
+# Получение важности
+importances = rf.feature_importances_
+feature_names = X.columns
+
+# Отбор по важности
+selector = SelectFromModel(rf, threshold='median', prefit=True)
+X_selected = selector.transform(X)
+selected_features = feature_names[selector.get_support()]
+</code></pre>
+<h3 id="rfe">Рекурсивное исключение признаков (RFE)</h3>
+<pre><code class="language-python">from sklearn.feature_selection import RFE
+from sklearn.linear_model import LogisticRegression
+
+# RFE с логистической регрессией
+estimator = LogisticRegression(max_iter=1000)
+rfe = RFE(estimator, n_features_to_select=10, step=1)
+rfe.fit(X, y)
+
+# Ранжированные признаки
+ranking = rfe.ranking_  # 1 = выбрано, больше = отброшено раньше
+selected_features = X.columns[rfe.support_]
+</code></pre>
+<h3 id="_95">Статистические тесты</h3>
+<pre><code class="language-python">from sklearn.feature_selection import f_classif, chi2, mutual_info_classif
+
+# F-тест (ANOVA) для непрерывных признаков
+f_scores, p_values = f_classif(X, y)
+
+# Хи-квадрат для категориальных признаков
+chi2_scores, p_values = chi2(X, y)
+
+# Взаимная информация
+mi_scores = mutual_info_classif(X, y, random_state=42)
+
+# Отбор по p-value
+from sklearn.feature_selection import SelectKBest
+selector = SelectKBest(score_func=f_classif, k=20)
+X_selected = selector.fit_transform(X, y)
+</code></pre>
+<h2 id="3_1">3. Преобразование признаков</h2>
+<h3 id="_96">Полиномиальные признаки</h3>
+<pre><code class="language-python">from sklearn.preprocessing import PolynomialFeatures
+
+poly = PolynomialFeatures(degree=2, include_bias=False, interaction_only=False)
+X_poly = poly.fit_transform(X)
+
+# Только взаимодействия
+poly_interaction = PolynomialFeatures(degree=2, include_bias=False, interaction_only=True)
+X_interaction = poly_interaction.fit_transform(X)
+</code></pre>
+<h3 id="_97">Сплайны и базисные функции</h3>
+<pre><code class="language-python">from patsy import dmatrix
+
+# B-сплайны
+spline_features = dmatrix(&quot;bs(x, df=5, degree=3)&quot;, {&quot;x&quot;: df['feature']}, return_type='dataframe')
+
+# Натуральные сплайны
+natural_spline = dmatrix(&quot;cr(x, df=5)&quot;, {&quot;x&quot;: df['feature']}, return_type='dataframe')
+</code></pre>
+<h3 id="target-encoding">Target Encoding (с регуляризацией)</h3>
+<pre><code class="language-python">def smooth_target_encoding(df, column, target, alpha=10):
+    &quot;&quot;&quot;Target encoding с лапласовской регуляризацией&quot;&quot;&quot;
+    global_mean = df[target].mean()
+
+    agg = df.groupby(column)[target].agg(['mean', 'count'])
+    smoothing = (alpha * global_mean + agg['count'] * agg['mean']) / (alpha + agg['count'])
+
+    df[f'{column}_target_enc'] = df[column].map(smoothing)
+    return df
+
+df = smooth_target_encoding(df, 'category', 'target', alpha=20)
+</code></pre>
+<h2 id="4_1">4. Обработка категориальных признаков</h2>
+<h3 id="_98">Частотное кодирование</h3>
+<pre><code class="language-python"># Кодирование частотой категории
+freq_encoder = df['category'].value_counts(normalize=True)
+df['category_freq'] = df['category'].map(freq_encoder)
+</code></pre>
+<h3 id="leave-one-out-encoding">Leave-One-Out Encoding</h3>
+<pre><code class="language-python">def leave_one_out_encode(df, column, target):
+    &quot;&quot;&quot;LOO encoding для избежания data leakage&quot;&quot;&quot;
+    loo_encoded = []
+    for i in range(len(df)):
+        mask = np.arange(len(df)) != i
+        mean_target = df.loc[mask].groupby(column)[target].mean()
+        loo_encoded.append(mean_target[df.iloc[i][column]])
+    return loo_encoded
+
+df['category_loo'] = leave_one_out_encode(df, 'category', 'target')
+</code></pre>
+<h3 id="hashing-encoder">Hashing Encoder</h3>
+<pre><code class="language-python">from category_encoders import HashingEncoder
+
+# Хэширование для высокоразмерных категориальных признаков
+he = HashingEncoder(cols=['category1', 'category2'], n_components=16)
+X_hashed = he.fit_transform(X)
+</code></pre>
+<h2 id="5_1">5. Автоматизация инженерии признаков</h2>
+<h3 id="featuretools">Featuretools</h3>
+<pre><code class="language-python">import featuretools as ft
+
+# Создание entity set
+es = ft.EntitySet(id='transactions')
+
+# Добавление таблиц
+es.add_dataframe(dataframe=df_transactions, dataframe_name='transactions', index='id')
+es.add_dataframe(dataframe=df_customers, dataframe_name='customers', index='customer_id')
+
+# Определение связей
+es.add_relationship('customers', 'customer_id', 'transactions', 'customer_id')
+
+# Глубокий синтез признаков
+feature_matrix, features = ft.dfs(
+    entityset=es,
+    target_dataframe_name='customers',
+    max_depth=2,
+    agg_primitives=['mean', 'sum', 'std'],
+    trans_primitives=['add', 'multiply']
+)
+</code></pre>
+<h3 id="tsfresh">tsfresh для временных рядов</h3>
+<pre><code class="language-python">from tsfresh import extract_features
+
+# Автоматическое извлечение признаков из временных рядов
+features = extract_features(timeseries_data, column_id='id', column_sort='time')
+</code></pre>
+<h2 id="-_1">Чек-лист инженерии признаков</h2>
+<ul>
+<li>[ ] Создать признаки из дат/времени</li>
+<li>[ ] Извлечь признаки из текста (если есть)</li>
+<li>[ ] Создать агрегированные признаки</li>
+<li>[ ] Проверить корреляции</li>
+<li>[ ] Отобрать важные признаки</li>
+<li>[ ] Применить полиномиальные признаки (если нужно)</li>
+<li>[ ] Закодировать категориальные признаки</li>
+<li>[ ] Проверить на мультиколлинеарность</li>
+</ul>
+<h2 id="_99">Рекомендации</h2>
+<ol>
+<li><strong>Начинайте с простого</strong> — не усложняйте без необходимости</li>
+<li><strong>Доменная экспертиза важна</strong> — создавайте осмысленные признаки</li>
+<li><strong>Избегайте data leakage</strong> — особенно при target encoding</li>
+<li><strong>Валидируйте на кросс-валидации</strong> — проверяйте устойчивость признаков</li>
+<li><strong>Документируйте</strong> — сохраняйте логику создания признаков</li>
+</ol>
+<p>================================================================================</p>
+<h1 id="_100">Линейные модели</h1>
+<h2 id="_101">Обзор</h2>
+<p>Линейные модели — это класс алгоритмов машинного обучения, которые предполагают линейную зависимость между признаками и целевой переменной.</p>
+<h2 id="_102">Линейная регрессия</h2>
+<h3 id="_103">Принцип работы</h3>
+<p>Модель предсказывает непрерывное значение как взвешенную сумму признаков:</p>
+<pre><code>y = w₁x₁ + w₂x₂ + ... + wₙxₙ + b
+</code></pre>
+<p>где:
+- <code>y</code> — предсказанное значение
+- <code>wᵢ</code> — веса (коэффициенты)
+- <code>xᵢ</code> — признаки
+- <code>b</code> — свободный член (bias)</p>
+<h3 id="_104">Функция потерь</h3>
+<p>Используется метод наименьших квадратов (MSE):</p>
+<pre><code>MSE = (1/n) * Σ(yᵢ - ŷᵢ)²
+</code></pre>
+<h3 id="_105">Регуляризация</h3>
+<ul>
+<li><strong>Ridge (L2)</strong>: добавляет штраф за большие веса</li>
+<li><strong>Lasso (L1)</strong>: обнуляет неважные признаки</li>
+<li><strong>ElasticNet</strong>: комбинация L1 и L2</li>
+</ul>
+<h3 id="_106">Применение</h3>
+<ul>
+<li>Прогнозирование цен</li>
+<li>Оценка спроса</li>
+<li>Анализ временных рядов</li>
+</ul>
+<h2 id="_107">Логистическая регрессия</h2>
+<h3 id="_108">Принцип работы</h3>
+<p>Несмотря на название, используется для <strong>классификации</strong>. Применяет сигмоидную функцию:</p>
+<pre><code>P(y=1|x) = 1 / (1 + e^(-z))
+</code></pre>
+<p>где <code>z = w₁x₁ + w₂x₂ + ... + wₙxₙ + b</code></p>
+<h3 id="_109">Функция потерь</h3>
+<p>Бинарная кросс-энтропия:</p>
+<pre><code>Loss = -[y·log(p) + (1-y)·log(1-p)]
+</code></pre>
+<h3 id="_110">Многоклассовая классификация</h3>
+<ul>
+<li>One-vs-Rest (OvR)</li>
+<li>Softmax регрессия</li>
+</ul>
+<h3 id="_111">Применение</h3>
+<ul>
+<li>Классификация спама</li>
+<li>Диагностика заболеваний</li>
+<li>Кредитный скоринг</li>
+</ul>
+<h2 id="_112">Преимущества и недостатки</h2>
+<table>
+<thead>
+<tr>
+<th>Преимущества</th>
+<th>Недостатки</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Быстрое обучение</td>
+<td>Предполагают линейность</td>
+</tr>
+<tr>
+<td>Интерпретируемость</td>
+<td>Чувствительны к выбросам</td>
+</tr>
+<tr>
+<td>Мало гиперпараметров</td>
+<td>Требуют масштабирования признаков</td>
+</tr>
+<tr>
+<td>Хороший базлайн</td>
+<td>Не работают со сложными паттернами</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_113">Практические советы</h2>
+<ol>
+<li><strong>Масштабирование</strong>: всегда применяйте StandardScaler или MinMaxScaler</li>
+<li><strong>Регуляризация</strong>: используйте для борьбы с переобучением</li>
+<li><strong>Интерпретация</strong>: анализируйте коэффициенты для понимания важности признаков</li>
+<li><strong>Проверка допущений</strong>: проверяйте нормальность остатков, гомоскедастичность</li>
+</ol>
+<h2 id="_114">Пример кода</h2>
+<pre><code class="language-python">from sklearn.linear_model import LinearRegression, LogisticRegression
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+
+# Подготовка данных
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+# Масштабирование
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+
+# Линейная регрессия
+lr = LinearRegression()
+lr.fit(X_train_scaled, y_train)
+
+# Логистическая регрессия
+clf = LogisticRegression(C=1.0, penalty='l2')
+clf.fit(X_train_scaled, y_train)
+</code></pre>
+<h2 id="_115">См. также</h2>
+<ul>
+<li><a href="ml-algorithms.md">Алгоритмы ML</a></li>
+<li><a href="model-evaluation.md">Оценка моделей</a></li>
+<li><a href="feature-engineering.md">Инженерия признаков</a></li>
+</ul>
+<p>================================================================================</p>
+<h1 id="_116">Алгоритмы машинного обучения</h1>
+<h2 id="_117">Обзор</h2>
+<p>Алгоритмы машинного обучения — это наборы правил и статистических моделей, которые позволяют компьютерам выполнять конкретные задачи без явных инструкций, полагаясь на паттерны и логические выводы.</p>
+<h2 id="_118">Типы алгоритмов</h2>
+<h3 id="supervised-learning">Обучение с учителем (Supervised Learning)</h3>
+<ul>
+<li><strong>Классификация</strong>: предсказание категориальных меток</li>
+<li><strong>Регрессия</strong>: предсказание непрерывных значений</li>
+</ul>
+<h3 id="unsupervised-learning">Обучение без учителя (Unsupervised Learning)</h3>
+<ul>
+<li><strong>Кластеризация</strong>: группировка схожих объектов</li>
+<li><strong>Снижение размерности</strong>: уменьшение количества признаков</li>
+</ul>
+<h3 id="reinforcement-learning">Обучение с подкреплением (Reinforcement Learning)</h3>
+<ul>
+<li>Обучение через взаимодействие со средой</li>
+</ul>
+<h2 id="_119">Основные категории алгоритмов</h2>
+<h3 id="1_2">1. Линейные модели</h3>
+<ul>
+<li>Линейная регрессия</li>
+<li>Логистическая регрессия</li>
+<li>Ridge, Lasso, ElasticNet</li>
+</ul>
+<h3 id="2_2">2. Деревья решений и ансамбли</h3>
+<ul>
+<li>Деревья решений</li>
+<li>Случайный лес (Random Forest)</li>
+<li>Градиентный бустинг (Gradient Boosting)</li>
+<li>XGBoost, LightGBM, CatBoost</li>
+</ul>
+<h3 id="3-svm">3. Методы опорных векторов (SVM)</h3>
+<ul>
+<li>Классификация</li>
+<li>Регрессия</li>
+</ul>
+<h3 id="4_2">4. Наивный байесовский классификатор</h3>
+<ul>
+<li>Gaussian Naive Bayes</li>
+<li>Multinomial Naive Bayes</li>
+</ul>
+<h3 id="5_2">5. Методы ближайших соседей</h3>
+<ul>
+<li>k-NN (k-Nearest Neighbors)</li>
+</ul>
+<h2 id="_120">Выбор алгоритма</h2>
+<table>
+<thead>
+<tr>
+<th>Тип задачи</th>
+<th>Рекомендуемые алгоритмы</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Линейная зависимость</td>
+<td>Линейная регрессия, Логистическая регрессия</td>
+</tr>
+<tr>
+<td>Нелинейная зависимость</td>
+<td>Деревья, SVM с ядрами, Нейронные сети</td>
+</tr>
+<tr>
+<td>Малый объем данных</td>
+<td>Наивный Байес, k-NN</td>
+</tr>
+<tr>
+<td>Большой объем данных</td>
+<td>Градиентный бустинг, Глубокие сети</td>
+</tr>
+<tr>
+<td>Интерпретируемость</td>
+<td>Деревья решений, Линейные модели</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_121">См. также</h2>
+<ul>
+<li><a href="linear-models.md">Линейные модели</a></li>
+<li><a href="decision-trees.md">Деревья решений</a></li>
+<li><a href="clustering.md">Кластеризация</a></li>
+<li><a href="dimensionality-reduction.md">Снижение размерности</a></li>
+</ul>
+<p>================================================================================</p>
+<h1 id="_122">Основы машинного обучения</h1>
+<h2 id="1_3">1. Типы обучения</h2>
+<h3 id="supervised-learning_1">Обучение с учителем (Supervised Learning)</h3>
+<p>Модель обучается на размеченных данных (X, y), где X - признаки, y - целевая переменная.</p>
+<p><strong>Задачи:</strong>
+- <strong>Классификация</strong> - предсказание дискретной метки
+- <strong>Регрессия</strong> - предсказание непрерывного значения</p>
+<p><strong>Алгоритмы:</strong></p>
+<pre><code>Линейная регрессия → y = w·x + b
+Логистическая регрессия → P(y=1|x) = σ(w·x + b)
+Деревья решений → иерархическая структура правил
+Случайный лес → ансамбль деревьев
+SVM → максимизация зазора между классами
+k-NN → классификация по ближайшим соседям
+</code></pre>
+<h3 id="unsupervised-learning_1">Обучение без учителя (Unsupervised Learning)</h3>
+<p>Модель работает с неразмеченными данными, находя скрытые структуры.</p>
+<p><strong>Задачи:</strong>
+- <strong>Кластеризация</strong> - группировка похожих объектов
+- <strong>Снижение размерности</strong> - сокращение числа признаков
+- <strong>Поиск аномалий</strong> - обнаружение выбросов</p>
+<p><strong>Алгоритмы:</strong></p>
+<pre><code>K-means → центроиды кластеров
+Hierarchical clustering → дендрограмма
+DBSCAN → кластеры по плотности
+PCA → главные компоненты
+t-SNE → визуализация многомерных данных
+Autoencoders → сжатие через нейросеть
+</code></pre>
+<h3 id="reinforcement-learning_1">Обучение с подкреплением (Reinforcement Learning)</h3>
+<p>Агент обучается, взаимодействуя со средой и получая награды.</p>
+<p><strong>Компоненты:</strong></p>
+<pre><code>Агент → принимает решения
+Среда → предоставляет состояния и награды
+Политика π(s) → стратегия выбора действий
+Функция ценности V(s) → ожидаемая награда
+Q-функция Q(s,a) → ценность действия в состоянии
+</code></pre>
+<h2 id="2_3">2. Метрики качества</h2>
+<h3 id="_123">Для классификации</h3>
+<pre><code>Accuracy = (TP + TN) / (TP + TN + FP + FN)
+Precision = TP / (TP + FP)
+Recall (Sensitivity) = TP / (TP + FN)
+F1-Score = 2 · (Precision · Recall) / (Precision + Recall)
+ROC-AUC → площадь под ROC-кривой
+</code></pre>
+<p><strong>Confusion Matrix:</strong></p>
+<pre><code>                Предсказано
+                +     -
+Фактически +   TP    FN
+           -   FP    TN
+</code></pre>
+<h3 id="_124">Для регрессии</h3>
+<pre><code>MSE = (1/n) · Σ(yᵢ - ŷᵢ)²
+RMSE = √MSE
+MAE = (1/n) · Σ|yᵢ - ŷᵢ|
+R² = 1 - SS_res / SS_tot
+</code></pre>
+<h2 id="3-">3. Кросс-валидация</h2>
+<h3 id="k-fold-cross-validation">K-Fold Cross-Validation</h3>
+<pre><code>1. Разделить данные на K равных частей
+2. Для каждой части:
+   - Использовать как тестовую
+   - Остальные K-1 как обучающую
+3. Усреднить результаты K прогонов
+</code></pre>
+<p><strong>Типичные значения K:</strong> 5 или 10</p>
+<h3 id="stratified-k-fold">Stratified K-Fold</h3>
+<p>Сохраняет распределение классов в каждом фолде.</p>
+<h3 id="leave-one-out-loo">Leave-One-Out (LOO)</h3>
+<p>K = n (каждый объект отдельно как тест). Дорого, но точно.</p>
+<h2 id="4-bias-variance-tradeoff">4. Bias-Variance Tradeoff</h2>
+<pre><code>Ошибка = Bias² + Variance + Irreducible Error
+
+Bias (смещение):
+- Высокий → недообучение (underfitting)
+- Модель слишком простая
+
+Variance (разброс):
+- Высокий → переобучение (overfitting)
+- Модель слишком чувствительна к данным
+</code></pre>
+<p><strong>Балансировка:</strong></p>
+<pre><code>Недообучение → увеличить сложность модели
+Переобучение → регуляризация, больше данных, упрощение
+</code></pre>
+<h2 id="5_3">5. Предобработка данных</h2>
+<h3 id="_125">Нормализация и стандартизация</h3>
+<pre><code>Min-Max Scaling: x' = (x - min) / (max - min)
+Z-score Standardization: x' = (x - μ) / σ
+</code></pre>
+<h3 id="_126">Работа с пропусками</h3>
+<pre><code>Удаление → если пропусков мало
+Mean/Median imputation → замена средним/медианой
+KNN imputation → замена по ближайшим соседям
+Model-based → предсказание пропущенных значений
+</code></pre>
+<h3 id="_127">Кодирование категориальных признаков</h3>
+<pre><code>One-Hot Encoding → бинарные векторы
+Label Encoding → числовые метки
+Target Encoding → замена средним таргета
+</code></pre>
+<p>================================================================================</p>
+<h1 id="_128">Оценка моделей машинного обучения</h1>
+<p>Правильная оценка моделей — ключевой этап в машинном обучении, определяющий качество и надежность ваших предсказаний.</p>
+<h2 id="1_4">1. Метрики для классификации</h2>
+<h3 id="_129">Основные метрики</h3>
+<pre><code class="language-python">from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+
+# Accuracy (точность) - доля правильных ответов
+accuracy = accuracy_score(y_true, y_pred)
+
+# Precision (точность положительного класса)
+precision = precision_score(y_true, y_pred)
+
+# Recall (полнота) - доля найденных положительных
+recall = recall_score(y_true, y_pred)
+
+# F1-score - гармоническое среднее precision и recall
+f1 = f1_score(y_true, y_pred)
+</code></pre>
+<h3 id="confusion-matrix">Матрица ошибок (Confusion Matrix)</h3>
+<pre><code class="language-python">from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+import matplotlib.pyplot as plt
+
+cm = confusion_matrix(y_true, y_pred)
+disp = ConfusionMatrixDisplay(confusion_matrix=cm)
+disp.plot()
+plt.show()
+
+# Расшифровка:
+# TN | FP
+# FN | TP
+</code></pre>
+<h3 id="roc-auc-pr-auc">ROC-AUC и PR-AUC</h3>
+<pre><code class="language-python">from sklearn.metrics import roc_curve, auc, precision_recall_curve, roc_auc_score
+
+# ROC кривая
+fpr, tpr, thresholds = roc_curve(y_true, y_scores)
+roc_auc = auc(fpr, tpr)
+
+# Построение ROC кривой
+plt.figure(figsize=(8, 6))
+plt.plot(fpr, tpr, label=f'ROC curve (AUC = {roc_auc:.2f})')
+plt.plot([0, 1], [0, 1], 'k--', label='Random')
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.legend()
+plt.show()
+
+# ROC-AUC score
+roc_auc = roc_auc_score(y_true, y_scores)
+
+# Precision-Recall кривая (для несбалансированных данных)
+precision, recall, thresholds = precision_recall_curve(y_true, y_scores)
+pr_auc = auc(recall, precision)
+</code></pre>
+<h3 id="log-loss">Логарифмические потери (Log Loss)</h3>
+<pre><code class="language-python">from sklearn.metrics import log_loss
+
+# Для бинарной классификации
+logloss = log_loss(y_true, y_scores)
+
+# Для многоклассовой
+logloss = log_loss(y_true, y_scores_proba, labels=[0, 1, 2])
+</code></pre>
+<h3 id="_130">Метрики для многоклассовой классификации</h3>
+<pre><code class="language-python">from sklearn.metrics import classification_report
+
+# Полный отчет по всем классам
+print(classification_report(y_true, y_pred, digits=4))
+
+# Средние значения
+# macro - простое среднее по классам
+# weighted - среднее с учетом поддержки классов
+# micro - глобальный подсчет TP, FP, FN
+
+precision_macro = precision_score(y_true, y_pred, average='macro')
+precision_weighted = precision_score(y_true, y_pred, average='weighted')
+</code></pre>
+<h3 id="cohens-kappa">Cohen's Kappa</h3>
+<pre><code class="language-python">from sklearn.metrics import cohen_kappa_score
+
+# Учет случайного угадывания
+kappa = cohen_kappa_score(y_true, y_pred)
+# Интерпретация:
+# &lt; 0 - хуже случайного
+# 0-0.2 - слабое согласие
+# 0.2-0.4 - умеренное
+# 0.4-0.6 - хорошее
+# 0.6-0.8 - очень хорошее
+# 0.8-1 - почти идеальное
+</code></pre>
+<h2 id="2_4">2. Метрики для регрессии</h2>
+<h3 id="mean-absolute-error-mae">Mean Absolute Error (MAE)</h3>
+<pre><code class="language-python">from sklearn.metrics import mean_absolute_error
+
+mae = mean_absolute_error(y_true, y_pred)
+# Интерпретация: средняя величина ошибки в единицах целевой переменной
+</code></pre>
+<h3 id="mean-squared-error-mse-rmse">Mean Squared Error (MSE) и RMSE</h3>
+<pre><code class="language-python">from sklearn.metrics import mean_squared_error
+
+mse = mean_squared_error(y_true, y_pred)
+rmse = mean_squared_error(y_true, y_pred, squared=False)
+
+# MSE сильнее штрафует за большие ошибки
+# RMSE интерпретируется в тех же единицах, что и y
+</code></pre>
+<h3 id="r2">R² (Коэффициент детерминации)</h3>
+<pre><code class="language-python">from sklearn.metrics import r2_score
+
+r2 = r2_score(y_true, y_pred)
+# Интерпретация:
+# 1 - идеальная модель
+# 0 - модель не лучше константы (среднего)
+# &lt; 0 - модель хуже константы
+</code></pre>
+<h3 id="mean-absolute-percentage-error-mape">Mean Absolute Percentage Error (MAPE)</h3>
+<pre><code class="language-python">def mape(y_true, y_pred):
+    &quot;&quot;&quot;Средняя абсолютная процентная ошибка&quot;&quot;&quot;
+    mask = y_true != 0
+    return np.mean(np.abs((y_true[mask] - y_pred[mask]) / y_true[mask])) * 100
+
+mape_value = mape(y_true, y_pred)
+# Интерпретация: средняя ошибка в процентах
+</code></pre>
+<h3 id="symmetric-mape-smape">Symmetric MAPE (sMAPE)</h3>
+<pre><code class="language-python">def smape(y_true, y_pred):
+    &quot;&quot;&quot;Симметричная MAPE&quot;&quot;&quot;
+    denominator = (np.abs(y_true) + np.abs(y_pred)) / 2
+    mask = denominator != 0
+    return np.mean(np.abs(y_true[mask] - y_pred[mask]) / denominator[mask]) * 100
+
+smape_value = smape(y_true, y_pred)
+</code></pre>
+<h2 id="3_2">3. Валидация моделей</h2>
+<h3 id="traintest-split">Train/Test Split</h3>
+<pre><code class="language-python">from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, 
+    test_size=0.2, 
+    random_state=42,
+    stratify=y  # Для сохранения распределения классов
+)
+
+model.fit(X_train, y_train)
+y_pred = model.predict(X_test)
+</code></pre>
+<h3 id="k-fold-cross-validation_1">K-Fold Cross-Validation</h3>
+<pre><code class="language-python">from sklearn.model_selection import cross_val_score, KFold
+
+kf = KFold(n_splits=5, shuffle=True, random_state=42)
+scores = cross_val_score(model, X, y, cv=kf, scoring='accuracy')
+
+print(f&quot;Mean accuracy: {scores.mean():.3f} (+/- {scores.std():.3f})&quot;)
+print(f&quot;Scores: {scores}&quot;)
+</code></pre>
+<h3 id="stratified-k-fold_1">Stratified K-Fold</h3>
+<pre><code class="language-python">from sklearn.model_selection import StratifiedKFold
+
+skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+scores = cross_val_score(model, X, y, cv=skf, scoring='f1')
+</code></pre>
+<h3 id="leave-one-out-loo_1">Leave-One-Out (LOO)</h3>
+<pre><code class="language-python">from sklearn.model_selection import LeaveOneOut
+
+loo = LeaveOneOut()
+scores = cross_val_score(model, X, y, cv=loo)
+# Дорого вычислительно, но дает наименее смещенную оценку
+</code></pre>
+<h3 id="time-series-split">Time Series Split</h3>
+<pre><code class="language-python">from sklearn.model_selection import TimeSeriesSplit
+
+tscv = TimeSeriesSplit(n_splits=5)
+for train_idx, test_idx in tscv.split(X):
+    X_train, X_test = X[train_idx], X[test_idx]
+    y_train, y_test = y[train_idx], y[test_idx]
+    # Важно: нет перемешивания, тест всегда после train
+</code></pre>
+<h2 id="4_3">4. Анализ ошибок</h2>
+<h3 id="learning-curves">Learning Curves</h3>
+<pre><code class="language-python">from sklearn.model_selection import learning_curve
+import matplotlib.pyplot as plt
+
+train_sizes, train_scores, test_scores = learning_curve(
+    model, X, y, cv=5, scoring='accuracy',
+    train_sizes=np.linspace(0.1, 1.0, 10),
+    n_jobs=-1
+)
+
+train_mean = np.mean(train_scores, axis=1)
+train_std = np.std(train_scores, axis=1)
+test_mean = np.mean(test_scores, axis=1)
+test_std = np.std(test_scores, axis=1)
+
+plt.figure(figsize=(10, 6))
+plt.plot(train_sizes, train_mean, 'o-', label='Train')
+plt.fill_between(train_sizes, train_mean - train_std, train_mean + train_std, alpha=0.15)
+plt.plot(train_sizes, test_mean, 'o-', label='Test')
+plt.fill_between(train_sizes, test_mean - test_std, test_mean + test_std, alpha=0.15)
+plt.xlabel('Training Size')
+plt.ylabel('Score')
+plt.legend()
+plt.grid(True)
+plt.show()
+</code></pre>
+<h3 id="validation-curves">Validation Curves</h3>
+<pre><code class="language-python">from sklearn.model_selection import validation_curve
+
+param_range = [1, 10, 50, 100, 200]
+train_scores, test_scores = validation_curve(
+    RandomForestClassifier(), X, y,
+    param_name='n_estimators', param_range=param_range,
+    cv=5, scoring='accuracy', n_jobs=-1
+)
+
+# Анализ переобучения/недообучения
+</code></pre>
+<h3 id="_131">Анализ ошибочных предсказаний</h3>
+<pre><code class="language-python"># Найти примеры, где модель ошиблась
+errors = y_pred != y_true
+error_indices = np.where(errors)[0]
+
+# Проанализировать характерные ошибки
+for idx in error_indices[:10]:
+    print(f&quot;True: {y_true[idx]}, Predicted: {y_pred[idx]}&quot;)
+    # Можно вывести сами данные или изображения
+</code></pre>
+<h2 id="5_4">5. Сравнение моделей</h2>
+<h3 id="_132">Статистические тесты</h3>
+<pre><code class="language-python">from scipy import stats
+
+# paired t-test для сравнения двух моделей
+t_stat, p_value = stats.ttest_rel(scores_model1, scores_model2)
+
+if p_value &lt; 0.05:
+    print(&quot;Модели статистически различаются&quot;)
+else:
+    print(&quot;Различия незначимы&quot;)
+</code></pre>
+<h3 id="mcnemars-test">McNemar's Test</h3>
+<pre><code class="language-python">from statsmodels.stats.contingency_tables import mcnemar
+
+# Таблица сопряженности ошибок
+table = [[sum((p1==y) &amp; (p2==y)), sum((p1==y) &amp; (p2!=y))],
+         [sum((p1!=y) &amp; (p2==y)), sum((p1!=y) &amp; (p2!=y))]]
+
+result = mcnemar(table, exact=True)
+print(f&quot;p-value: {result.pvalue}&quot;)
+</code></pre>
+<h2 id="6-baselines">6. Базовые модели (Baselines)</h2>
+<h3 id="dummy-classifier">Dummy Classifier</h3>
+<pre><code class="language-python">from sklearn.dummy import DummyClassifier
+
+# Стратегии:
+# - most_frequent: всегда предсказывает самый частый класс
+# - stratified: случайное предсказание по распределению
+# - uniform: равномерное случайное предсказание
+# - constant: всегда предсказывает заданный класс
+
+dummy = DummyClassifier(strategy='most_frequent')
+dummy.fit(X_train, y_train)
+baseline_score = dummy.score(X_test, y_test)
+print(f&quot;Baseline accuracy: {baseline_score:.3f}&quot;)
+</code></pre>
+<h3 id="dummy-regressor">Dummy Regressor</h3>
+<pre><code class="language-python">from sklearn.dummy import DummyRegressor
+
+# Стратегии:
+# - mean: всегда предсказывает среднее
+# - median: всегда предсказывает медиану
+# - quantile: предсказывает квантиль
+# - constant: всегда предсказывает константу
+
+dummy = DummyRegressor(strategy='mean')
+dummy.fit(X_train, y_train)
+baseline_r2 = dummy.score(X_test, y_test)
+print(f&quot;Baseline R²: {baseline_r2:.3f}&quot;)
+</code></pre>
+<h2 id="-_2">Чек-лист оценки модели</h2>
+<ul>
+<li>[ ] Выбрать подходящие метрики для задачи</li>
+<li>[ ] Использовать кросс-валидацию</li>
+<li>[ ] Сравнить с baseline моделью</li>
+<li>[ ] Проверить на переобучение (learning curves)</li>
+<li>[ ] Проанализировать ошибочные предсказания</li>
+<li>[ ] Проверить стабильность на разных фолдах</li>
+<li>[ ] Оценить калибровку вероятностей (если нужно)</li>
+</ul>
+<h2 id="_133">Рекомендации</h2>
+<ol>
+<li><strong>Всегда сравнивайте с baseline</strong> — ваша модель должна быть лучше простого правила</li>
+<li><strong>Используйте несколько метрик</strong> — одна метрика может вводить в заблуждение</li>
+<li><strong>Кросс-валидация обязательна</strong> — особенно на маленьких датасетах</li>
+<li><strong>Анализируйте ошибки</strong> — это даст идеи для улучшения</li>
+<li><strong>Учитывайте бизнес-контекст</strong> — выбирайте метрики, важные для задачи</li>
+</ol>
+<p>================================================================================</p>
+<h1 id="_134">Нейронные сети</h1>
+<p>Добро пожаловать в раздел о нейронных сетях! Здесь вы изучите основы построения и обучения нейронных сетей.</p>
+<h2 id="_135">Содержание раздела</h2>
+<ul>
+<li><a href="neural-networks/perceptron.md">Перцептрон</a> - базовая единица нейронной сети</li>
+<li><a href="neural-networks/multilayer.md">Многослойные сети</a> - архитектура глубоких сетей</li>
+<li><a href="neural-networks/activation-functions.md">Функции активации</a> - нелинейные преобразования</li>
+<li><a href="neural-networks/backpropagation.md">Обратное распространение</a> - алгоритм обучения</li>
+</ul>
+<h2 id="_136">Быстрый старт</h2>
+<p>Начните с изучения перцептрона - строительного блока всех нейронных сетей.</p>
+<h2 id="_137">Структура раздела</h2>
+<pre><code>neural-networks/
+├── perceptron.md           # Базовая единица сети
+├── multilayer.md           # Многослойные архитектуры
+├── activation-functions.md # Функции активации
+└── backpropagation.md      # Алгоритм обучения
+</code></pre>
+<h2 id="_138">Ключевые концепции</h2>
+<ul>
+<li><strong>Нейрон</strong> - базовая вычислительная единица</li>
+<li><strong>Слои</strong> - входной, скрытые, выходной</li>
+<li><strong>Веса и смещения</strong> - обучаемые параметры</li>
+<li><strong>Функция активации</strong> - нелинейное преобразование</li>
+<li><strong>Прямое распространение</strong> - вычисление выхода</li>
+<li><strong>Обратное распространение</strong> - вычисление градиентов</li>
+</ul>
+<p>================================================================================</p>
+<h1 id="_139">Функции активации</h1>
+<h2 id="_140">Введение</h2>
+<p>Функции активации играют критическую роль в нейронных сетях, внося нелинейность, которая позволяет сетям обучаться сложным зависимостям. Без функций активации нейронная сеть была бы просто линейной комбинацией входов, независимо от количества слоёв.</p>
+<h2 id="_141">Зачем нужны функции активации?</h2>
+<h3 id="_142">Нелинейность</h3>
+<p>Если бы мы использовали только линейные преобразования:</p>
+<pre><code>y = W₂(W₁x + b₁) + b₂ = W'x + b'
+</code></pre>
+<p>Многослойная сеть выродилась бы в один слой. Функции активации ломают эту линейность:</p>
+<pre><code>y = f(W₂f(W₁x + b₁) + b₂)
+</code></pre>
+<h3 id="_143">Свойства хороших функций активации</h3>
+<ol>
+<li><strong>Нелинейность</strong> - позволяет аппроксимировать сложные функции</li>
+<li><strong>Дифференцируемость</strong> - необходима для обратного распространения</li>
+<li><strong>Монотонность</strong> - упрощает оптимизацию (опционально)</li>
+<li><strong>Ограниченный диапазон</strong> - помогает стабилизировать обучение</li>
+<li><strong>Вычислительная эффективность</strong> - важна для больших сетей</li>
+</ol>
+<h2 id="_144">Основные функции активации</h2>
+<h3 id="sigmoid">Sigmoid (Логистическая функция)</h3>
+<pre><code>σ(x) = 1 / (1 + e^(-x))
+</code></pre>
+<p><strong>Характеристики:</strong>
+- Диапазон: (0, 1)
+- Производная: σ'(x) = σ(x)(1 - σ(x))
+- Максимум производной: 0.25 при x = 0</p>
+<p><strong>Преимущества:</strong>
+- Интерпретируемый выход (вероятность)
+- Гладкая и монотонная
+- Хорошо работает для бинарной классификации</p>
+<p><strong>Недостатки:</strong>
+- Проблема исчезающих градиентов
+- Выход не центрирован вокруг нуля
+- Вычислительно дороже из-за экспоненты</p>
+<p><strong>Применение:</strong>
+- Выходной слой для бинарной классификации
+- Редко в скрытых слоях современных сетей</p>
+<pre><code class="language-python">def sigmoid(x):
+    return 1 / (1 + np.exp(-x))
+
+def sigmoid_derivative(x):
+    s = sigmoid(x)
+    return s * (1 - s)
+</code></pre>
+<h3 id="tanh">Tanh (Гиперболический тангенс)</h3>
+<pre><code>tanh(x) = (e^x - e^(-x)) / (e^x + e^(-x))
+</code></pre>
+<p><strong>Характеристики:</strong>
+- Диапазон: (-1, 1)
+- Производная: tanh'(x) = 1 - tanh²(x)
+- Центрирована вокруг нуля</p>
+<p><strong>Преимущества:</strong>
+- Сильнее сигмоиды (градиенты ближе к 1)
+- Центрированный выход улучшает сходимость
+- Гладкая и монотонная</p>
+<p><strong>Недостатки:</strong>
+- Всё ещё проблема исчезающих градиентов
+- Вычислительно затратная</p>
+<p><strong>Применение:</strong>
+- Скрытые слои в небольших сетях
+- RNN и LSTM (часто предпочтительнее ReLU)</p>
+<pre><code class="language-python">def tanh(x):
+    return np.tanh(x)
+
+def tanh_derivative(x):
+    return 1 - np.tanh(x) ** 2
+</code></pre>
+<h3 id="relu-rectified-linear-unit">ReLU (Rectified Linear Unit)</h3>
+<pre><code>ReLU(x) = max(0, x)
+</code></pre>
+<p><strong>Характеристики:</strong>
+- Диапазон: [0, ∞)
+- Производная: 1 при x &gt; 0, 0 при x &lt; 0
+- Не определена при x = 0 (обычно принимают 0 или 1)</p>
+<p><strong>Преимущества:</strong>
+- Вычислительно эффективная
+- Решает проблему исчезающих градиентов для положительных значений
+- Разреженная активация (многие нейроны "молчат")
+- Быстрая сходимость на практике</p>
+<p><strong>Недостатки:</strong>
+- "Мёртвые нейроны" (Dying ReLU) - нейроны могут перестать активироваться
+- Не дифференцируема в точке 0
+- Не центрирована вокруг нуля</p>
+<p><strong>Применение:</strong>
+- Наиболее популярная функция для скрытых слоёв
+- CNN, fully connected сети</p>
+<pre><code class="language-python">def relu(x):
+    return np.maximum(0, x)
+
+def relu_derivative(x):
+    return (x &gt; 0).astype(float)
+</code></pre>
+<h3 id="leaky-relu">Leaky ReLU</h3>
+<pre><code>LeakyReLU(x) = { x, если x &gt; 0
+               { αx, если x ≤ 0
+</code></pre>
+<p>где α - небольшой коэффициент (обычно 0.01)</p>
+<p><strong>Характеристики:</strong>
+- Диапазон: (-∞, ∞)
+- Небольшой градиент для отрицательных значений</p>
+<p><strong>Преимущества:</strong>
+- Решает проблему мёртвых нейронов
+- Все преимущества ReLU
+- Лучшая производительность в некоторых задачах</p>
+<p><strong>Недостатки:</strong>
+- Нужно подбирать параметр α
+- Не всегда лучше обычного ReLU</p>
+<pre><code class="language-python">def leaky_relu(x, alpha=0.01):
+    return np.where(x &gt; 0, x, alpha * x)
+
+def leaky_relu_derivative(x, alpha=0.01):
+    return np.where(x &gt; 0, 1, alpha)
+</code></pre>
+<h3 id="parametric-relu-prelu">Parametric ReLU (PReLU)</h3>
+<p>Вариация Leaky ReLU, где α обучается вместе с другими параметрами:</p>
+<pre><code class="language-python">class PReLU:
+    def __init__(self, alpha=0.01):
+        self.alpha = alpha
+
+    def forward(self, x):
+        return np.where(x &gt; 0, x, self.alpha * x)
+
+    def backward(self, x, grad_output):
+        grad_input = np.where(x &gt; 0, grad_output, self.alpha * grad_output)
+        # Градиент по alpha можно использовать для обновления
+        return grad_input
+</code></pre>
+<h3 id="exponential-linear-unit-elu">Exponential Linear Unit (ELU)</h3>
+<pre><code>ELU(x) = { x, если x &gt; 0
+         { α(e^x - 1), если x ≤ 0
+</code></pre>
+<p><strong>Характеристики:</strong>
+- Плавный переход для отрицательных значений
+- Среднее значение активаций ближе к нулю</p>
+<p><strong>Преимущества:</strong>
+- Решает проблему мёртвых нейронов
+- Плавные градиенты
+- Часто показывает лучшую точность чем ReLU</p>
+<p><strong>Недостатки:</strong>
+- Вычислительно дороже из-за экспоненты
+- Нужно подбирать α</p>
+<pre><code class="language-python">def elu(x, alpha=1.0):
+    return np.where(x &gt; 0, x, alpha * (np.exp(x) - 1))
+
+def elu_derivative(x, alpha=1.0):
+    return np.where(x &gt; 0, 1, alpha * np.exp(x))
+</code></pre>
+<h3 id="selu-scaled-elu">SELU (Scaled ELU)</h3>
+<pre><code>SELU(x) = λ * ELU(x, α)
+</code></pre>
+<p>где λ ≈ 1.0507, α ≈ 1.6733</p>
+<p><strong>Особенности:</strong>
+- Самонормализующиеся свойства
+- Поддерживает среднее и дисперсию активаций
+- Работает только с правильной инициализацией LeCun</p>
+<p><strong>Применение:</strong>
+- Полносвязные сети
+- Требует использования Dropout variant AlphaDropout</p>
+<pre><code class="language-python">def selu(x):
+    alpha = 1.6732632423543772848170429916717
+    scale = 1.0507009873554804934193349852946
+    return scale * np.where(x &gt; 0, x, alpha * (np.exp(x) - 1))
+</code></pre>
+<h3 id="softmax">Softmax</h3>
+<pre><code>softmax(x)_i = e^(x_i) / Σⱼ e^(x_j)
+</code></pre>
+<p><strong>Характеристики:</strong>
+- Преобразует logits в вероятности
+- Сумма выходов равна 1
+- Используется только в выходном слое</p>
+<p><strong>Применение:</strong>
+- Многоклассовая классификация
+- Всегда в сочетании с cross-entropy loss</p>
+<pre><code class="language-python">def softmax(x):
+    exp_x = np.exp(x - np.max(x, axis=-1, keepdims=True))  # для численной стабильности
+    return exp_x / np.sum(exp_x, axis=-1, keepdims=True)
+</code></pre>
+<p><strong>Важно:</strong> На практике softmax часто комбинируется с cross-entropy loss для численной стабильности.</p>
+<h3 id="swish-silu">Swish (SiLU)</h3>
+<pre><code>Swish(x) = x * σ(x) = x / (1 + e^(-x))
+</code></pre>
+<p><strong>Характеристики:</strong>
+- Нemonotonic (не монотонная)
+- Гладкая везде
+- Самоограничивающаяся</p>
+<p><strong>Преимущества:</strong>
+- Часто превосходит ReLU в глубоких сетях
+- Используется в EfficientNet, Transformer моделях</p>
+<pre><code class="language-python">def swish(x):
+    return x * sigmoid(x)
+</code></pre>
+<h3 id="gelu-gaussian-error-linear-unit">GELU (Gaussian Error Linear Unit)</h3>
+<pre><code>GELU(x) = x * Φ(x)
+</code></pre>
+<p>где Φ(x) - CDF стандартного нормального распределения</p>
+<p>Аппроксимация:</p>
+<pre><code>GELU(x) ≈ 0.5x * (1 + tanh(√(2/π) * (x + 0.044715x³)))
+</code></pre>
+<p><strong>Применение:</strong>
+- Transformer модели (BERT, GPT)
+- State-of-the-art результаты во многих задачах</p>
+<pre><code class="language-python">import math
+
+def gelu(x):
+    return 0.5 * x * (1 + np.tanh(np.sqrt(2 / np.pi) * (x + 0.044715 * x ** 3)))
+</code></pre>
+<h2 id="_145">Сравнение функций активации</h2>
+<table>
+<thead>
+<tr>
+<th>Функция</th>
+<th>Диапазон</th>
+<th>Центрирована</th>
+<th>Вычислительная стоимость</th>
+<th>Градиенты</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sigmoid</td>
+<td>(0, 1)</td>
+<td>Нет</td>
+<td>Средняя</td>
+<td>Исчезают</td>
+</tr>
+<tr>
+<td>Tanh</td>
+<td>(-1, 1)</td>
+<td>Да</td>
+<td>Средняя</td>
+<td>Исчезают</td>
+</tr>
+<tr>
+<td>ReLU</td>
+<td>[0, ∞)</td>
+<td>Нет</td>
+<td>Низкая</td>
+<td>Мёртвые нейроны</td>
+</tr>
+<tr>
+<td>Leaky ReLU</td>
+<td>(-∞, ∞)</td>
+<td>Нет</td>
+<td>Низкая</td>
+<td>Есть всегда</td>
+</tr>
+<tr>
+<td>ELU</td>
+<td>(-α, ∞)</td>
+<td>Близко</td>
+<td>Высокая</td>
+<td>Есть всегда</td>
+</tr>
+<tr>
+<td>SELU</td>
+<td>(-λα, ∞)</td>
+<td>Да</td>
+<td>Высокая</td>
+<td>Самонормализация</td>
+</tr>
+<tr>
+<td>Swish</td>
+<td>(-∞, ∞)</td>
+<td>Нет</td>
+<td>Высокая</td>
+<td>Отличные</td>
+</tr>
+<tr>
+<td>GELU</td>
+<td>(-∞, ∞)</td>
+<td>Нет</td>
+<td>Высокая</td>
+<td>Отличные</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_146">Рекомендации по выбору</h2>
+<h3 id="_147">Для скрытых слоёв</h3>
+<ol>
+<li><strong>По умолчанию</strong>: ReLU</li>
+<li>
+<p>Быстрая, простая, хорошо работает</p>
+</li>
+<li>
+<p><strong>Если мёртвые нейроны</strong>: Leaky ReLU или ELU</p>
+</li>
+<li>
+<p>Особенно в очень глубоких сетях</p>
+</li>
+<li>
+<p><strong>Для state-of-the-art</strong>: Swish или GELU</p>
+</li>
+<li>Transformer архитектуры</li>
+<li>
+<p>Когда важна максимальная точность</p>
+</li>
+<li>
+<p><strong>Для самонормализации</strong>: SELU</p>
+</li>
+<li>Только с инициализацией LeCun</li>
+<li>Без Batch Normalization</li>
+</ol>
+<h3 id="_148">Для выходного слоя</h3>
+<ol>
+<li><strong>Бинарная классификация</strong>: Sigmoid</li>
+<li><strong>Многоклассовая классификация</strong>: Softmax</li>
+<li><strong>Регрессия</strong>: </li>
+<li>Линейная (без активации) для произвольного диапазона</li>
+<li>ReLU для неотрицательных значений</li>
+<li>Sigmoid/Tanh для ограниченного диапазона</li>
+</ol>
+<h2 id="_149">Проблемы и решения</h2>
+<h3 id="dying-relu-problem">Dying ReLU Problem</h3>
+<p><strong>Проблема:</strong> Нейроны с ReLU могут "умереть" -永远输出 0</p>
+<p><strong>Причины:</strong>
+- Большой learning rate
+- Инициализация с большими отрицательными смещениями
+- Градиенты толкают веса в область отрицательных входов</p>
+<p><strong>Решения:</strong>
+- Использовать Leaky ReLU, ELU, или Swish
+- Уменьшить learning rate
+- Правильная инициализация весов
+- Batch Normalization</p>
+<h3 id="_150">Численная стабильность</h3>
+<p>Для softmax используйте trick с вычитанием максимума:</p>
+<pre><code class="language-python">def stable_softmax(x):
+    shift_x = x - np.max(x, axis=-1, keepdims=True)
+    exp_x = np.exp(shift_x)
+    return exp_x / np.sum(exp_x, axis=-1, keepdims=True)
+</code></pre>
+<h2 id="_151">Практический пример</h2>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+def compare_activations():
+    x = np.linspace(-5, 5, 1000)
+
+    activations = {
+        'Sigmoid': sigmoid(x),
+        'Tanh': np.tanh(x),
+        'ReLU': relu(x),
+        'Leaky ReLU': leaky_relu(x),
+        'ELU': elu(x),
+        'Swish': swish(x)
+    }
+
+    fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+
+    # Функции
+    for name, y in activations.items():
+        axes[0].plot(x, y, label=name)
+    axes[0].set_title('Функции активации')
+    axes[0].set_xlabel('x')
+    axes[0].set_ylabel('f(x)')
+    axes[0].legend()
+    axes[0].grid(True)
+
+    # Производные
+    derivatives = {
+        'Sigmoid': sigmoid_derivative(x),
+        'Tanh': 1 - np.tanh(x) ** 2,
+        'ReLU': relu_derivative(x),
+        'Leaky ReLU': leaky_relu_derivative(x),
+        'ELU': elu_derivative(x)
+    }
+
+    for name, y in derivatives.items():
+        axes[1].plot(x, y, label=name)
+    axes[1].set_title('Производные функций активации')
+    axes[1].set_xlabel('x')
+    axes[1].set_ylabel(&quot;f'(x)&quot;)
+    axes[1].legend()
+    axes[1].grid(True)
+
+    plt.tight_layout()
+    plt.show()
+</code></pre>
+<h2 id="_152">Заключение</h2>
+<p>Выбор функции активации зависит от конкретной задачи:</p>
+<ul>
+<li><strong>ReLU</strong> - отличный выбор по умолчанию для большинства задач</li>
+<li><strong>Leaky ReLU/ELU</strong> - если возникают проблемы с мёртвыми нейронами</li>
+<li><strong>Swish/GELU</strong> - для достижения state-of-the-art результатов</li>
+<li><strong>Sigmoid/Softmax</strong> - для выходных слоёв классификации</li>
+</ul>
+<p>Экспериментируйте с разными функциями активации и выбирайте ту, которая даёт лучшие результаты на валидационном наборе данных.</p>
+<h2 id="_153">Дополнительные ресурсы</h2>
+<ul>
+<li><a href="https://www.deeplearningbook.org/">Activation Functions - Deep Learning Book</a></li>
+<li><a href="https://arxiv.org/abs/1710.05941">Swish: a Self-Gated Activation Function</a></li>
+<li><a href="https://arxiv.org/abs/1606.08415">GELU Paper</a></li>
+<li><a href="https://towardsdatascience.com/comparison-of-activation-functions-in-deep-neural-networks-3a8e5cc3c0e8">Comparison of Activation Functions</a></li>
+</ul>
+<p>================================================================================</p>
+<h1 id="backpropagation">Обратное распространение ошибки (Backpropagation)</h1>
+<h2 id="_154">Введение</h2>
+<p>Обратное распространение ошибки (Backpropagation, Backprop) - это фундаментальный алгоритм обучения нейронных сетей. Он позволяет эффективно вычислять градиенты функции потерь по всем параметрам сети, используя цепное правило дифференцирования.</p>
+<h2 id="_155">Историческая справка</h2>
+<ul>
+<li><strong>1974</strong>: Пол Вербос описал алгоритм в своей диссертации</li>
+<li><strong>1986</strong>: Дэвид Румельхарт, Джеффри Хинтон и Рональд Уильямс популяризировали алгоритм</li>
+<li><strong>Современность</strong>: Основа всех современных методов глубокого обучения</li>
+</ul>
+<h2 id="_156">Интуиция</h2>
+<p>Представьте нейронную сеть как многоступенчатую систему:</p>
+<ol>
+<li><strong>Прямой проход</strong>: Данные проходят от входа к выходу, генерируя предсказание</li>
+<li><strong>Вычисление ошибки</strong>: Сравниваем предсказание с истинным значением</li>
+<li><strong>Обратный проход</strong>: Распространяем ошибку назад, определяя вклад каждого параметра</li>
+<li><strong>Обновление весов</strong>: Корректируем веса в направлении, уменьшающем ошибку</li>
+</ol>
+<p>Ключевая идея: <strong>цепное правило</strong> позволяет выразить градиент сложной функции через градиенты её составляющих.</p>
+<h2 id="_157">Математические основы</h2>
+<h3 id="_158">Цепное правило</h3>
+<p>Для композиции функций f(g(x)):</p>
+<pre><code>df/dx = df/dg · dg/dx
+</code></pre>
+<p>Для нейронной сети с множеством слоёв:</p>
+<pre><code>∂L/∂W[l] = ∂L/∂a[L] · ∂a[L]/∂z[L] · ∂z[L]/∂W[L] · ... · ∂a[l+1]/∂z[l+1] · ∂z[l]/∂W[l]
+</code></pre>
+<p>где:
+- L - функция потерь
+- W[l] - веса слоя l
+- a[l] - активации слоя l
+- z[l] - взвешенная сумма перед активацией</p>
+<h3 id="_159">Обозначения</h3>
+<ul>
+<li><strong>l</strong>: индекс слоя (1, 2, ..., L)</li>
+<li><strong>nₗ</strong>: количество нейронов в слое l</li>
+<li><strong>W[l]</strong>: матрица весов размера (nₗ, nₗ₋₁)</li>
+<li><strong>b[l]</strong>: вектор смещений размера (nₗ, 1)</li>
+<li><strong>z[l]</strong>: W[l]a[l-1] + b[l] - взвешенная сумма</li>
+<li><strong>a[l]</strong>: f(z[l]) - активация после применения функции активации</li>
+<li><strong>a[0]</strong>: x - входные данные</li>
+<li><strong>δ[l]</strong>: ошибка слоя l</li>
+</ul>
+<h2 id="_160">Алгоритм обратного распространения</h2>
+<h3 id="1_5">Шаг 1: Прямой проход</h3>
+<p>Для каждого слоя l = 1, 2, ..., L:</p>
+<pre><code>z[l] = W[l] · a[l-1] + b[l]
+a[l] = f(z[l])
+</code></pre>
+<p>Сохраняем все промежуточные значения для обратного прохода.</p>
+<h3 id="2_5">Шаг 2: Вычисление ошибки на выходе</h3>
+<p>Для выходного слоя L:</p>
+<pre><code>δ[L] = ∂L/∂a[L] · f'(z[L])
+</code></pre>
+<p>Для разных функций потерь:</p>
+<p><strong>MSE (среднеквадратичная ошибка):</strong></p>
+<pre><code>L = (1/n) Σ(a[L] - y)²
+∂L/∂a[L] = (2/n)(a[L] - y)
+δ[L] = (2/n)(a[L] - y) · f'(z[L])
+</code></pre>
+<p><strong>Cross-Entropy с softmax:</strong></p>
+<pre><code>δ[L] = a[L] - y  # упрощённая форма
+</code></pre>
+<h3 id="3_3">Шаг 3: Обратное распространение ошибки</h3>
+<p>Для слоёв l = L-1, L-2, ..., 1:</p>
+<pre><code>δ[l] = (W[l+1])ᵀ · δ[l+1] · f'(z[l])
+</code></pre>
+<p>Интерпретация:
+- <strong>(W[l+1])ᵀ · δ[l+1]</strong>: распространение ошибки от следующего слоя
+- <strong>f'(z[l])</strong>: учет локальной чувствительности функции активации</p>
+<h3 id="4_4">Шаг 4: Вычисление градиентов</h3>
+<p>Градиенты по весам и смещениям:</p>
+<pre><code>∂L/∂W[l] = δ[l] · (a[l-1])ᵀ
+∂L/∂b[l] = δ[l]
+</code></pre>
+<h3 id="5_5">Шаг 5: Обновление параметров</h3>
+<p>Градиентный спуск:</p>
+<pre><code>W[l] = W[l] - α · ∂L/∂W[l]
+b[l] = b[l] - α · ∂L/∂b[l]
+</code></pre>
+<p>где α - learning rate.</p>
+<h2 id="_161">Полный алгоритм в псевдокоде</h2>
+<pre><code class="language-python">def backpropagation(X, Y, parameters, caches, loss_type='mse'):
+    L = len(parameters) // 2  # количество слоёв
+    m = X.shape[1]  # количество примеров
+    grads = {}
+
+    # Шаг 1: Вычисление ошибки на выходе
+    AL = caches[f'A{L}']
+
+    if loss_type == 'mse':
+        dAL = (2 / m) * (AL - Y)
+    elif loss_type == 'cross_entropy':
+        dAL = None  # обрабатывается отдельно
+
+    ZL = caches[f'Z{L}']
+
+    # Для cross-entropy + softmax
+    if loss_type == 'cross_entropy':
+        dZL = AL - Y  # комбинированный градиент
+    else:
+        dZL = dAL * sigmoid_derivative(ZL)  # или другая функция активации
+
+    grads[f'dW{L}'] = (1/m) * np.dot(dZL, caches[f'A{L-1}'].T)
+    grads[f'db{L}'] = (1/m) * np.sum(dZL, axis=1, keepdims=True)
+
+    # Шаг 2: Обратное распространение
+    for l in reversed(range(1, L)):
+        dA_prev = np.dot(parameters[f'W{l+1}'].T, dZL)
+
+        Zl = caches[f'Z{l}']
+        dZl = dA_prev * relu_derivative(Zl)  # или другая функция активации
+
+        grads[f'dW{l}'] = (1/m) * np.dot(dZl, caches[f'A{l-1}'].T)
+        grads[f'db{l}'] = (1/m) * np.sum(dZl, axis=1, keepdims=True)
+
+        dZL = dZl
+
+    return grads
+</code></pre>
+<h2 id="_162">Пример: двухслойная сеть</h2>
+<p>Рассмотрим сеть с:
+- Вход: x ∈ ℝⁿ
+- Скрытый слой: h ∈ ℝᵐ с ReLU
+- Выход: ŷ ∈ ℝ с sigmoid
+- Функция потерь: Binary Cross-Entropy</p>
+<h3 id="_163">Прямой проход</h3>
+<pre><code>z₁ = W₁x + b₁          # размер: (m, 1)
+h = ReLU(z₁)           # размер: (m, 1)
+z₂ = W₂h + b₂          # размер: (1, 1)
+ŷ = sigmoid(z₂)        # размер: (1, 1)
+L = -[y·log(ŷ) + (1-y)·log(1-ŷ)]
+</code></pre>
+<h3 id="_164">Обратный проход</h3>
+<p><strong>Выходной слой:</strong></p>
+<pre><code>∂L/∂ŷ = -y/ŷ + (1-y)/(1-ŷ)
+∂ŷ/∂z₂ = ŷ(1-ŷ)  # производная sigmoid
+
+δ₂ = ∂L/∂z₂ = ∂L/∂ŷ · ∂ŷ/∂z₂
+   = (-y/ŷ + (1-y)/(1-ŷ)) · ŷ(1-ŷ)
+   = ŷ - y  # красивое упрощение!
+
+∂L/∂W₂ = δ₂ · hᵀ = (ŷ - y) · hᵀ
+∂L/∂b₂ = δ₂ = ŷ - y
+</code></pre>
+<p><strong>Скрытый слой:</strong></p>
+<pre><code>δ₂ = ŷ - y
+
+∂L/∂h = W₂ᵀ · δ₂
+
+∂h/∂z₁ = ReLU'(z₁) = 1 если z₁ &gt; 0, иначе 0
+
+δ₁ = (W₂ᵀ · δ₂) ⊙ ReLU'(z₁)  # ⊙ - поэлементное умножение
+
+∂L/∂W₁ = δ₁ · xᵀ
+∂L/∂b₁ = δ₁
+</code></pre>
+<h2 id="python">Реализация на Python</h2>
+<pre><code class="language-python">import numpy as np
+
+class NeuralNetwork:
+    def __init__(self, layer_sizes):
+        self.layer_sizes = layer_sizes
+        self.parameters = {}
+
+        # Инициализация весов
+        for l in range(1, len(layer_sizes)):
+            self.parameters[f'W{l}'] = np.random.randn(
+                layer_sizes[l], layer_sizes[l-1]
+            ) * np.sqrt(2.0 / layer_sizes[l-1])
+            self.parameters[f'b{l}'] = np.zeros((layer_sizes[l], 1))
+
+    def relu(self, Z):
+        return np.maximum(0, Z)
+
+    def relu_derivative(self, Z):
+        return (Z &gt; 0).astype(float)
+
+    def sigmoid(self, Z):
+        return 1 / (1 + np.exp(-np.clip(Z, -500, 500)))
+
+    def forward(self, X):
+        self.caches = {'A0': X}
+        A = X
+        L = len(self.parameters) // 2
+
+        for l in range(1, L):
+            Z = np.dot(self.parameters[f'W{l}'], A) + self.parameters[f'b{l}']
+            A = self.relu(Z)
+            self.caches[f'Z{l}'] = Z
+            self.caches[f'A{l}'] = A
+
+        # Выходной слой
+        ZL = np.dot(self.parameters[f'W{L}'], A) + self.parameters[f'b{L}']
+        AL = self.sigmoid(ZL)
+        self.caches[f'Z{L}'] = ZL
+        self.caches[f'A{L}'] = AL
+
+        return AL
+
+    def compute_loss(self, AL, Y):
+        m = Y.shape[1]
+        loss = -np.mean(Y * np.log(AL + 1e-15) + (1 - Y) * np.log(1 - AL + 1e-15))
+        return loss
+
+    def backward(self, AL, Y):
+        grads = {}
+        L = len(self.parameters) // 2
+        m = AL.shape[1]
+
+        # Выходной слой (sigmoid + cross-entropy)
+        dZL = AL - Y
+        grads[f'dW{L}'] = (1/m) * np.dot(dZL, self.caches[f'A{L-1}'].T)
+        grads[f'db{L}'] = (1/m) * np.sum(dZL, axis=1, keepdims=True)
+
+        # Скрытые слои
+        dA_prev = np.dot(self.parameters[f'W{L}'].T, dZL)
+
+        for l in reversed(range(1, L)):
+            dZ = dA_prev * self.relu_derivative(self.caches[f'Z{l}'])
+            grads[f'dW{l}'] = (1/m) * np.dot(dZ, self.caches[f'A{l-1}'].T)
+            grads[f'db{l}'] = (1/m) * np.sum(dZ, axis=1, keepdims=True)
+
+            if l &gt; 1:
+                dA_prev = np.dot(self.parameters[f'W{l}'].T, dZ)
+
+        return grads
+
+    def update_parameters(self, grads, learning_rate):
+        L = len(self.parameters) // 2
+
+        for l in range(1, L + 1):
+            self.parameters[f'W{l}'] -= learning_rate * grads[f'dW{l}']
+            self.parameters[f'b{l}'] -= learning_rate * grads[f'db{l}']
+
+    def train(self, X, Y, epochs=1000, learning_rate=0.01, print_cost=True):
+        costs = []
+
+        for epoch in range(epochs):
+            # Прямой проход
+            AL = self.forward(X)
+
+            # Вычисление потерь
+            cost = self.compute_loss(AL, Y)
+
+            # Обратный проход
+            grads = self.backward(AL, Y)
+
+            # Обновление параметров
+            self.update_parameters(grads, learning_rate)
+
+            if print_cost and epoch % 100 == 0:
+                print(f&quot;Epoch {epoch}: Cost = {cost:.4f}&quot;)
+            costs.append(cost)
+
+        return self.parameters, costs
+</code></pre>
+<h2 id="_165">Векторизация</h2>
+<p>Одно из главных преимуществ backpropagation - возможность полной векторизации:</p>
+<pre><code class="language-python"># Вместо цикла по примерам
+for i in range(m):
+    # вычисления для одного примера
+
+# Используем матричные операции
+Z = np.dot(W, A_prev) + b  # сразу для всех примеров
+</code></pre>
+<p>Это даёт ускорение в 100-1000 раз на современном оборудовании.</p>
+<h2 id="_166">Проблемы и решения</h2>
+<h3 id="_167">Исчезающие градиенты</h3>
+<p><strong>Проблема:</strong> Градиенты становятся экспоненциально малыми при движении к нижним слоям.</p>
+<p><strong>Причины:</strong>
+- Производные функций активации &lt; 1 (sigmoid, tanh)
+- Глубокие сети
+- Плохая инициализация</p>
+<p><strong>Решения:</strong>
+- ReLU и его вариации
+- Правильная инициализация (Xavier, He)
+- Batch Normalization
+- Skip connections (ResNet)</p>
+<h3 id="_168">Взрывающиеся градиенты</h3>
+<p><strong>Проблема:</strong> Градиенты становятся экспоненциально большими.</p>
+<p><strong>Решения:</strong>
+- Gradient clipping: <code>grad = np.clip(grad, -threshold, threshold)</code>
+- Правильная инициализация
+- Batch Normalization</p>
+<h3 id="gradient-checking">Проверка градиентов (Gradient Checking)</h3>
+<p>Важно убедиться в правильности реализации backpropagation:</p>
+<pre><code class="language-python">def gradient_check(parameters, grads, X, Y, epsilon=1e-7):
+    # Численное вычисление градиента
+    numerical_grads = {}
+
+    for key in parameters.keys():
+        if not key.startswith('W'):
+            continue
+
+        param = parameters[key].flatten()
+        grad_approx = np.zeros_like(param)
+
+        for i in range(len(param)):
+            # f(x + ε)
+            param_plus = param.copy()
+            param_plus[i] += epsilon
+            parameters[key] = param_plus.reshape(parameters[key].shape)
+            AL_plus = forward(X, parameters)
+            loss_plus = compute_loss(AL_plus, Y)
+
+            # f(x - ε)
+            param_minus = param.copy()
+            param_minus[i] -= epsilon
+            parameters[key] = param_minus.reshape(parameters[key].shape)
+            AL_minus = forward(X, parameters)
+            loss_minus = compute_loss(AL_minus, Y)
+
+            grad_approx[i] = (loss_plus - loss_minus) / (2 * epsilon)
+
+        numerical_grads[key] = grad_approx.reshape(parameters[key].shape)
+
+    # Восстановить оригинальные параметры
+    # ...
+
+    # Сравнение
+    for key in parameters.keys():
+        if not key.startswith('W'):
+            continue
+
+        diff = np.linalg.norm(numerical_grads[key] - grads['d' + key]) / \
+               (np.linalg.norm(numerical_grads[key]) + np.linalg.norm(grads['d' + key]) + 1e-7)
+
+        print(f&quot;{key}: difference = {diff:.2e}&quot;)
+        assert diff &lt; 1e-7, f&quot;Градиент для {key} не сходится!&quot;
+</code></pre>
+<p><strong>Важно:</strong> Gradient checking очень медленный, используйте только для отладки!</p>
+<h2 id="_169">Оптимизации</h2>
+<h3 id="mini-batch-gradient-descent">Mini-batch Gradient Descent</h3>
+<p>Вместо использования всего датасета:</p>
+<pre><code class="language-python"># Разбиение на батчи
+for batch_X, batch_Y in mini_batches:
+    AL = forward(batch_X)
+    grads = backward(AL, batch_Y)
+    update_parameters(grads, learning_rate)
+</code></pre>
+<p>Преимущества:
+- Быстрее сходимость
+- Лучшая обобщающая способность
+- Эффективное использование памяти</p>
+<h3 id="momentum">Momentum</h3>
+<p>Добавление инерции к обновлениям:</p>
+<pre><code class="language-python">v_dW = β * v_dW + (1 - β) * dW
+W = W - α * v_dW
+</code></pre>
+<p>где β ≈ 0.9</p>
+<h3 id="adam-optimizer">Adam Optimizer</h3>
+<p>Комбинация Momentum и RMSProp:</p>
+<pre><code class="language-python"># Скользящее среднее градиентов
+m_dW = β1 * m_dW + (1 - β1) * dW
+# Скользящее среднее квадратов градиентов
+v_dW = β2 * v_dW + (1 - β2) * (dW ** 2)
+
+# Коррекция смещения
+m_dW_corrected = m_dW / (1 - β1 ** t)
+v_dW_corrected = v_dW / (1 - β2 ** t)
+
+# Обновление
+W = W - α * m_dW_corrected / (np.sqrt(v_dW_corrected) + ε)
+</code></pre>
+<h2 id="_170">Визуализация процесса обучения</h2>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+
+def plot_learning_curve(costs, learning_rate):
+    plt.figure(figsize=(10, 6))
+    plt.plot(costs)
+    plt.title(f'Функция потерь (learning rate = {learning_rate})')
+    plt.xlabel('Эпоха (сотни)')
+    plt.ylabel('Стоимость')
+    plt.grid(True)
+    plt.show()
+</code></pre>
+<h2 id="_171">Заключение</h2>
+<p>Обратное распространение - это краеугольный камень глубокого обучения. Понимание этого алгоритма необходимо для:</p>
+<ul>
+<li>Отладки нейронных сетей</li>
+<li>Выбора правильных архитектур</li>
+<li>Оптимизации процесса обучения</li>
+<li>Разработки новых методов обучения</li>
+</ul>
+<p>Хотя современные фреймворки (TensorFlow, PyTorch) автоматически вычисляют градиенты, глубокое понимание backpropagation помогает создавать более эффективные модели.</p>
+<h2 id="_172">Дополнительные ресурсы</h2>
+<ul>
+<li><a href="https://www.deeplearningbook.org/">Deep Learning Book - Chapter 6</a></li>
+<li><a href="http://cs231n.github.io/optimization-2/">Stanford CS231n Notes</a></li>
+<li><a href="https://www.youtube.com/watch?v=Ilg3gGewQ5U">3Blue1Brown - Backpropagation Visualization</a></li>
+<li><a href="https://pytorch.org/tutorials/beginner/blitz/autograd_tutorial.html">PyTorch Autograd Tutorial</a></li>
+</ul>
+<p>================================================================================</p>
+<h1 id="_173">Многослойные нейронные сети</h1>
+<h2 id="_174">Введение</h2>
+<p>Многослойные нейронные сети (Multilayer Neural Networks) представляют собой архитектуру, состоящую из нескольких последовательно соединённых слоёв нейронов. Такая структура позволяет сети обучаться сложным нелинейным зависимостям в данных.</p>
+<h2 id="_175">Архитектура многослойной сети</h2>
+<h3 id="_176">Слои сети</h3>
+<ol>
+<li><strong>Входной слой (Input Layer)</strong></li>
+<li>Принимает исходные данные</li>
+<li>Количество нейронов равно размерности входных данных</li>
+<li>
+<p>Не выполняет вычислений, только передаёт данные</p>
+</li>
+<li>
+<p><strong>Скрытые слои (Hidden Layers)</strong></p>
+</li>
+<li>Один или несколько слоёв между входом и выходом</li>
+<li>Каждый нейрон связан со всеми нейронами предыдущего слоя</li>
+<li>
+<p>Выполняют основные вычисления и извлечение признаков</p>
+</li>
+<li>
+<p><strong>Выходной слой (Output Layer)</strong></p>
+</li>
+<li>Produces the final output</li>
+<li>Количество нейронов зависит от задачи (1 для регрессии, N для классификации)</li>
+</ol>
+<h3 id="_177">Полносвязная архитектура</h3>
+<p>В полносвязной сети (Fully Connected / Dense) каждый нейрон слоя l связан со всеми нейронами слоя l-1:</p>
+<pre><code>y = f(Wx + b)
+</code></pre>
+<p>где:
+- x - входной вектор
+- W - матрица весов
+- b - вектор смещений
+- f - функция активации</p>
+<h2 id="_178">Глубокие нейронные сети</h2>
+<p>Глубокая нейронная сеть (Deep Neural Network, DNN) содержит множество скрытых слоёв:</p>
+<ul>
+<li><strong>Shallow networks</strong>: 1-2 скрытых слоя</li>
+<li><strong>Deep networks</strong>: 3+ скрытых слоя</li>
+<li><strong>Very deep networks</strong>: 10+ слоёв (например, ResNet-152)</li>
+</ul>
+<h3 id="_179">Преимущества глубины</h3>
+<ol>
+<li><strong>Иерархическое представление</strong></li>
+<li>Нижние слои учатся простым признакам</li>
+<li>
+<p>Верхние слои комбинируют их в сложные концепции</p>
+</li>
+<li>
+<p><strong>Эффективность параметров</strong></p>
+</li>
+<li>Глубокие сети требуют меньше параметров для той же выразительности</li>
+<li>
+<p>Экспоненциальное увеличение представимости с глубиной</p>
+</li>
+<li>
+<p><strong>Автоматическое извлечение признаков</strong></p>
+</li>
+<li>Не требуется ручная инженерия признаков</li>
+<li>Сеть сама учится релевантным представлениям</li>
+</ol>
+<h2 id="forward-propagation">Прямое распространение (Forward Propagation)</h2>
+<p>Процесс вычисления выхода сети:</p>
+<pre><code class="language-python">def forward_propagation(X, parameters):
+    L = len(parameters) // 2  # количество слоёв
+
+    A = X
+    caches = []
+
+    for l in range(1, L):
+        A_prev = A
+        Z = np.dot(parameters['W' + str(l)], A_prev) + parameters['b' + str(l)]
+        A = activation_function(Z)  # например, ReLU
+        caches.append((A_prev, Z))
+
+    # Выходной слой
+    ZL = np.dot(parameters['W' + str(L)], A) + parameters['b' + str(L)]
+    AL = output_activation(ZL)  # например, softmax
+
+    return AL, caches
+</code></pre>
+<h2 id="_180">Инициализация весов</h2>
+<p>Правильная инициализация критична для обучения глубоких сетей:</p>
+<h3 id="_181">Методы инициализации</h3>
+<ol>
+<li><strong>Xavier/Glorot Initialization</strong>
+   <code>python
+   W = np.random.randn(n_out, n_in) * np.sqrt(2.0 / (n_in + n_out))</code></li>
+<li>
+<p>Хорошо работает с tanh и sigmoid</p>
+</li>
+<li>
+<p><strong>He Initialization</strong>
+   <code>python
+   W = np.random.randn(n_out, n_in) * np.sqrt(2.0 / n_in)</code></p>
+</li>
+<li>
+<p>Рекомендуется для ReLU и её вариаций</p>
+</li>
+<li>
+<p><strong>LeCun Initialization</strong>
+   <code>python
+   W = np.random.randn(n_out, n_in) * np.sqrt(1.0 / n_in)</code></p>
+</li>
+<li>Для SELU активации</li>
+</ol>
+<h2 id="_182">Проблемы глубоких сетей</h2>
+<h3 id="vanishing-gradients">Исчезающие градиенты (Vanishing Gradients)</h3>
+<p>При обратном распространении градиенты могут становиться экспоненциально малыми:</p>
+<ul>
+<li>Градиент умножается на каждом слое</li>
+<li>При малых производных функций активации градиент затухает</li>
+<li>Нижние слои перестают обучаться</li>
+</ul>
+<p><strong>Решения:</strong>
+- ReLU и её вариации вместо sigmoid/tanh
+- Правильная инициализация весов
+- Batch Normalization
+- Skip connections (Residual Networks)</p>
+<h3 id="exploding-gradients">Взрывающиеся градиенты (Exploding Gradients)</h3>
+<p>Противоположная проблема - градиенты становятся слишком большими:</p>
+<ul>
+<li>Веса обновляются на огромные величины</li>
+<li>Обучение становится нестабильным</li>
+</ul>
+<p><strong>Решения:</strong>
+- Gradient clipping
+- Правильная инициализация
+- Batch Normalization</p>
+<h2 id="_183">Регуляризация в многослойных сетях</h2>
+<h3 id="dropout">Dropout</h3>
+<p>Случайное "отключение" нейронов во время обучения:</p>
+<pre><code class="language-python">def apply_dropout(A, keep_prob):
+    D = np.random.rand(*A.shape) &lt; keep_prob
+    A = A * D
+    A = A / keep_prob  # масштабирование
+    return A
+</code></pre>
+<h3 id="l1l2">L1/L2 Регуляризация</h3>
+<p>Добавление штрафа к функции потерь:</p>
+<ul>
+<li><strong>L1</strong>: <code>loss += λ * Σ|w|</code> (способствует разреженности)</li>
+<li><strong>L2</strong>: <code>loss += λ * Σw²</code> (предотвращает большие веса)</li>
+</ul>
+<h3 id="batch-normalization">Batch Normalization</h3>
+<p>Нормализация активаций каждого слоя:</p>
+<pre><code>μ = mean(x)
+σ² = variance(x)
+x_norm = (x - μ) / √(σ² + ε)
+y = γ * x_norm + β
+</code></pre>
+<p>Преимущества:
+- Ускоряет обучение
+- Снижает чувствительность к инициализации
+- Действует как регуляризатор</p>
+<h2 id="_184">Практические рекомендации</h2>
+<h3 id="_185">Выбор архитектуры</h3>
+<ol>
+<li><strong>Начните просто</strong></li>
+<li>Начните с 1-2 скрытых слоёв</li>
+<li>
+<p>Постепенно увеличивайте глубину при необходимости</p>
+</li>
+<li>
+<p><strong>Размер слоёв</strong></p>
+</li>
+<li>Обычно уменьшается к выходу (пирамидальная структура)</li>
+<li>
+<p>Или остаётся постоянным</p>
+</li>
+<li>
+<p><strong>Количество нейронов</strong></p>
+</li>
+<li>Между размером входа и выхода</li>
+<li>Эмпирически: 2/3 размера входа + размер выхода</li>
+</ol>
+<h3 id="_186">Гиперпараметры</h3>
+<ul>
+<li><strong>Learning rate</strong>: 0.001 - 0.1 (начните с 0.01)</li>
+<li><strong>Batch size</strong>: 32, 64, 128, 256</li>
+<li><strong>Количество эпох</strong>: используйте early stopping</li>
+<li><strong>Optimizer</strong>: Adam обычно лучший выбор</li>
+</ul>
+<h3 id="_187">Мониторинг обучения</h3>
+<p>Отслеживайте:
+- Loss на training и validation наборах
+- Точность/метрики качества
+- Градиенты и веса (для отладки)</p>
+<h2 id="python_1">Пример реализации на Python</h2>
+<pre><code class="language-python">import numpy as np
+
+class MultiLayerNN:
+    def __init__(self, layer_sizes, activation='relu'):
+        self.layer_sizes = layer_sizes
+        self.activation = activation
+        self.parameters = {}
+
+        # Инициализация весов
+        for l in range(1, len(layer_sizes)):
+            self.parameters[f'W{l}'] = np.random.randn(
+                layer_sizes[l], layer_sizes[l-1]
+            ) * np.sqrt(2.0 / layer_sizes[l-1])
+            self.parameters[f'b{l}'] = np.zeros((layer_sizes[l], 1))
+
+    def relu(self, Z):
+        return np.maximum(0, Z)
+
+    def relu_derivative(self, Z):
+        return (Z &gt; 0).astype(float)
+
+    def forward(self, X):
+        self.caches = {'A0': X}
+        A = X
+
+        L = len(self.parameters) // 2
+
+        for l in range(1, L):
+            Z = np.dot(self.parameters[f'W{l}'], A) + self.parameters[f'b{l}']
+            A = self.relu(Z)
+            self.caches[f'Z{l}'] = Z
+            self.caches[f'A{l}'] = A
+
+        # Выходной слой (sigmoid для бинарной классификации)
+        ZL = np.dot(self.parameters[f'W{L}'], A) + self.parameters[f'b{L}']
+        AL = 1 / (1 + np.exp(-ZL))
+        self.caches[f'Z{L}'] = ZL
+        self.caches[f'A{L}'] = AL
+
+        return AL
+
+    def backward(self, AL, Y):
+        grads = {}
+        L = len(self.parameters) // 2
+        m = AL.shape[1]
+
+        # Выходной слой
+        dZL = AL - Y
+        grads[f'dW{L}'] = (1/m) * np.dot(dZL, self.caches[f'A{L-1}'].T)
+        grads[f'db{L}'] = (1/m) * np.sum(dZL, axis=1, keepdims=True)
+
+        # Скрытые слои
+        dA_prev = np.dot(self.parameters[f'W{L}'].T, dZL)
+
+        for l in reversed(range(1, L)):
+            dZ = dA_prev * self.relu_derivative(self.caches[f'Z{l}'])
+            grads[f'dW{l}'] = (1/m) * np.dot(dZ, self.caches[f'A{l-1}'].T)
+            grads[f'db{l}'] = (1/m) * np.sum(dZ, axis=1, keepdims=True)
+
+            if l &gt; 1:
+                dA_prev = np.dot(self.parameters[f'W{l}'].T, dZ)
+
+        return grads
+
+    def update_parameters(self, grads, learning_rate):
+        L = len(self.parameters) // 2
+
+        for l in range(1, L + 1):
+            self.parameters[f'W{l}'] -= learning_rate * grads[f'dW{l}']
+            self.parameters[f'b{l}'] -= learning_rate * grads[f'db{l}']
+
+    def train(self, X, Y, epochs=1000, learning_rate=0.01):
+        for epoch in range(epochs):
+            AL = self.forward(X)
+            grads = self.backward(AL, Y)
+            self.update_parameters(grads, learning_rate)
+
+            if epoch % 100 == 0:
+                loss = -np.mean(Y * np.log(AL) + (1-Y) * np.log(1-AL))
+                print(f&quot;Epoch {epoch}, Loss: {loss:.4f}&quot;)
+</code></pre>
+<h2 id="_188">Заключение</h2>
+<p>Многослойные нейронные сети являются фундаментом глубокого обучения. Понимание их архитектуры, процесса обучения и методов регуляризации необходимо для построения эффективных моделей.</p>
+<h2 id="_189">Дополнительные ресурсы</h2>
+<ul>
+<li><a href="https://www.deeplearningbook.org/">Deep Learning Book</a> - глава 6</li>
+<li><a href="http://neuralnetworksanddeeplearning.com/">Neural Networks and Deep Learning</a></li>
+<li><a href="http://cs231n.stanford.edu/">Stanford CS231n</a> - лекции о нейронных сетях</li>
+</ul>
+<p>================================================================================</p>
+<h1 id="_190">Нейронные сети</h1>
+<h2 id="1_6">1. Перцептрон</h2>
+<p>Базовая единица нейронной сети.</p>
+<pre><code>Вход: x = [x₁, x₂, ..., xₙ]
+Веса: w = [w₁, w₂, ..., wₙ]
+Смещение: b
+Выход: y = f(w·x + b)
+</code></pre>
+<p><strong>Формула:</strong></p>
+<pre><code>z = Σ(wᵢ · xᵢ) + b
+y = f(z)
+</code></pre>
+<h2 id="2_6">2. Функции активации</h2>
+<h3 id="sigmoid_1">Sigmoid</h3>
+<pre><code>f(x) = 1 / (1 + e⁻ˣ)
+Диапазон: (0, 1)
+Применение: бинарная классификация (выходной слой)
+Проблема: затухающий градиент
+</code></pre>
+<h3 id="tanh_1">Tanh</h3>
+<pre><code>f(x) = (eˣ - e⁻ˣ) / (eˣ + e⁻ˣ)
+Диапазон: (-1, 1)
+Применение: скрытые слои
+Лучше sigmoid, но всё ещё затухание
+</code></pre>
+<h3 id="relu-rectified-linear-unit_1">ReLU (Rectified Linear Unit)</h3>
+<pre><code>f(x) = max(0, x)
+Диапазон: [0, ∞)
+Применение: скрытые слои (по умолчанию)
+Преимущества: нет затухания для x &gt; 0
+Проблема: &quot;мёртвые&quot; нейроны
+</code></pre>
+<h3 id="leaky-relu_1">Leaky ReLU</h3>
+<pre><code>f(x) = x if x &gt; 0 else α·x (α ≈ 0.01)
+Решает проблему мёртвых нейронов
+</code></pre>
+<h3 id="softmax_1">Softmax</h3>
+<pre><code>f(xᵢ) = eˣᵢ / Σ(eˣⱼ)
+Диапазон: (0, 1), сумма = 1
+Применение: многоклассовая классификация (выходной слой)
+</code></pre>
+<h2 id="3-backpropagation">3. Backpropagation (Обратное распространение)</h2>
+<p>Алгоритм вычисления градиентов для обучения.</p>
+<p><strong>Шаги:</strong></p>
+<pre><code>1. Forward pass → вычисление выходов
+2. Вычисление ошибки → L(y_pred, y_true)
+3. Backward pass → градиенты по цепному правилу
+4. Обновление весов → w = w - η · ∂L/∂w
+</code></pre>
+<p><strong>Цепное правило:</strong></p>
+<pre><code>∂L/∂w = ∂L/∂y · ∂y/∂z · ∂z/∂w
+</code></pre>
+<h2 id="4_5">4. Оптимизаторы</h2>
+<h3 id="sgd-stochastic-gradient-descent">SGD (Stochastic Gradient Descent)</h3>
+<pre><code>w = w - η · ∇L
+Плюсы: простота
+Минусы: медленная сходимость, осцилляции
+</code></pre>
+<h3 id="momentum_1">Momentum</h3>
+<pre><code>v = γ·v + η·∇L
+w = w - v
+γ ≈ 0.9 - импульс
+Ускоряет сходимость, сглаживает осцилляции
+</code></pre>
+<h3 id="adam-adaptive-moment-estimation">Adam (Adaptive Moment Estimation)</h3>
+<pre><code>m = β₁·m + (1-β₁)·∇L  (первый момент)
+v = β₂·v + (1-β₂)·(∇L)²  (второй момент)
+m̂ = m / (1-β₁ᵗ)  (bias correction)
+v̂ = v / (1-β₂ᵗ)
+w = w - η·m̂ / (√v̂ + ε)
+</code></pre>
+<p><strong>Параметры по умолчанию:</strong></p>
+<pre><code>β₁ = 0.9, β₂ = 0.999, ε = 10⁻⁸
+Оптимизатор по умолчанию для большинства задач
+</code></pre>
+<h3 id="rmsprop">RMSprop</h3>
+<pre><code>v = β·v + (1-β)·(∇L)²
+w = w - η·∇L / √v
+Хорошо для RNN
+</code></pre>
+<h2 id="5_6">5. Регуляризация</h2>
+<h3 id="l1-lasso">L1 (Lasso)</h3>
+<pre><code>L_total = L_data + λ·Σ|wᵢ|
+Создаёт разреженные веса (обнуляет некоторые)
+</code></pre>
+<h3 id="l2-ridge">L2 (Ridge)</h3>
+<pre><code>L_total = L_data + λ·Σwᵢ²
+Предотвращает большие веса
+</code></pre>
+<h3 id="dropout_1">Dropout</h3>
+<pre><code>Во время обучения: случайное &quot;выключение&quot; нейронов с вероятностью p
+Во время инференса: все нейроны активны, веса умножаются на (1-p)
+Типичные значения: p = 0.2-0.5
+</code></pre>
+<h3 id="batch-normalization_1">Batch Normalization</h3>
+<pre><code>x̂ = (x - μ_batch) / √(σ²_batch + ε)
+y = γ·x̂ + β
+Нормализует активации по батчу
+Ускоряет обучение, снижает чувствительность к инициализации
+</code></pre>
+<h2 id="6">6. Инициализация весов</h2>
+<h3 id="xavierglorot">Xavier/Glorot</h3>
+<pre><code>Для tanh и sigmoid
+W ~ N(0, √(2 / (n_in + n_out)))
+</code></pre>
+<h3 id="he-initialization">He Initialization</h3>
+<pre><code>Для ReLU
+W ~ N(0, √(2 / n_in))
+</code></pre>
+<h2 id="7">7. Архитектуры сетей</h2>
+<h3 id="fully-connected">Полносвязная сеть (Fully Connected)</h3>
+<pre><code>Каждый нейрон связан со всеми нейронами следующего слоя
+Применение: табличные данные, небольшие изображения
+</code></pre>
+<h3 id="cnn">Сверточная сеть (CNN)</h3>
+<pre><code>Использует свертки для извлечения локальных признаков
+Слои: Conv → Pooling → FC
+Применение: изображения, видео
+</code></pre>
+<h3 id="rnn">Рекуррентная сеть (RNN)</h3>
+<pre><code>Имеет циклы для обработки последовательностей
+Проблема: затухающий/взрывающийся градиент
+Применение: текст, временные ряды
+</code></pre>
+<h3 id="lstm-gru">LSTM / GRU</h3>
+<pre><code>Усовершенствованные RNN с механизмами памяти
+Решают проблему длинных зависимостей
+</code></pre>
+<p>================================================================================</p>
+<h1 id="_191">Перцептрон</h1>
+<p>Перцептрон — это базовая единица нейронной сети, математическая модель биологического нейрона.</p>
+<h2 id="1_7">1. Структура перцептрона</h2>
+<pre><code>Входы: x = [x₁, x₂, ..., xₙ]
+Веса: w = [w₁, w₂, ..., wₙ]
+Смещение: b
+Выход: y = f(w·x + b)
+</code></pre>
+<h3 id="_192">Формула вычисления</h3>
+<pre><code>z = Σ(wᵢ · xᵢ) + b = w·x + b
+y = f(z)
+</code></pre>
+<p>где:
+- <code>z</code> - взвешенная сумма входов (логит)
+- <code>f</code> - функция активации
+- <code>y</code> - выход перцептрона</p>
+<h2 id="2-python">2. Реализация на Python</h2>
+<h3 id="_193">Базовая реализация</h3>
+<pre><code class="language-python">import numpy as np
+
+class Perceptron:
+    def __init__(self, n_inputs, learning_rate=0.01):
+        self.weights = np.random.randn(n_inputs) * 0.01
+        self.bias = 0
+        self.lr = learning_rate
+
+    def activate(self, z):
+        &quot;&quot;&quot;Функция активации (step function)&quot;&quot;&quot;
+        return 1 if z &gt;= 0 else 0
+
+    def predict(self, X):
+        &quot;&quot;&quot;Прямое распространение&quot;&quot;&quot;
+        z = np.dot(X, self.weights) + self.bias
+        return self.activate(z)
+
+    def fit(self, X, y, epochs=100):
+        &quot;&quot;&quot;Обучение перцептрона&quot;&quot;&quot;
+        for epoch in range(epochs):
+            for xi, target in zip(X, y):
+                prediction = self.predict(xi)
+                error = target - prediction
+
+                # Обновление весов
+                self.weights += self.lr * error * xi
+                self.bias += self.lr * error
+</code></pre>
+<h3 id="_194">Векторизованная версия</h3>
+<pre><code class="language-python">class PerceptronVectorized:
+    def __init__(self, n_inputs, learning_rate=0.01):
+        self.weights = np.random.randn(n_inputs) * 0.01
+        self.bias = 0
+        self.lr = learning_rate
+
+    def sigmoid(self, z):
+        return 1 / (1 + np.exp(-z))
+
+    def predict(self, X):
+        z = np.dot(X, self.weights) + self.bias
+        return self.sigmoid(z)
+
+    def fit(self, X, y, epochs=1000):
+        m = len(y)
+        for epoch in range(epochs):
+            # Forward pass
+            predictions = self.predict(X)
+
+            # Вычисление градиентов
+            error = predictions - y
+            dw = (1/m) * np.dot(X.T, error)
+            db = (1/m) * np.sum(error)
+
+            # Обновление параметров
+            self.weights -= self.lr * dw
+            self.bias -= self.lr * db
+</code></pre>
+<h2 id="3_4">3. Логические вентили</h2>
+<p>Перцептрон может реализовать линейно разделимые функции:</p>
+<h3 id="and">AND (И)</h3>
+<pre><code class="language-python"># Веса для AND
+w = [1, 1], b = -1.5
+
+# Таблица истинности
+# x1 | x2 | y
+# 0  | 0  | 0  → 1*0 + 1*0 - 1.5 = -1.5 &lt; 0
+# 0  | 1  | 0  → 1*0 + 1*1 - 1.5 = -0.5 &lt; 0
+# 1  | 0  | 0  → 1*1 + 1*0 - 1.5 = -0.5 &lt; 0
+# 1  | 1  | 1  → 1*1 + 1*1 - 1.5 = 0.5 &gt;= 0
+</code></pre>
+<h3 id="or">OR (ИЛИ)</h3>
+<pre><code class="language-python"># Веса для OR
+w = [1, 1], b = -0.5
+
+# Таблица истинности
+# x1 | x2 | y
+# 0  | 0  | 0  → 1*0 + 1*0 - 0.5 = -0.5 &lt; 0
+# 0  | 1  | 1  → 1*0 + 1*1 - 0.5 = 0.5 &gt;= 0
+# 1  | 0  | 1  → 1*1 + 1*0 - 0.5 = 0.5 &gt;= 0
+# 1  | 1  | 1  → 1*1 + 1*1 - 0.5 = 1.5 &gt;= 0
+</code></pre>
+<h3 id="not">NOT (НЕ)</h3>
+<pre><code class="language-python"># Веса для NOT(x1)
+w = [-1], b = 0.5
+
+# Таблица истинности
+# x1 | y
+# 0  | 1  → -1*0 + 0.5 = 0.5 &gt;= 0
+# 1  | 0  → -1*1 + 0.5 = -0.5 &lt; 0
+</code></pre>
+<h3 id="xor">XOR (Исключающее ИЛИ)</h3>
+<pre><code>XOR НЕ реализуем одним перцептроном!
+Требуется многослойная сеть.
+
+# x1 | x2 | y
+# 0  | 0  | 0
+# 0  | 1  | 1
+# 1  | 0  | 1
+# 1  | 1  | 0  ← нелинейно разделимо
+</code></pre>
+<h2 id="4_6">4. Геометрическая интерпретация</h2>
+<p>Перцептрон реализует <strong>линейный классификатор</strong>:</p>
+<pre><code>Решающая граница: w·x + b = 0
+
+В 2D: w₁*x₁ + w₂*x₂ + b = 0  → прямая линия
+В 3D: w₁*x₁ + w₂*x₂ + w₃*x₃ + b = 0  → плоскость
+В n-D: гиперплоскость
+</code></pre>
+<h3 id="_195">Визуализация</h3>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+
+def plot_decision_boundary(perceptron, X, y):
+    # Сетка для визуализации
+    x_min, x_max = X[:, 0].min() - 0.5, X[:, 0].max() + 0.5
+    y_min, y_max = X[:, 1].min() - 0.5, X[:, 1].max() + 0.5
+    xx, yy = np.meshgrid(np.linspace(x_min, x_max, 100),
+                         np.linspace(y_min, y_max, 100))
+
+    # Предсказания на сетке
+    Z = perceptron.predict(np.c_[xx.ravel(), yy.ravel()])
+    Z = Z.reshape(xx.shape)
+
+    # Построение
+    plt.contourf(xx, yy, Z, alpha=0.4, cmap='RdBu')
+    plt.scatter(X[:, 0], X[:, 1], c=y, cmap='RdBu', edgecolors='k')
+    plt.xlabel('x₁')
+    plt.ylabel('x₂')
+    plt.title('Decision Boundary')
+    plt.show()
+</code></pre>
+<h2 id="5_7">5. Ограничения перцептрона</h2>
+<h3 id="_196">Теорема о сходимости</h3>
+<p>Если данные линейно разделимы, алгоритм перцептрона сойдется за конечное число шагов.</p>
+<h3 id="_197">Проблемы</h3>
+<ol>
+<li><strong>Только линейная разделимость</strong> - не может решить XOR</li>
+<li><strong>Нет вероятностной интерпретации</strong> - выдает 0 или 1</li>
+<li><strong>Чувствительность к выбросам</strong> - одно неверное обновление</li>
+<li><strong>Не сходится для неразделимых данных</strong> - будет колебаться</li>
+</ol>
+<h3 id="_198">Решение</h3>
+<p>Использовать <strong>многослойные сети</strong> с нелинейными функциями активации.</p>
+<h2 id="6_1">6. Пример использования</h2>
+<pre><code class="language-python">from sklearn.datasets import make_classification
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+
+# Генерация данных
+X, y = make_classification(n_samples=100, n_features=2, 
+                           n_redundant=0, n_informative=2,
+                           random_state=42)
+
+# Разделение
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+# Обучение
+perceptron = Perceptron(n_inputs=2, learning_rate=0.1)
+perceptron.fit(X_train, y_train, epochs=100)
+
+# Оценка
+predictions = perceptron.predict(X_test)
+accuracy = accuracy_score(y_test, (predictions &gt;= 0.5).astype(int))
+print(f&quot;Accuracy: {accuracy:.2f}&quot;)
+</code></pre>
+<h2 id="-_3">Чек-лист понимания</h2>
+<ul>
+<li>[ ] Понимаю формулу перцептрона: y = f(w·x + b)</li>
+<li>[ ] Могу реализовать перцептрон на Python</li>
+<li>[ ] Понимаю, какие функции реализует (AND, OR, NOT)</li>
+<li>[ ] Понимаю, почему XOR не реализуем</li>
+<li>[ ] Знаю геометрическую интерпретацию (гиперплоскость)</li>
+<li>[ ] Понимаю ограничения перцептрона</li>
+</ul>
+<h2 id="_199">Следующие шаги</h2>
+<p>Изучите <a href="multilayer.md">многослойные сети</a> для решения нелинейных задач.</p>
+<p>================================================================================</p>
+<h1 id="autoencoders_1">Автоэнкодеры (Autoencoders)</h1>
+<h2 id="_200">Введение</h2>
+<p>Автоэнкодеры - это тип нейронных сетей для обучения без учителя, которые учатся сжимать и восстанавливать данные.</p>
+<h2 id="_201">Архитектура</h2>
+<pre><code>Вход → [Encoder] → Latent Space → [Decoder] → Выход
+</code></pre>
+<h3 id="encoder">Encoder</h3>
+<p>Сжимает вход в латентное представление:</p>
+<pre><code>h = f(W_e · x + b_e)
+</code></pre>
+<h3 id="decoder">Decoder</h3>
+<p>Восстанавливает из латентного представления:</p>
+<pre><code>x̂ = g(W_d · h + b_d)
+</code></pre>
+<h3 id="_202">Функция потерь</h3>
+<p>Минимизируется разница между входом и выходом:</p>
+<pre><code>L = ||x - x̂||²
+</code></pre>
+<h2 id="_203">Типы автоэнкодеров</h2>
+<h3 id="undercomplete-autoencoder">Undercomplete Autoencoder</h3>
+<p>Латентное пространство меньше входа:</p>
+<pre><code>dim(z) &lt; dim(x)
+</code></pre>
+<p>Принуждает сеть изучать важные признаки.</p>
+<h3 id="sparse-autoencoder">Sparse Autoencoder</h3>
+<p>Добавляется штраф за активацию:</p>
+<pre><code>L = ||x - x̂||² + λ · Σ|h|
+</code></pre>
+<h3 id="denoising-autoencoder">Denoising Autoencoder</h3>
+<p>Обучается восстанавливать чистые данные из зашумленных:</p>
+<pre><code>x̃ = x + noise
+x̂ = decoder(encoder(x̃))
+L = ||x - x̂||²
+</code></pre>
+<h3 id="variational-autoencoder-vae">Variational Autoencoder (VAE)</h3>
+<p>Кодирует распределение в латентном пространстве:</p>
+<pre><code class="language-python">class VAE(nn.Module):
+    def __init__(self, input_dim, hidden_dim, latent_dim):
+        super().__init__()
+
+        # Encoder
+        self.encoder = nn.Sequential(
+            nn.Linear(input_dim, hidden_dim),
+            nn.ReLU(),
+        )
+        self.fc_mu = nn.Linear(hidden_dim, latent_dim)
+        self.fc_logvar = nn.Linear(hidden_dim, latent_dim)
+
+        # Decoder
+        self.decoder = nn.Sequential(
+            nn.Linear(latent_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Linear(hidden_dim, input_dim),
+            nn.Sigmoid()
+        )
+
+    def reparameterize(self, mu, logvar):
+        std = torch.exp(0.5 * logvar)
+        eps = torch.randn_like(std)
+        return mu + eps * std
+
+    def forward(self, x):
+        h = self.encoder(x)
+        mu = self.fc_mu(h)
+        logvar = self.fc_logvar(h)
+        z = self.reparameterize(mu, logvar)
+        return self.decoder(z), mu, logvar
+
+    def loss_function(self, x, x_hat, mu, logvar):
+        reconstruction_loss = F.binary_cross_entropy(x_hat, x, reduction='sum')
+        kl_divergence = -0.5 * torch.sum(1 + logvar - mu.pow(2) - logvar.exp())
+        return reconstruction_loss + kl_divergence
+</code></pre>
+<h2 id="_204">Применения</h2>
+<ul>
+<li>Снижение размерности</li>
+<li>Удаление шума</li>
+<li>Генерация данных</li>
+<li>Аномалии детекция</li>
+<li>Рекомендательные системы</li>
+</ul>
+<h2 id="_205">Заключение</h2>
+<p>Автоэнкодеры - мощный инструмент для обучения представлений без размеченных данных.</p>
+<p>================================================================================</p>
+<h1 id="cnn_1">Сверточные нейронные сети (CNN)</h1>
+<h2 id="_206">Введение</h2>
+<p>Сверточные нейронные сети (Convolutional Neural Networks, CNN, ConvNet) - это класс глубоких нейронных сетей, специально разработанных для обработки данных с сеточной структурой, таких как изображения.</p>
+<h2 id="cnn_2">Почему CNN для изображений?</h2>
+<h3 id="_207">Проблемы полносвязных сетей</h3>
+<p>Для изображения 256×256×3 (RGB):
+- Количество входов: 256 × 256 × 3 = 196,608
+- Для одного скрытого слоя с 1000 нейронов: 196,608 × 1000 ≈ 197 миллионов параметров!
+- Переобучение, вычислительная сложность, потеря пространственной структуры</p>
+<h3 id="cnn_3">Преимущества CNN</h3>
+<ol>
+<li><strong>Локальные связи</strong> - нейроны соединены только с локальной областью входа</li>
+<li><strong>Разделение весов</strong> - одни и те же фильтры применяются ко всему изображению</li>
+<li><strong>Пространственная иерархия</strong> - от простых краев к сложным объектам</li>
+<li><strong>Инвариантность к трансляции</strong> - распознают объекты независимо от положения</li>
+</ol>
+<h2 id="cnn_4">Архитектура CNN</h2>
+<h3 id="_208">Основные слои</h3>
+<h4 id="1-convolutional-layer">1. Сверточный слой (Convolutional Layer)</h4>
+<p>Применяет набор фильтров (ядер) ко входному изображению:</p>
+<pre><code>Output = Input * Filter + bias
+</code></pre>
+<p>где * - операция свертки.</p>
+<p><strong>Параметры:</strong>
+- <strong>Количество фильтров (K)</strong> - глубина выхода
+- <strong>Размер фильтра (F)</strong> - обычно 3×3, 5×5, 7×7
+- <strong>Шаг (Stride, S)</strong> - шаг скольжения фильтра
+- <strong>Дополнение (Padding, P)</strong> - добавление границ</p>
+<p><strong>Выходной размер:</strong></p>
+<pre><code>W_out = (W_in - F + 2P) / S + 1
+H_out = (H_in - F + 2P) / S + 1
+D_out = K
+</code></pre>
+<p><strong>Пример:</strong>
+- Вход: 32×32×3
+- Фильтр: 5×5, stride=1, padding=0
+- Количество фильтров: 6
+- Выход: (32-5)/1+1 = 28 → 28×28×6</p>
+<h4 id="2-pooling-layer">2. Слой подвыборки (Pooling Layer)</h4>
+<p>Уменьшает пространственные размеры, сохраняя важную информацию:</p>
+<p><strong>Max Pooling:</strong></p>
+<pre><code>Возвращает максимальное значение в области
+</code></pre>
+<p><strong>Average Pooling:</strong></p>
+<pre><code>Возвращает среднее значение в области
+</code></pre>
+<p><strong>Параметры:</strong>
+- Размер окна (обычно 2×2)
+- Шаг (обычно 2)</p>
+<p><strong>Выходной размер:</strong></p>
+<pre><code>W_out = (W_in - F) / S + 1
+</code></pre>
+<p><strong>Преимущества:</strong>
+- Уменьшение количества параметров
+- Контроль переобучения
+- Инвариантность к малым смещениям</p>
+<h4 id="3-fully-connected-layer">3. Полносвязный слой (Fully Connected Layer)</h4>
+<p>Обычно располагается в конце сети для классификации:
+- Преобразует признаки в классы
+- Аналогичен обычным нейронным сетям</p>
+<h4 id="4-batch-normalization">4. Нормализация (Batch Normalization)</h4>
+<p>Нормализует активации по батчу:</p>
+<pre><code>x_norm = (x - μ_batch) / √(σ²_batch + ε)
+y = γ * x_norm + β
+</code></pre>
+<p>Ускоряет обучение, улучшает стабильность.</p>
+<h2 id="_209">Операция свертки</h2>
+<h3 id="2d">2D Свертка</h3>
+<p>Для входного изображения I и фильтра K:</p>
+<pre><code class="language-python">def convolve2d(image, kernel):
+    m, n = kernel.shape
+    if (m == n):
+        yy, xx = image.shape
+        y = yy - m + 1
+        x = xx - n + 1
+        z_new = np.zeros((y, x))
+        for i in range(y):
+            for j in range(x):
+                z_new[i, j] = np.sum(image[i:i+m, j:j+n] * kernel)
+        return z_new
+</code></pre>
+<h3 id="_210">Пример фильтра</h3>
+<p><strong>Фильтр Собеля для детекции вертикальных краев:</strong></p>
+<pre><code>[-1  0  1]
+[-1  0  1]
+[-1  0  1]
+</code></pre>
+<p><strong>Фильтр для детекции горизонтальных краев:</strong></p>
+<pre><code>[-1 -1 -1]
+[ 0  0  0]
+[ 1  1  1]
+</code></pre>
+<h3 id="_211">Многоканальная свертка</h3>
+<p>Для RGB изображения (3 канала):
+- Фильтр имеет размер F×F×3
+- Свертка применяется по всем каналам
+- Результаты суммируются</p>
+<pre><code>Output[i,j] = Σₖ Σₘ Σₙ Input[i+m, j+n, k] × Filter[m, n, k]
+</code></pre>
+<h2 id="_212">Типы сверток</h2>
+<h3 id="1-valid-padding">1. Обычная свертка (Valid Padding)</h3>
+<p>Без дополнения границ:</p>
+<pre><code>W_out = W_in - F + 1
+</code></pre>
+<h3 id="2-same-padding">2. Свертка с дополнением (Same Padding)</h3>
+<p>Добавление нулей по краям для сохранения размера:</p>
+<pre><code>P = (F - 1) / 2  # для нечетного F
+W_out = W_in
+</code></pre>
+<h3 id="3-transposed-convolution">3. Транспонированная свертка (Transposed Convolution)</h3>
+<p>Увеличивает пространственные размеры:
+- Используется в сегментации изображений
+- Генеративных моделях</p>
+<h3 id="4-depthwise-separable-convolution">4. Разделенная свертка (Depthwise Separable Convolution)</h3>
+<p>Разделяет свертку на два этапа:
+1. <strong>Depthwise</strong>: свертка по каждому каналу отдельно
+2. <strong>Pointwise</strong>: свертка 1×1 для комбинации каналов</p>
+<p>Экономит параметры, используется в MobileNet.</p>
+<h3 id="5-dilated-convolution">5. Дилатированная свертка (Dilated Convolution)</h3>
+<p>Фильтр с пропусками (atrous convolution):</p>
+<pre><code>Увеличивает receptive field без увеличения параметров
+</code></pre>
+<p>Используется в семантической сегментации.</p>
+<h2 id="receptive-field">Receptive Field</h2>
+<p>Receptive field - область входного изображения, влияющая на конкретный нейрон.</p>
+<p><strong>Расчет:</strong></p>
+<pre><code>RF_l = RF_{l-1} + (F_l - 1) × Π_{i=1}^{l-1} S_i
+</code></pre>
+<p>где:
+- F_l - размер фильтра на слое l
+- S_i - stride на предыдущих слоях</p>
+<p><strong>Пример:</strong>
+- Conv1: 3×3, stride=1 → RF = 3
+- Conv2: 3×3, stride=1 → RF = 5
+- Pool: 2×2, stride=2 → RF = 12</p>
+<p>Чем больше receptive field, тем более глобальный контекст учитывает нейрон.</p>
+<h2 id="cnn_5">Классические архитектуры CNN</h2>
+<h3 id="lenet-5-1998">LeNet-5 (1998)</h3>
+<p>Пионер CNN для распознавания цифр:</p>
+<pre><code>Input → Conv → Pool → Conv → Pool → FC → FC → Output
+</code></pre>
+<h3 id="alexnet-2012">AlexNet (2012)</h3>
+<p>Прорыв в ImageNet:
+- 8 слоёв (5 conv + 3 FC)
+- ReLU активации
+- Dropout
+- Data augmentation</p>
+<h3 id="vggnet-2014">VGGNet (2014)</h3>
+<p>Глубокая сеть с однородной архитектурой:
+- Только фильтры 3×3
+- Глубина 16-19 слоёв
+- Простая и элегантная архитектура</p>
+<h3 id="googlenet-inception-2014">GoogLeNet / Inception (2014)</h3>
+<p>Модули Inception с параллельными свертками:</p>
+<pre><code>[1×1 conv]
+[3×3 conv]     → concatenate
+[5×5 conv]
+[max pool + 1×1]
+</code></pre>
+<h3 id="resnet-2015">ResNet (2015)</h3>
+<p>Остаточные соединения (skip connections):</p>
+<pre><code>Output = F(x) + x
+</code></pre>
+<p>Позволяет обучать очень глубокие сети (до 152 слоёв).</p>
+<h3 id="efficientnet-2019">EfficientNet (2019)</h3>
+<p>Масштабирование по глубине, ширине и разрешению:
+- Compound scaling
+- State-of-the-art эффективность</p>
+<h2 id="cnn-python">Реализация CNN на Python</h2>
+<pre><code class="language-python">import numpy as np
+
+class ConvLayer:
+    def __init__(self, in_channels, out_channels, filter_size, stride=1, padding=0):
+        self.in_channels = in_channels
+        self.out_channels = out_channels
+        self.filter_size = filter_size
+        self.stride = stride
+        self.padding = padding
+
+        # Инициализация весов (Xavier)
+        scale = np.sqrt(2.0 / (in_channels * filter_size * filter_size))
+        self.weights = np.random.randn(
+            out_channels, in_channels, filter_size, filter_size
+        ) * scale
+        self.biases = np.zeros(out_channels)
+
+        self.cache = None
+
+    def forward(self, X):
+        batch_size = X.shape[0]
+
+        # Добавление padding
+        if self.padding &gt; 0:
+            X_padded = np.pad(X, ((0, 0), (0, 0), (self.padding, self.padding), 
+                                  (self.padding, self.padding)), mode='constant')
+        else:
+            X_padded = X
+
+        # Вычисление выходных размеров
+        _, _, h_in, w_in = X_padded.shape
+        h_out = (h_in - self.filter_size) // self.stride + 1
+        w_out = (w_in - self.filter_size) // self.stride + 1
+
+        # Инициализация выхода
+        out = np.zeros((batch_size, self.out_channels, h_out, w_out))
+
+        # Свертка
+        for i in range(h_out):
+            for j in range(w_out):
+                h_start = i * self.stride
+                h_end = h_start + self.filter_size
+                w_start = j * self.stride
+                w_end = w_start + self.filter_size
+
+                # Извлечение региона
+                region = X_padded[:, :, h_start:h_end, w_start:w_end]
+
+                # Свертка для каждого фильтра
+                for f in range(self.out_channels):
+                    out[:, f, i, j] = np.sum(region * self.weights[f], axis=(1, 2, 3))
+
+                out[:, :, i, j] += self.biases
+
+        self.cache = (X, X_padded, region)
+        return out
+
+    def backward(self, dout):
+        X, X_padded, _ = self.cache
+        batch_size = X.shape[0]
+
+        # Градиенты
+        dweights = np.zeros_like(self.weights)
+        dbiases = np.sum(dout, axis=(0, 2, 3))
+        dX_padded = np.zeros_like(X_padded)
+
+        # Вычисление градиентов
+        _, _, h_out, w_out = dout.shape
+
+        for i in range(h_out):
+            for j in range(w_out):
+                h_start = i * self.stride
+                h_end = h_start + self.filter_size
+                w_start = j * self.stride
+                w_end = w_start + self.filter_size
+
+                region = X_padded[:, :, h_start:h_end, w_start:w_end]
+
+                for f in range(self.out_channels):
+                    dweights[f] += np.sum(
+                        region * dout[:, f, i, j][:, None, None, None],
+                        axis=0
+                    )
+                    dX_padded[:, :, h_start:h_end, w_start:w_end] += \
+                        self.weights[f] * dout[:, f, i, j][:, None, None, None]
+
+        # Удаление padding из градиента
+        if self.padding &gt; 0:
+            dX = dX_padded[:, :, self.padding:-self.padding, self.padding:-self.padding]
+        else:
+            dX = dX_padded
+
+        return dX, dweights, dbiases
+
+
+class MaxPoolLayer:
+    def __init__(self, filter_size=2, stride=2):
+        self.filter_size = filter_size
+        self.stride = stride
+        self.cache = None
+
+    def forward(self, X):
+        batch_size, channels, h_in, w_in = X.shape
+
+        h_out = (h_in - self.filter_size) // self.stride + 1
+        w_out = (w_in - self.filter_size) // self.stride + 1
+
+        out = np.zeros((batch_size, channels, h_out, w_out))
+        max_indices = {}
+
+        for b in range(batch_size):
+            for c in range(channels):
+                for i in range(h_out):
+                    for j in range(w_out):
+                        h_start = i * self.stride
+                        h_end = h_start + self.filter_size
+                        w_start = j * self.stride
+                        w_end = w_start + self.filter_size
+
+                        region = X[b, c, h_start:h_end, w_start:w_end]
+                        max_val = np.max(region)
+                        max_idx = np.unravel_index(np.argmax(region), region.shape)
+
+                        out[b, c, i, j] = max_val
+                        max_indices[(b, c, i, j)] = (h_start + max_idx[0], 
+                                                     w_start + max_idx[1])
+
+        self.cache = (X, max_indices)
+        return out
+
+    def backward(self, dout):
+        X, max_indices = self.cache
+        batch_size, channels, h_in, w_in = X.shape
+
+        dX = np.zeros_like(X)
+
+        for b in range(batch_size):
+            for c in range(channels):
+                for i in range(dout.shape[2]):
+                    for j in range(dout.shape[3]):
+                        h, w = max_indices[(b, c, i, j)]
+                        dX[b, c, h, w] += dout[b, c, i, j]
+
+        return dX
+</code></pre>
+<h2 id="data-augmentation">Data Augmentation</h2>
+<p>Методы увеличения данных для улучшения обобщения:</p>
+<pre><code class="language-python">from tensorflow.keras.preprocessing.image import ImageDataGenerator
+
+datagen = ImageDataGenerator(
+    rotation_range=20,        # случайные повороты
+    width_shift_range=0.2,    # сдвиги по ширине
+    height_shift_range=0.2,   # сдвиги по высоте
+    shear_range=0.2,          # искажения
+    zoom_range=0.2,           # зум
+    horizontal_flip=True,     # горизонтальные отражения
+    fill_mode='nearest'       # заполнение новых пикселей
+)
+</code></pre>
+<h2 id="_213">Визуализация признаков</h2>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+
+def visualize_filters(conv_layer):
+    &quot;&quot;&quot;Визуализация фильтров сверточного слоя&quot;&quot;&quot;
+    filters = conv_layer.weights
+    n_filters = filters.shape[0]
+
+    fig, axes = plt.subplots(n_filters // 8, 8, figsize=(12, 6))
+
+    for i, ax in enumerate(axes.flat):
+        if i &lt; n_filters:
+            # Нормализация для визуализации
+            f = (filters[i] - filters[i].min()) / (filters[i].max() - filters[i].min())
+            ax.imshow(f.transpose(1, 2, 0))
+        ax.axis('off')
+
+    plt.tight_layout()
+    plt.show()
+
+
+def visualize_feature_maps(conv_output):
+    &quot;&quot;&quot;Визуализация карт признаков&quot;&quot;&quot;
+    n_maps = conv_output.shape[1]
+
+    fig, axes = plt.subplots(n_maps // 8, 8, figsize=(12, 6))
+
+    for i, ax in enumerate(axes.flat):
+        if i &lt; n_maps:
+            ax.imshow(conv_output[0, i], cmap='viridis')
+        ax.axis('off')
+
+    plt.tight_layout()
+    plt.show()
+</code></pre>
+<h2 id="_214">Практические рекомендации</h2>
+<h3 id="_215">Выбор архитектуры</h3>
+<ol>
+<li><strong>Начните с простой модели</strong></li>
+<li>Несколько сверточных слоев</li>
+<li>
+<p>Постепенно увеличивайте глубину</p>
+</li>
+<li>
+<p><strong>Используйте предобученные модели</strong></p>
+</li>
+<li>Transfer learning</li>
+<li>
+<p>Fine-tuning под вашу задачу</p>
+</li>
+<li>
+<p><strong>Размер фильтра</strong></p>
+</li>
+<li>3×3 - стандартный выбор</li>
+<li>1×1 - для изменения глубины</li>
+<li>5×5, 7×7 - только в первых слоях</li>
+</ol>
+<h3 id="_216">Гиперпараметры</h3>
+<ul>
+<li><strong>Learning rate</strong>: 0.001 - 0.01 (с decay)</li>
+<li><strong>Batch size</strong>: 32, 64, 128</li>
+<li><strong>Optimizer</strong>: Adam, SGD with momentum</li>
+<li><strong>Regularization</strong>: Dropout, L2, data augmentation</li>
+</ul>
+<h3 id="_217">Предобработка данных</h3>
+<ol>
+<li>Нормализация пикселей (0-1 или -1 до 1)</li>
+<li>Вычитание среднего значения</li>
+<li>Resize к единому размеру</li>
+</ol>
+<h2 id="_218">Заключение</h2>
+<p>CNN произвели революцию в компьютерном зрении и продолжают доминировать во многих задачах:
+- Классификация изображений
+- Детекция объектов
+- Семантическая сегментация
+- Распознавание лиц
+- Медицинская диагностика</p>
+<p>Понимание принципов работы CNN необходимо для любого специалиста по машинному обучению.</p>
+<h2 id="_219">Дополнительные ресурсы</h2>
+<ul>
+<li><a href="http://cs231n.stanford.edu/">CS231n: CNN for Visual Recognition</a></li>
+<li><a href="https://www.deeplearningbook.org/">Deep Learning Book - Chapter 9</a></li>
+<li><a href="https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html">PyTorch CNN Tutorial</a></li>
+<li><a href="https://keras.io/guides/sequential_model/">Keras CNN Guide</a></li>
+</ul>
+<p>================================================================================</p>
+<h1 id="_220">Глубокое обучение</h1>
+<h2 id="1-cnn">1. Сверточные нейронные сети (CNN)</h2>
+<h3 id="_221">Принцип работы</h3>
+<p>Используют свертки для извлечения локальных признаков из изображений.</p>
+<p><strong>Операция свертки:</strong></p>
+<pre><code>Выход[i,j] = ΣΣ Вход[i+m, j+n] · Ядро[m, n] + bias
+</code></pre>
+<h3 id="_222">Основные слои</h3>
+<h4 id="convolutional-layer">Convolutional Layer</h4>
+<pre><code>Параметры:
+- Размер ядра (kernel size): 3×3, 5×5
+- Количество фильтров
+-Stride (шаг): 1, 2
+- Padding: same, valid
+
+Эффект:
+- Извлечение признаков (края, текстуры, паттерны)
+- Сохранение пространственной структуры
+</code></pre>
+<h4 id="pooling-layer">Pooling Layer</h4>
+<pre><code>Max Pooling:
+- Берёт максимум из области (обычно 2×2)
+- Уменьшает размерность
+- Повышает инвариантность к сдвигам
+
+Average Pooling:
+- Усреднение по области
+- Более мягкое уменьшение
+</code></pre>
+<h4 id="fully-connected-layer">Fully Connected Layer</h4>
+<pre><code>В конце сети для классификации
+Объединяет все признаки
+</code></pre>
+<h3 id="cnn_6">Архитектуры CNN</h3>
+<h4 id="lenet-5-1998_1">LeNet-5 (1998)</h4>
+<pre><code>Conv → Pool → Conv → Pool → FC → FC → Output
+Для распознавания цифр
+</code></pre>
+<h4 id="alexnet-2012_1">AlexNet (2012)</h4>
+<pre><code>5 сверточных слоев + 3 полностью связных
+ReLU, Dropout, Data Augmentation
+Прорыв в ImageNet
+</code></pre>
+<h4 id="vgg-2014">VGG (2014)</h4>
+<pre><code>Много слоев 3×3 вместо больших ядер
+Глубина: 16-19 слоев
+Простая и элегантная архитектура
+</code></pre>
+<h4 id="resnet-2015_1">ResNet (2015)</h4>
+<pre><code>Остаточные блоки (Residual Blocks)
+Skip connections: y = F(x) + x
+Позволяет обучать очень глубокие сети (100+ слоев)
+Решает проблему деградации
+</code></pre>
+<h2 id="2-rnn">2. Рекуррентные нейронные сети (RNN)</h2>
+<h3 id="rnn_1">Базовая RNN</h3>
+<pre><code>hₜ = f(W·hₜ₋₁ + U·xₜ + b)
+yₜ = g(V·hₜ + c)
+
+Проблемы:
+- Затухающий градиент
+- Взрывающийся градиент
+- Не может запоминать длинные зависимости
+</code></pre>
+<h3 id="lstm-long-short-term-memory">LSTM (Long Short-Term Memory)</h3>
+<pre><code>Три гейта:
+1. Forget Gate: fₜ = σ(W_f·[hₜ₋₁, xₜ] + b_f)
+2. Input Gate: iₜ = σ(W_i·[hₜ₋₁, xₜ] + b_i)
+3. Output Gate: oₜ = σ(W_o·[hₜ₋₁, xₜ] + b_o)
+
+Cell State: Cₜ = fₜ·Cₜ₋₁ + iₜ·tanh(W_C·[hₜ₋₁, xₜ] + b_C)
+Hidden State: hₜ = oₜ·tanh(Cₜ)
+
+Преимущества:
+- Запоминание длинных зависимостей
+- Контроль потока информации
+</code></pre>
+<h3 id="gru-gated-recurrent-unit">GRU (Gated Recurrent Unit)</h3>
+<pre><code>Упрощенная версия LSTM
+Два гейта:
+1. Update Gate: zₜ = σ(W_z·[hₜ₋₁, xₜ])
+2. Reset Gate: rₜ = σ(W_r·[hₜ₋₁, xₜ])
+
+Новое состояние: h̃ₜ = tanh(W·[rₜ·hₜ₋₁, xₜ])
+Выход: hₜ = (1-zₜ)·hₜ₋₁ + zₜ·h̃ₜ
+
+Быстрее LSTM, сравнимое качество
+</code></pre>
+<h3 id="bidirectional-rnn">Bidirectional RNN</h3>
+<pre><code>Обрабатывает последовательность в обоих направлениях
+hₜ = [h→ₜ, h←ₜ]
+Применение: NLP (контекст слева и справа)
+</code></pre>
+<h2 id="3-transformer-attention-mechanisms">3. Transformer и Attention Mechanisms</h2>
+<h3 id="attention-mechanism">Attention Mechanism</h3>
+<pre><code>Query (Q), Key (K), Value (V)
+
+Attention(Q, K, V) = softmax(Q·Kᵀ / √d_k) · V
+
+√d_k - масштабирование для стабильных градиентов
+</code></pre>
+<h3 id="self-attention">Self-Attention</h3>
+<pre><code>Q, K, V получаются из одного входа
+Каждое слово взаимодействует со всеми остальными
+Параллельные вычисления (в отличие от RNN)
+</code></pre>
+<h3 id="multi-head-attention">Multi-Head Attention</h3>
+<pre><code>Несколько attention &quot;голов&quot; параллельно
+MultiHead(Q, K, V) = Concat(head₁, ..., headₕ)·W_O
+headᵢ = Attention(Q·W_Qᵢ, K·W_Kᵢ, V·W_Vᵢ)
+
+Каждая голова учит разные типы зависимостей
+</code></pre>
+<h3 id="transformer-encoder">Transformer Encoder</h3>
+<pre><code>1. Multi-Head Self-Attention
+2. Add &amp; Norm ( residual + LayerNorm)
+3. Feed-Forward Network
+4. Add &amp; Norm
+
+Повторяется N раз (обычно 6 или 12)
+</code></pre>
+<h3 id="transformer-decoder">Transformer Decoder</h3>
+<pre><code>1. Masked Multi-Head Self-Attention
+2. Multi-Head Cross-Attention (с encoder)
+3. Feed-Forward Network
+С residual connections и LayerNorm
+</code></pre>
+<h3 id="positional-encoding">Positional Encoding</h3>
+<pre><code>Добавляет информацию о позиции токенов
+PE(pos, 2i) = sin(pos / 10000^(2i/d_model))
+PE(pos, 2i+1) = cos(pos / 10000^(2i/d_model))
+</code></pre>
+<h3 id="transformer">Применения Transformer</h3>
+<pre><code>- BERT (Encoder-only) - понимание текста
+- GPT (Decoder-only) - генерация текста
+- T5 (Encoder-Decoder) - перевод, суммаризация
+- Vision Transformer (ViT) - классификация изображений
+</code></pre>
+<h2 id="4-generative-models">4. Generative Models</h2>
+<h3 id="autoencoders_2">Autoencoders</h3>
+<pre><code>Encoder: z = f(x)  (сжатие)
+Decoder: x̂ = g(z)  (восстановление)
+
+Применения:
+- Снижение размерности
+- Denoising
+- Generative модели
+</code></pre>
+<h3 id="variational-autoencoders-vae">Variational Autoencoders (VAE)</h3>
+<pre><code>Кодирует в распределение N(μ, σ²)
+Sample: z = μ + σ·ε, ε ~ N(0,1)
+Loss = Reconstruction + KL-divergence
+
+Генерирует новые данные
+</code></pre>
+<h3 id="gan-generative-adversarial-networks">GAN (Generative Adversarial Networks)</h3>
+<pre><code>Generator: создаёт фейковые данные
+Discriminator: отличает реальные от фейковых
+
+Минимаксная игра:
+min_G max_D V(D,G) = E[log D(x)] + E[log(1-D(G(z)))]
+
+Применения: генерация изображений, style transfer
+</code></pre>
+<h3 id="diffusion-models">Diffusion Models</h3>
+<pre><code>Forward process: постепенное добавление шума
+Reverse process: обучение удалению шума
+
+State-of-the-art для генерации изображений
+DALL-E 2, Stable Diffusion, Midjourney
+</code></pre>
+<p>================================================================================</p>
+<h1 id="rnn_2">Рекуррентные нейронные сети (RNN)</h1>
+<h2 id="_223">Введение</h2>
+<p>Рекуррентные нейронные сети (Recurrent Neural Networks, RNN) - это класс нейронных сетей, предназначенных для обработки последовательных данных, где порядок элементов имеет значение.</p>
+<h2 id="rnn_3">Почему RNN?</h2>
+<h3 id="_224">Ограничения обычных сетей</h3>
+<p>Обычные нейронные сети (CNN, FC) предполагают:
+- Независимость входов друг от друга
+- Фиксированный размер входа
+- Отсутствие памяти о предыдущих входах</p>
+<h3 id="_225">Задачи с последовательностями</h3>
+<ul>
+<li><strong>Временные ряды</strong>: прогнозирование, анализ</li>
+<li><strong>Текст</strong>: перевод, генерация, классификация</li>
+<li><strong>Речь</strong>: распознавание, синтез</li>
+<li><strong>Видео</strong>: анализ действий, предсказание</li>
+</ul>
+<h2 id="rnn_4">Архитектура RNN</h2>
+<h3 id="rnn_5">Базовая ячейка RNN</h3>
+<pre><code>h_t = f(W_hh · h_{t-1} + W_xh · x_t + b_h)
+y_t = g(W_hy · h_t + b_y)
+</code></pre>
+<p>где:
+- x_t - вход в момент времени t
+- h_t - скрытое состояние в момент t
+- y_t - выход в момент t
+- W_hh, W_xh, W_hy - матрицы весов
+- f, g - функции активации</p>
+<h3 id="_226">Развертка во времени</h3>
+<p>RNN можно представить как развернутую сеть:</p>
+<pre><code>x_0 → [RNN] → h_0 → y_0
+        ↓
+x_1 → [RNN] → h_1 → y_1
+        ↓
+x_2 → [RNN] → h_2 → y_2
+</code></pre>
+<p>Одни и те же веса применяются на каждом шаге.</p>
+<h2 id="rnn_6">Типы архитектур RNN</h2>
+<h3 id="one-to-one">One-to-One</h3>
+<p>Обычная нейронная сеть:</p>
+<pre><code>Вход → [RNN] → Выход
+</code></pre>
+<p>Пример: классификация изображений</p>
+<h3 id="one-to-many">One-to-Many</h3>
+<p>Один вход, последовательность выходов:</p>
+<pre><code>Вход → [RNN] → Выход_1 → Выход_2 → ...
+</code></pre>
+<p>Пример: генерация подписей к изображениям</p>
+<h3 id="many-to-one">Many-to-One</h3>
+<p>Последовательность входов, один выход:</p>
+<pre><code>Вход_1 → Вход_2 → ... → [RNN] → Выход
+</code></pre>
+<p>Пример: классификация текста, анализ тональности</p>
+<h3 id="many-to-many">Many-to-Many (синхронный)</h3>
+<pre><code>Вход_1 → [RNN] → Выход_1
+Вход_2 → [RNN] → Выход_2
+</code></pre>
+<p>Пример: POS-tagging</p>
+<h3 id="many-to-many_1">Many-to-Many (асинхронный)</h3>
+<pre><code>Вход_1 → Вход_2 → [RNN] → Выход_1 → Выход_2
+</code></pre>
+<p>Пример: машинный перевод</p>
+<h2 id="rnn_7">Проблемы базовых RNN</h2>
+<h3 id="_227">Исчезающие градиенты</h3>
+<p>При обратном распространении через много шагов:
+- Градиенты умножаются на каждом шаге
+- При |W| &lt; 1 градиенты экспоненциально затухают
+- Сеть не может обучаться долгосрочным зависимостям</p>
+<h3 id="_228">Взрывающиеся градиенты</h3>
+<p>При |W| &gt; 1 градиенты экспоненциально растут.</p>
+<p><strong>Решение</strong>: Gradient clipping</p>
+<pre><code class="language-python">torch.nn.utils.clip_grad_norm_(parameters, max_norm=1.0)
+</code></pre>
+<h2 id="lstm-long-short-term-memory_1">LSTM (Long Short-Term Memory)</h2>
+<p>LSTM решает проблему исчезающих градиентов с помощью гейтов.</p>
+<h3 id="lstm">Архитектура LSTM</h3>
+<pre><code class="language-python"># Forget gate: что забыть
+f_t = σ(W_f · [h_{t-1}, x_t] + b_f)
+
+# Input gate: что запомнить
+i_t = σ(W_i · [h_{t-1}, x_t] + b_i)
+c̃_t = tanh(W_c · [h_{t-1}, x_t] + b_c)
+
+# Update cell state
+c_t = f_t ⊙ c_{t-1} + i_t ⊙ c̃_t
+
+# Output gate: что выдать
+o_t = σ(W_o · [h_{t-1}, x_t] + b_o)
+h_t = o_t ⊙ tanh(c_t)
+</code></pre>
+<p>где:
+- c_t - состояние ячейки (cell state)
+- h_t - скрытое состояние
+- σ - sigmoid функция
+- ⊙ - поэлементное умножение</p>
+<h3 id="lstm_1">Преимущества LSTM</h3>
+<ul>
+<li>Явная память через cell state</li>
+<li>Гейты контролируют поток информации</li>
+<li>Могут запоминать на сотни шагов</li>
+</ul>
+<h2 id="gru-gated-recurrent-unit_1">GRU (Gated Recurrent Unit)</h2>
+<p>Упрощенная версия LSTM:</p>
+<pre><code class="language-python"># Reset gate: насколько забыть прошлое
+r_t = σ(W_r · [h_{t-1}, x_t])
+
+# Update gate: насколько обновить
+z_t = σ(W_z · [h_{t-1}, x_t])
+
+# Candidate activation
+h̃_t = tanh(W_h · [r_t ⊙ h_{t-1}, x_t])
+
+# Final hidden state
+h_t = (1 - z_t) ⊙ h_{t-1} + z_t ⊙ h̃_t
+</code></pre>
+<h3 id="lstm-gru_1">Сравнение LSTM и GRU</h3>
+<table>
+<thead>
+<tr>
+<th>Характеристика</th>
+<th>LSTM</th>
+<th>GRU</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Параметров</td>
+<td>Больше</td>
+<td>Меньше</td>
+</tr>
+<tr>
+<td>Скорость</td>
+<td>Медленнее</td>
+<td>Быстрее</td>
+</tr>
+<tr>
+<td>Качество</td>
+<td>Немного лучше</td>
+<td>Почти такое же</td>
+</tr>
+<tr>
+<td>Рекомендация</td>
+<td>Большие данные</td>
+<td>Ограниченные ресурсы</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bidirectional-rnn_1">Bidirectional RNN</h2>
+<p>Обрабатывает последовательность в обоих направлениях:</p>
+<pre><code>Вперед: x_1 → x_2 → ... → x_n
+Назад:  x_n → x_{n-1} → ... → x_1
+Выход:  Concat(h_forward, h_backward)
+</code></pre>
+<p>Применение: NLP задачи, где контекст важен с обеих сторон.</p>
+<h2 id="deep-rnn">Deep RNN</h2>
+<p>Многослойные RNN для более сложных представлений:</p>
+<pre><code>x → [RNN L1] → h_1 → [RNN L2] → h_2 → ... → Выход
+</code></pre>
+<p>Каждый слой изучает разные уровни абстракции.</p>
+<h2 id="rnn-python">Реализация RNN на Python</h2>
+<pre><code class="language-python">import numpy as np
+
+class SimpleRNN:
+    def __init__(self, input_size, hidden_size, output_size):
+        self.hidden_size = hidden_size
+
+        # Инициализация весов
+        scale = 0.1
+        self.W_xh = np.random.randn(input_size, hidden_size) * scale
+        self.W_hh = np.random.randn(hidden_size, hidden_size) * scale
+        self.W_hy = np.random.randn(hidden_size, output_size) * scale
+
+        self.b_h = np.zeros((1, hidden_size))
+        self.b_y = np.zeros((1, output_size))
+
+        self.cache = {}
+
+    def tanh(self, x):
+        return np.tanh(x)
+
+    def tanh_derivative(self, x):
+        return 1 - np.tanh(x) ** 2
+
+    def softmax(self, x):
+        exp_x = np.exp(x - np.max(x, axis=-1, keepdims=True))
+        return exp_x / np.sum(exp_x, axis=-1, keepdims=True)
+
+    def forward(self, X):
+        &quot;&quot;&quot;
+        X: последовательность входов (batch_size, seq_length, input_size)
+        &quot;&quot;&quot;
+        batch_size, seq_length, _ = X.shape
+
+        # Инициализация
+        h = np.zeros((batch_size, self.hidden_size))
+        self.cache['X'] = X
+        self.cache['h'] = [h]
+
+        # Прямой проход по времени
+        for t in range(seq_length):
+            x_t = X[:, t, :]
+            h = self.tanh(np.dot(x_t, self.W_xh) + np.dot(h, self.W_hh) + self.b_h)
+            self.cache['h'].append(h)
+
+        # Выход
+        y = self.softmax(np.dot(h, self.W_hy) + self.b_y)
+
+        return y, h
+
+    def backward(self, dy, learning_rate=0.01):
+        batch_size = dy.shape[0]
+        X = self.cache['X']
+        seq_length = X.shape[1]
+        hs = self.cache['h']
+
+        # Инициализация градиентов
+        dW_xh = np.zeros_like(self.W_xh)
+        dW_hh = np.zeros_like(self.W_hh)
+        dW_hy = np.zeros_like(self.W_hy)
+        db_h = np.zeros_like(self.b_h)
+        db_y = np.zeros_like(self.b_y)
+
+        # Градиент по выходному слою
+        dh_next = np.dot(dy, self.W_hy.T)
+        dW_hy = np.dot(hs[-1].T, dy)
+        db_y = np.sum(dy, axis=0, keepdims=True)
+
+        # Обратное распространение во времени (BPTT)
+        for t in reversed(range(seq_length)):
+            dh = dh_next * self.tanh_derivative(np.dot(X[:, t], self.W_xh) + 
+                                                 np.dot(hs[t], self.W_hh) + self.b_h)
+
+            dW_xh += np.dot(X[:, t].T, dh)
+            dW_hh += np.dot(hs[t].T, dh)
+            db_h += np.sum(dh, axis=0, keepdims=True)
+
+            dh_next = np.dot(dh, self.W_hh.T)
+
+        # Обновление весов (градиентный спуск)
+        self.W_xh -= learning_rate * dW_xh
+        self.W_hh -= learning_rate * dW_hh
+        self.W_hy -= learning_rate * dW_hy
+        self.b_h -= learning_rate * db_h
+        self.b_y -= learning_rate * db_y
+
+
+class LSTM:
+    def __init__(self, input_size, hidden_size):
+        self.hidden_size = hidden_size
+
+        # Веса для каждого гейта
+        scale = 0.1
+        self.W_f = np.random.randn(input_size + hidden_size, hidden_size) * scale
+        self.W_i = np.random.randn(input_size + hidden_size, hidden_size) * scale
+        self.W_c = np.random.randn(input_size + hidden_size, hidden_size) * scale
+        self.W_o = np.random.randn(input_size + hidden_size, hidden_size) * scale
+
+        self.b_f = np.ones((1, hidden_size))  # forget gate инициализируется единицами
+        self.b_i = np.zeros((1, hidden_size))
+        self.b_c = np.zeros((1, hidden_size))
+        self.b_o = np.zeros((1, hidden_size))
+
+        self.cache = {}
+
+    def sigmoid(self, x):
+        return 1 / (1 + np.exp(-np.clip(x, -500, 500)))
+
+    def forward(self, X, h_prev=None, c_prev=None):
+        batch_size, seq_length, _ = X.shape
+
+        if h_prev is None:
+            h_prev = np.zeros((batch_size, self.hidden_size))
+        if c_prev is None:
+            c_prev = np.zeros((batch_size, self.hidden_size))
+
+        self.cache['X'] = X
+        self.cache['h'] = [h_prev]
+        self.cache['c'] = [c_prev]
+
+        h = h_prev
+        c = c_prev
+
+        for t in range(seq_length):
+            x_t = X[:, t, :]
+            combined = np.concatenate([h, x_t], axis=1)
+
+            # Gates
+            f_t = self.sigmoid(np.dot(combined, self.W_f) + self.b_f)
+            i_t = self.sigmoid(np.dot(combined, self.W_i) + self.b_i)
+            c_tilde = np.tanh(np.dot(combined, self.W_c) + self.b_c)
+            o_t = self.sigmoid(np.dot(combined, self.W_o) + self.b_o)
+
+            # Update states
+            c = f_t * c + i_t * c_tilde
+            h = o_t * np.tanh(c)
+
+            self.cache['h'].append(h)
+            self.cache['c'].append(c)
+
+        return h, c
+</code></pre>
+<h2 id="attention-mechanism_1">Attention Mechanism</h2>
+<p>Механизм внимания позволяет модели фокусироваться на релевантных частях входа:</p>
+<pre><code class="language-python">def attention(query, key, value):
+    scores = np.matmul(query, key.transpose(0, 2, 1))
+    scores /= np.sqrt(key.shape[-1])
+    weights = softmax(scores)
+    output = np.matmul(weights, value)
+    return output, weights
+</code></pre>
+<h2 id="transformer-architecture">Transformer Architecture</h2>
+<p>Современная архитектура на основе attention:</p>
+<ul>
+<li>Self-Attention для контекста</li>
+<li>Multi-Head Attention для разных представлений</li>
+<li>Positional Encoding для порядка</li>
+<li>Feed-Forward слои</li>
+<li>Layer Normalization и residual connections</li>
+</ul>
+<h2 id="_229">Практическое применение</h2>
+<pre><code class="language-python"># PyTorch пример
+import torch
+import torch.nn as nn
+
+class TextClassifier(nn.Module):
+    def __init__(self, vocab_size, embed_dim, hidden_dim, num_classes):
+        super().__init__()
+        self.embedding = nn.Embedding(vocab_size, embed_dim)
+        self.lstm = nn.LSTM(embed_dim, hidden_dim, batch_first=True, 
+                           bidirectional=True, dropout=0.3)
+        self.fc = nn.Linear(hidden_dim * 2, num_classes)
+        self.dropout = nn.Dropout(0.5)
+
+    def forward(self, x):
+        embedded = self.dropout(self.embedding(x))
+        lstm_out, (hidden, cell) = self.lstm(embedded)
+        # Используем последнее скрытое состояние с обоих направлений
+        hidden_cat = torch.cat((hidden[-2,:,:], hidden[-1,:,:]), dim=1)
+        return self.fc(self.dropout(hidden_cat))
+</code></pre>
+<h2 id="_230">Заключение</h2>
+<p>RNN и их варианты (LSTM, GRU) остаются важными инструментами для работы с последовательностями, хотя в некоторых задачах их вытесняют Transformers.</p>
+<h2 id="_231">Дополнительные ресурсы</h2>
+<ul>
+<li><a href="https://colah.github.io/posts/2015-08-Understanding-LSTMs/">Understanding LSTM Networks</a></li>
+<li><a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/">The Unreasonable Effectiveness of RNNs</a></li>
+<li><a href="https://pytorch.org/tutorials/intermediate/seq2seq_translation_tutorial.html">PyTorch RNN Tutorial</a></li>
+</ul>
+<p>================================================================================</p>
+<h1 id="transformers">Трансформеры (Transformers)</h1>
+<h2 id="_232">Введение</h2>
+<p>Трансформеры - это архитектура нейронных сетей, основанная на механизме внимания (attention mechanism), которая произвела революцию в обработке естественного языка и других областях.</p>
+<h2 id="transformers_1">Почему Transformers?</h2>
+<h3 id="rnnlstm">Ограничения RNN/LSTM</h3>
+<ul>
+<li>Последовательная обработка (медленно)</li>
+<li>Проблемы с длинными зависимостями</li>
+<li>Сложность параллелизации</li>
+</ul>
+<h3 id="transformers_2">Преимущества Transformers</h3>
+<ul>
+<li>Полная параллелизация</li>
+<li>Прямые связи между любыми позициями</li>
+<li>Масштабируемость</li>
+</ul>
+<h2 id="transformer_1">Архитектура Transformer</h2>
+<h3 id="encoder-decoder">Encoder-Decoder структура</h3>
+<pre><code>Вход → [Encoder] → Контекст → [Decoder] → Выход
+</code></pre>
+<h3 id="encoder_1">Encoder</h3>
+<p>Состоит из N идентичных слоев:
+- Multi-Head Attention
+- Feed-Forward Network
+- Layer Normalization
+- Residual Connections</p>
+<h3 id="decoder_1">Decoder</h3>
+<p>Также N слоев плюс:
+- Masked Multi-Head Attention
+- Encoder-Decoder Attention</p>
+<h2 id="self-attention_1">Self-Attention</h2>
+<h3 id="_233">Механизм внимания</h3>
+<pre><code>Attention(Q, K, V) = softmax(QK^T / √d_k) · V
+</code></pre>
+<p>где:
+- Q (Query) - запрос
+- K (Key) - ключ
+- V (Value) - значение
+- d_k - размерность ключа</p>
+<h3 id="scaled-dot-product-attention">Scaled Dot-Product Attention</h3>
+<pre><code class="language-python">def scaled_dot_product_attention(Q, K, V):
+    d_k = K.shape[-1]
+    scores = np.matmul(Q, K.transpose(0, 2, 1))
+    scores /= np.sqrt(d_k)
+    weights = softmax(scores)
+    output = np.matmul(weights, V)
+    return output, weights
+</code></pre>
+<h2 id="multi-head-attention_1">Multi-Head Attention</h2>
+<p>Параллельное применение нескольких heads:</p>
+<pre><code class="language-python">class MultiHeadAttention:
+    def __init__(self, d_model, num_heads):
+        self.num_heads = num_heads
+        self.d_model = d_model
+        self.d_k = d_model // num_heads
+
+        self.W_q = nn.Linear(d_model, d_model)
+        self.W_k = nn.Linear(d_model, d_model)
+        self.W_v = nn.Linear(d_model, d_model)
+        self.W_o = nn.Linear(d_model, d_model)
+
+    def forward(self, Q, K, V, mask=None):
+        batch_size = Q.shape[0]
+
+        # Linear projections
+        q = self.W_q(Q).view(batch_size, -1, self.num_heads, self.d_k).transpose(1, 2)
+        k = self.W_k(K).view(batch_size, -1, self.num_heads, self.d_k).transpose(1, 2)
+        v = self.W_v(V).view(batch_size, -1, self.num_heads, self.d_k).transpose(1, 2)
+
+        # Attention
+        scores = torch.matmul(q, k.transpose(-2, -1)) / np.sqrt(self.d_k)
+
+        if mask is not None:
+            scores = scores.masked_fill(mask == 0, -1e9)
+
+        weights = F.softmax(scores, dim=-1)
+        output = torch.matmul(weights, v)
+
+        # Concatenate heads
+        output = output.transpose(1, 2).contiguous().view(batch_size, -1, self.d_model)
+        return self.W_o(output)
+</code></pre>
+<h2 id="positional-encoding_1">Positional Encoding</h2>
+<p>Добавляет информацию о позиции:</p>
+<pre><code>PE(pos, 2i) = sin(pos / 10000^(2i/d_model))
+PE(pos, 2i+1) = cos(pos / 10000^(2i/d_model))
+</code></pre>
+<pre><code class="language-python">def positional_encoding(max_len, d_model):
+    pe = torch.zeros(max_len, d_model)
+    position = torch.arange(0, max_len).unsqueeze(1).float()
+    div_term = torch.exp(torch.arange(0, d_model, 2).float() * 
+                        (-np.log(10000.0) / d_model))
+
+    pe[:, 0::2] = torch.sin(position * div_term)
+    pe[:, 1::2] = torch.cos(position * div_term)
+
+    return pe.unsqueeze(0)
+</code></pre>
+<h2 id="feed-forward-network">Feed-Forward Network</h2>
+<p>Позиционно-поэлементный полносвязный слой:</p>
+<pre><code>FFN(x) = max(0, xW_1 + b_1)W_2 + b_2
+</code></pre>
+<pre><code class="language-python">class PositionwiseFeedForward(nn.Module):
+    def __init__(self, d_model, d_ff, dropout=0.1):
+        super().__init__()
+        self.linear1 = nn.Linear(d_model, d_ff)
+        self.linear2 = nn.Linear(d_ff, d_model)
+        self.dropout = nn.Dropout(dropout)
+        self.activation = nn.ReLU()
+
+    def forward(self, x):
+        return self.linear2(self.dropout(self.activation(self.linear1(x))))
+</code></pre>
+<h2 id="transformer_2">Полный Transformer</h2>
+<pre><code class="language-python">class Transformer(nn.Module):
+    def __init__(self, src_vocab, tgt_vocab, d_model=512, num_heads=8, 
+                 num_layers=6, d_ff=2048, max_len=5000, dropout=0.1):
+        super().__init__()
+
+        self.embedding_src = nn.Embedding(src_vocab, d_model)
+        self.embedding_tgt = nn.Embedding(tgt_vocab, d_model)
+        self.pe = positional_encoding(max_len, d_model)
+
+        self.encoder_layers = nn.ModuleList([
+            EncoderLayer(d_model, num_heads, d_ff, dropout) 
+            for _ in range(num_layers)
+        ])
+
+        self.decoder_layers = nn.ModuleList([
+            DecoderLayer(d_model, num_heads, d_ff, dropout) 
+            for _ in range(num_layers)
+        ])
+
+        self.fc_out = nn.Linear(d_model, tgt_vocab)
+        self.dropout = nn.Dropout(dropout)
+
+    def forward(self, src, tgt, src_mask, tgt_mask):
+        src_embedded = self.dropout(self.embedding_src(src) + self.pe[:, :src.size(1)])
+        tgt_embedded = self.dropout(self.embedding_tgt(tgt) + self.pe[:, :tgt.size(1)])
+
+        enc_output = src_embedded
+        for layer in self.encoder_layers:
+            enc_output = layer(enc_output, src_mask)
+
+        dec_output = tgt_embedded
+        for layer in self.decoder_layers:
+            dec_output = layer(dec_output, enc_output, tgt_mask, src_mask)
+
+        return self.fc_out(dec_output)
+</code></pre>
+<h2 id="_234">Варианты архитектуры</h2>
+<h3 id="bert-bidirectional-encoder-representations">BERT (Bidirectional Encoder Representations)</h3>
+<ul>
+<li>Только encoder</li>
+<li>Bidirectional attention</li>
+<li>Предобучение: MLM + NSP</li>
+</ul>
+<h3 id="gpt-generative-pre-trained-transformer">GPT (Generative Pre-trained Transformer)</h3>
+<ul>
+<li>Только decoder</li>
+<li>Causal (masked) attention</li>
+<li>Авторегрессионная генерация</li>
+</ul>
+<h3 id="t5-text-to-text-transfer-transformer">T5 (Text-to-Text Transfer Transformer)</h3>
+<ul>
+<li>Encoder-decoder</li>
+<li>Все задачи как text-to-text</li>
+</ul>
+<h3 id="vision-transformer-vit">Vision Transformer (ViT)</h3>
+<ul>
+<li>Применение к изображениям</li>
+<li>Patch embeddings вместо токенов</li>
+</ul>
+<h2 id="_235">Заключение</h2>
+<p>Transformers стали доминирующей архитектурой в NLP и активно применяются в компьютерном зрении, аудио и других областях.</p>
+<p>================================================================================</p>
+<h1 id="_236">Обработка данных</h1>
+<h2 id="1-feature-engineering">1. Feature Engineering</h2>
+<h3 id="_237">Создание признаков</h3>
+<pre><code>Полиномиальные признаки:
+x², x³, x₁·x₂, ...
+
+Взаимодействия:
+feature_interaction = feature₁ × feature₂
+
+Агрегации:
+mean, std, min, max по группам
+
+Временные признаки:
+hour, day_of_week, month, is_weekend
+</code></pre>
+<h3 id="_238">Отбор признаков</h3>
+<h4 id="filter-methods">Filter Methods</h4>
+<pre><code>Статистические метрики:
+- Дисперсия (удаляем константы)
+- Корреляция с таргетом
+- Chi-square тест
+- Mutual Information
+
+Быстро, но игнорирует взаимодействие признаков
+</code></pre>
+<h4 id="wrapper-methods">Wrapper Methods</h4>
+<pre><code>Forward Selection - добавляем лучшие
+Backward Elimination - удаляем худшие
+Recursive Feature Elimination (RFE)
+
+Точно, но дорого вычислительно
+</code></pre>
+<h4 id="embedded-methods">Embedded Methods</h4>
+<pre><code>L1-регуляризация (Lasso) - обнуляет веса
+Feature Importance из деревьев
+Коэффициенты линейных моделей
+
+Баланс скорости и качества
+</code></pre>
+<h2 id="2_7">2. Нормализация и стандартизация</h2>
+<h3 id="min-max-scaling">Min-Max Scaling</h3>
+<pre><code>x' = (x - min(x)) / (max(x) - min(x))
+Диапазон: [0, 1]
+
+Применение:
+- Нейронные сети
+- K-means, KNN
+- Когда важны границы
+</code></pre>
+<h3 id="z-score-standardization">Z-score Standardization</h3>
+<pre><code>x' = (x - μ) / σ
+Распределение: N(0, 1)
+
+Применение:
+- Линейная регрессия
+- Логистическая регрессия
+- SVM
+- Когда есть выбросы (более устойчива)
+</code></pre>
+<h3 id="robust-scaling">Robust Scaling</h3>
+<pre><code>x' = (x - median) / IQR
+IQR = Q3 - Q1
+
+Применение:
+- Данные с выбросами
+- Более устойчив к аномалиям
+</code></pre>
+<h3 id="log-transform">Log Transform</h3>
+<pre><code>x' = log(x + 1)
+
+Применение:
+- Скошенные распределения
+- Финансовые данные
+- Счётчики
+</code></pre>
+<h2 id="3_5">3. Работа с пропусками</h2>
+<h3 id="_239">Стратегии удаления</h3>
+<pre><code>Удаление строк:
+- Если пропусков &lt; 5%
+- Пропуски случайны (MCAR)
+
+Удаление столбцов:
+- Если пропусков &gt; 50-70%
+- Признак не важен
+</code></pre>
+<h3 id="_240">Простые методы импутации</h3>
+<pre><code>Среднее/Медиана:
+- Числовые признаки
+- Медиана устойчивее к выбросам
+
+Мода:
+- Категориальные признаки
+
+Константа:
+- Заполнение специальным значением (-1, &quot;Unknown&quot;)
+</code></pre>
+<h3 id="_241">Продвинутые методы</h3>
+<pre><code>KNN Imputation:
+- Замена на среднее k ближайших соседей
+- Учитывает структуру данных
+
+MICE (Multiple Imputation):
+- Итеративное моделирование
+- Создаёт несколько версий
+
+Model-based:
+- Обучение модели предсказания пропусков
+- Random Forest, XGBoost
+</code></pre>
+<h2 id="4_7">4. Кодирование категориальных признаков</h2>
+<h3 id="one-hot-encoding">One-Hot Encoding</h3>
+<pre><code>Категория → бинарный вектор
+
+Пример:
+&quot;red&quot; → [1, 0, 0]
+&quot;green&quot; → [0, 1, 0]
+&quot;blue&quot; → [0, 0, 1]
+
+Применение:
+- Номинальные признаки (без порядка)
+- Малое количество категорий
+
+Проблема:
+- Проклятие размерности при многих категориях
+</code></pre>
+<h3 id="label-encoding">Label Encoding</h3>
+<pre><code>Категория → целое число
+
+Пример:
+&quot;low&quot; → 0
+&quot;medium&quot; → 1
+&quot;high&quot; → 2
+
+Применение:
+- Порядковые признаки
+- Деревья решений
+
+Проблема:
+- Ложный порядок для номинальных
+</code></pre>
+<h3 id="target-encoding_1">Target Encoding</h3>
+<pre><code>Категория → среднее таргета
+
+Пример:
+Для категории C: mean(y | category=C)
+
+Применение:
+- Много категорий
+- Высококардинальные признаки
+
+Риск:
+- Переобучение (нужна регуляризация)
+</code></pre>
+<h3 id="frequency-encoding">Frequency Encoding</h3>
+<pre><code>Категория → частота встречаемости
+
+Пример:
+&quot;red&quot; → 0.3 (30% записей)
+
+Применение:
+- Когда частота важна
+- Альтернатива target encoding
+</code></pre>
+<h2 id="5_8">5. Аугментация данных</h2>
+<h3 id="_242">Для изображений</h3>
+<pre><code>Геометрические:
+- Поворот, отражение
+- Масштабирование, кадрирование
+- Сдвиг, искажение
+
+Цветовые:
+- Изменение яркости, контраста
+- Цветовой тон, насыщенность
+
+Шум:
+- Gaussian noise
+- Dropout (случайные чёрные области)
+</code></pre>
+<h3 id="_243">Для текста</h3>
+<pre><code>Synonym Replacement:
+- Замена слов на синонимы
+
+Random Insertion:
+- Вставка случайных синонимов
+
+Random Swap:
+- Перестановка слов
+
+Back Translation:
+- Перевод на другой язык и обратно
+</code></pre>
+<h3 id="_244">Для табличных данных</h3>
+<pre><code>SMOTE (Synthetic Minority Oversampling):
+- Синтетические примеры меньшинства
+
+Noise Addition:
+- Добавление малого шума
+
+Interpolation:
+- Линейная интерполяция между примерами
+</code></pre>
+<h2 id="6_2">6. Балансировка классов</h2>
+<h3 id="undersampling">Undersampling</h3>
+<pre><code>Удаление примеров большинства
+
+Методы:
+- Random undersampling
+- Tomek links
+- NearMiss
+
+Риск: потеря информации
+</code></pre>
+<h3 id="oversampling">Oversampling</h3>
+<pre><code>Дублирование примеров меньшинства
+
+Методы:
+- Random oversampling
+- SMOTE
+- ADASYN
+
+Риск: переобучение
+</code></pre>
+<h3 id="class-weights">Class Weights</h3>
+<pre><code>Взвешивание функции потерь
+
+Пример:
+weight_class_i = n_samples / (n_classes * n_samples_i)
+
+Применение:
+- Встроенная поддержка в sklearn, XGBoost
+</code></pre>
+<h2 id="7_1">7. Разделение данных</h2>
+<h3 id="trainvalidationtest">Train/Validation/Test</h3>
+<pre><code>Обычное разделение:
+- Train: 60-80%
+- Validation: 10-20%
+- Test: 10-20%
+
+Важно:
+- Stratified split для классификации
+- Временное разделение для временных рядов
+</code></pre>
+<h3 id="cross-validation">Cross-Validation</h3>
+<pre><code>K-Fold:
+- K равных частей
+- K итераций обучения
+
+Stratified K-Fold:
+- Сохраняет распределение классов
+
+Time Series Split:
+- Только прошлое для обучения
+- Будущее для теста
+</code></pre>
+<p>================================================================================</p>
+<h1 id="_245">Моделирование</h1>
+<h2 id="1-bias-variance-tradeoff">1. Bias-Variance Tradeoff</h2>
+<h3 id="decomposition">Decomposition ошибки</h3>
+<pre><code>Total Error = Bias² + Variance + Irreducible Error
+
+Bias (Смещение):
+- Ошибка от упрощённых предположений
+- Высокий bias → underfitting
+- Пример: линейная модель для нелинейных данных
+
+Variance (Разброс):
+- Чувствительность к флуктуациям в данных
+- Высокий variance → overfitting
+- Пример: глубокие деревья без регуляризации
+
+Irreducible Error:
+- Шум в данных
+- Нельзя устранить
+</code></pre>
+<h3 id="_246">Диагностика</h3>
+<pre><code>Underfitting (High Bias):
+- Низкое качество на train
+- Низкое качество на test
+- Решение: усложнить модель
+
+Overfitting (High Variance):
+- Отличное качество на train
+- Плохое качество на test
+- Решение: регуляризация, больше данных
+</code></pre>
+<h3 id="learning-curves_1">Learning Curves</h3>
+<pre><code>Построение графика error vs. training size
+
+Underfitting:
+- Train и test ошибки сходятся высоко
+
+Overfitting:
+- Большая gap между train и test
+- Test ошибка высокая
+
+Optimal:
+- Малая gap
+- Обе ошибки низкие
+</code></pre>
+<h2 id="2_8">2. Регуляризация</h2>
+<h3 id="l1-lasso_1">L1 (Lasso)</h3>
+<pre><code>Loss += λ · Σ|wᵢ|
+
+Эффект:
+- Обнуляет некоторые веса
+- Feature selection
+- Разреженные модели
+
+Применение:
+- Много признаков
+- Нужен отбор признаков
+</code></pre>
+<h3 id="l2-ridge_1">L2 (Ridge)</h3>
+<pre><code>Loss += λ · Σwᵢ²
+
+Эффект:
+- Уменьшает величину весов
+- Не обнуляет
+- Более стабильные решения
+
+Применение:
+- Мультиколлинеарность
+- Предотвращение больших весов
+</code></pre>
+<h3 id="elastic-net">Elastic Net</h3>
+<pre><code>Loss += λ₁ · Σ|wᵢ| + λ₂ · Σwᵢ²
+
+Комбинация L1 и L2
+Лучше чем Lasso при коррелированных признаках
+</code></pre>
+<h3 id="dropout_2">Dropout (для нейросетей)</h3>
+<pre><code>Случайное &quot;выключение&quot; нейронов во время обучения
+
+Rate p:
+- Обычно 0.2-0.5
+- Во время inference все активны, веса × (1-p)
+
+Эффект:
+- Предотвращает co-adaptation
+- Ансамбль из подсетей
+</code></pre>
+<h2 id="3_6">3. Ансамбли моделей</h2>
+<h3 id="bagging-bootstrap-aggregating">Bagging (Bootstrap Aggregating)</h3>
+<pre><code>Принцип:
+1. Bootstrap выборки из данных
+2. Обучение модели на каждой
+3. Усреднение предсказаний
+
+Пример: Random Forest
+
+Эффект:
+- Снижает variance
+- Параллельное обучение
+</code></pre>
+<h3 id="random-forest_1">Random Forest</h3>
+<pre><code>Ансамбль决策ных деревьев
+
+Двойная рандомизация:
+1. Bootstrap выборка объектов
+2. Случайное подмножество признаков
+
+Параметры:
+- n_estimators: количество деревьев
+- max_depth: глубина деревьев
+- max_features: √n для классификации, n/3 для регрессии
+</code></pre>
+<h3 id="boosting">Boosting</h3>
+<pre><code>Принцип:
+1. Последовательное обучение
+2. Каждая модель исправляет ошибки предыдущей
+3. Взвешенное голосование
+
+Примеры:
+- AdaBoost
+- Gradient Boosting
+- XGBoost
+- LightGBM
+- CatBoost
+
+Эффект:
+- Снижает bias
+- Часто state-of-the-art
+</code></pre>
+<h3 id="adaboost">AdaBoost</h3>
+<pre><code>Адаптивное усиление
+
+Алгоритм:
+1. Равные веса объектов
+2. Обучение слабой модели
+3. Увеличение весов ошибочных объектов
+4. Повторение
+
+Вес модели: α = ½ · ln((1-error)/error)
+</code></pre>
+<h3 id="gradient-boosting_1">Gradient Boosting</h3>
+<pre><code>Обучение на градиентах ошибки
+
+Алгоритм:
+1. Начальное предсказание (среднее)
+2. Вычисление остатков
+3. Обучение модели на остатках
+4. Обновление предсказания
+
+Learning rate η:
+- Меньше → медленнее, но точнее
+- Обычно 0.01-0.1
+</code></pre>
+<h3 id="xgboost_1">XGBoost</h3>
+<pre><code>eXtreme Gradient Boosting
+
+Оптимизации:
+- Регуляризация (L1, L2)
+- Пропуски обрабатываются автоматически
+- Parallel tree construction
+- Pruning по максимальной глубине
+
+Параметры:
+- max_depth, learning_rate, n_estimators
+- subsample, colsample_bytree
+- reg_alpha, reg_lambda
+</code></pre>
+<h3 id="stacking">Stacking</h3>
+<pre><code>Многослойный ансамбль
+
+Уровни:
+1. Base models (разные алгоритмы)
+2. Meta-model (обучается на предсказаниях base)
+
+Важно:
+- Использовать out-of-fold предсказания
+- Разнообразие base моделей
+</code></pre>
+<h2 id="4-hyperparameter-tuning">4. Hyperparameter Tuning</h2>
+<h3 id="grid-search">Grid Search</h3>
+<pre><code>Полный перебор по сетке параметров
+
+Плюсы:
+- exhaustively search
+- Параллелизация
+
+Минусы:
+- Дорого для большого пространства
+- Не учитывает важность параметров
+</code></pre>
+<h3 id="random-search">Random Search</h3>
+<pre><code>Случайная выборка параметров
+
+Плюсы:
+- Эффективнее grid search
+- Лучше исследует пространство
+
+Минусы:
+- Может пропустить оптимум
+</code></pre>
+<h3 id="bayesian-optimization">Bayesian Optimization</h3>
+<pre><code>Использование surrogate модели
+
+Алгоритм:
+1. Построение probabilistic модели
+2. Выбор следующей точки через acquisition function
+3. Обновление модели
+
+Библиотеки:
+- Optuna
+- Hyperopt
+- scikit-optimize
+</code></pre>
+<h3 id="automated-ml-automl">Automated ML (AutoML)</h3>
+<pre><code>Полностью автоматический подбор
+
+Инструменты:
+- TPOT
+- Auto-sklearn
+- H2O AutoML
+- Google Cloud AutoML
+</code></pre>
+<h2 id="5-evaluation-strategies">5. Evaluation Strategies</h2>
+<h3 id="hold-out-validation">Hold-out Validation</h3>
+<pre><code>Простое разделение: train / test
+
+Когда использовать:
+- Много данных
+- Быстрая оценка
+</code></pre>
+<h3 id="k-fold-cross-validation_2">K-Fold Cross-Validation</h3>
+<pre><code>K итераций, каждый fold как test
+
+Преимущества:
+- Все данные используются
+- Стабильная оценка
+
+Недостатки:
+- K обучений модели
+</code></pre>
+<h3 id="stratified-k-fold_2">Stratified K-Fold</h3>
+<pre><code>Сохраняет распределение классов в каждом fold
+
+Важно для:
+- Несбалансированных данных
+- Классификации
+</code></pre>
+<h3 id="time-series-split_1">Time Series Split</h3>
+<pre><code>Train: только прошлое
+Test: будущее
+
+Никакого look-ahead bias!
+</code></pre>
+<h3 id="nested-cross-validation">Nested Cross-Validation</h3>
+<pre><code>Внешний цикл: оценка модели
+Внутренний цикл: подбор гиперпараметров
+
+Честная оценка final performance
+</code></pre>
+<h2 id="6-model-selection-criteria">6. Model Selection Criteria</h2>
+<h3 id="aic-akaike-information-criterion">AIC (Akaike Information Criterion)</h3>
+<pre><code>AIC = 2k - 2ln(L)
+k - количество параметров
+L - maximum likelihood
+
+Меньше = лучше
+Штраф за сложность
+</code></pre>
+<h3 id="bic-bayesian-information-criterion">BIC (Bayesian Information Criterion)</h3>
+<pre><code>BIC = k·ln(n) - 2ln(L)
+n - количество наблюдений
+
+Сильнее штрафует за сложность чем AIC
+</code></pre>
+<h3 id="cross-validation-score">Cross-Validation Score</h3>
+<pre><code>Средняя метрика по folds
+
+Надёжнее чем AIC/BIC для:
+- Маленьких выборок
+- Сложных моделей
+</code></pre>
+<p>================================================================================</p>
+<h1 id="mlai">Этика и безопасность в ML/AI</h1>
+<h2 id="1-fairness">1. Fairness (Справедливость)</h2>
+<h3 id="bias">Типы смещений (Bias)</h3>
+<h4 id="historical-bias">Historical Bias</h4>
+<pre><code>Существующие социальные предрассудки в данных
+
+Пример:
+- Кредитные данные с дискриминацией по полу
+- Найм с гендерным перекосом
+
+Решение:
+- Аудит данных
+- Reweighting примеров
+</code></pre>
+<h4 id="representation-bias">Representation Bias</h4>
+<pre><code>Некоторые группы недостаточно представлены
+
+Пример:
+- Распознавание лиц, обученное на светлой коже
+- Голосовые ассистенты, не понимающие акценты
+
+Решение:
+- Стратифицированная выборка
+- Oversampling меньшинств
+</code></pre>
+<h4 id="measurement-bias">Measurement Bias</h4>
+<pre><code>Некорректные или неполные признаки
+
+Пример:
+- Использование почтового индекса как proxy для расы
+- Прокси-переменные для защищённых атрибутов
+
+Решение:
+- Анализ корреляций
+- Удаление прокси-признаков
+</code></pre>
+<h3 id="fairness">Метрики Fairness</h3>
+<h4 id="demographic-parity">Demographic Parity</h4>
+<pre><code>P(Ŷ=1 | A=0) = P(Ŷ=1 | A=1)
+
+Одинаковая доля положительных предсказаний
+для всех групп (A - защищённый атрибут)
+</code></pre>
+<h4 id="equal-opportunity">Equal Opportunity</h4>
+<pre><code>P(Ŷ=1 | Y=1, A=0) = P(Ŷ=1 | Y=1, A=1)
+
+Одинаковый True Positive Rate для всех групп
+</code></pre>
+<h4 id="predictive-parity">Predictive Parity</h4>
+<pre><code>P(Y=1 | Ŷ=1, A=0) = P(Y=1 | Ŷ=1, A=1)
+
+Одинаковая Precision для всех групп
+</code></pre>
+<h3 id="fairness_1">Техники обеспечения Fairness</h3>
+<h4 id="pre-processing">Pre-processing</h4>
+<pre><code>Reweighting:
+- Изменение весов примеров
+- Балансировка групп
+
+Massaging:
+- Изменение меток в обучающих данных
+- Устранение исторических смещений
+</code></pre>
+<h4 id="in-processing">In-processing</h4>
+<pre><code>Fairness constraints:
+- Добавление ограничений в функцию потерь
+
+Adversarial debiasing:
+- Основная модель + adversarial для удаления bias
+</code></pre>
+<h4 id="post-processing">Post-processing</h4>
+<pre><code>Threshold adjustment:
+- Разные пороги для разных групп
+
+Calibration:
+- Калибровка вероятностей по группам
+</code></pre>
+<h2 id="2-interpretability">2. Interpretability (Интерпретируемость)</h2>
+<h3 id="_247">Почему это важно?</h3>
+<pre><code>- Доверие пользователей
+- Отладка моделей
+- Регуляторные требования (GDPR)
+- Обнаружение bias
+- Безопасность
+</code></pre>
+<h3 id="global-interpretability">Global Interpretability</h3>
+<h4 id="feature-importance_1">Feature Importance</h4>
+<pre><code>Важность признаков для всей модели
+
+Методы:
+- Permutation importance
+- Gini importance (деревья)
+- SHAP values
+</code></pre>
+<h4 id="partial-dependence-plots-pdp">Partial Dependence Plots (PDP)</h4>
+<pre><code>Зависимость предсказания от признака
+При усреднении по остальным признакам
+
+Показывает:
+- Направление влияния
+- Линейность/нелинейность
+</code></pre>
+<h4 id="shap-shapley-additive-explanations">SHAP (SHapley Additive exPlanations)</h4>
+<pre><code>Основано на теории игр
+
+φᵢ = Σ [f(S∪{i}) - f(S)] / C(n,|S|)
+
+Преимущества:
+- Локальная точность
+- Consistency
+- Global агрегация
+</code></pre>
+<h3 id="local-interpretability">Local Interpretability</h3>
+<h4 id="lime-local-interpretable-model-agnostic-explanations">LIME (Local Interpretable Model-agnostic Explanations)</h4>
+<pre><code>Аппроксимация сложной модели простой локально
+
+Алгоритм:
+1. Генерация пертурбированных примеров
+2. Обучение интерпретируемой модели локально
+3. Объяснение через веса простой модели
+</code></pre>
+<h4 id="counterfactual-explanations">Counterfactual Explanations</h4>
+<pre><code>&quot;Что нужно изменить, чтобы получить другой результат?&quot;
+
+Пример:
+- &quot;Если бы доход был на 5000 больше, кредит одобрили бы&quot;
+
+Требования:
+- Близость к исходному примеру
+- Реалистичность
+- Спarsity (минимум изменений)
+</code></pre>
+<h2 id="3-adversarial-attacks">3. Adversarial Attacks</h2>
+<h3 id="_248">Типы атак</h3>
+<h4 id="evasion-attacks-inference-time">Evasion Attacks (Inference time)</h4>
+<pre><code>Изменение входных данных для обмана модели
+
+Примеры:
+- Adversarial examples для изображений
+- Незаметные изменения пикселей
+
+Методы:
+- FGSM (Fast Gradient Sign Method)
+- PGD (Projected Gradient Descent)
+</code></pre>
+<h4 id="poisoning-attacks-training-time">Poisoning Attacks (Training time)</h4>
+<pre><code>Внесение вредоносных данных в обучение
+
+Цели:
+- Снижение общей точности
+- Backdoor (срабатывание на триггере)
+- Targeted misclassification
+</code></pre>
+<h4 id="model-extraction">Model Extraction</h4>
+<pre><code>Кража модели через query
+
+Атака:
+1. Множественные запросы к API
+2. Восстановление архитектуры и весов
+3. Создание surrogate модели
+</code></pre>
+<h4 id="membership-inference">Membership Inference</h4>
+<pre><code>Определение, был ли пример в training set
+
+Риск:
+- Утечка приватной информации
+- Нарушение GDPR
+</code></pre>
+<h3 id="_249">Защита от атак</h3>
+<h4 id="adversarial-training">Adversarial Training</h4>
+<pre><code>Обучение на adversarial примерах
+
+min_θ max_δ L(f(x+δ), y)
+
+Плюсы:
+- Robustness к атакам
+
+Минусы:
+- Дорого вычислительно
+- Может снизить accuracy на clean data
+</code></pre>
+<h4 id="defensive-distillation">Defensive Distillation</h4>
+<pre><code>Обучение мягкой модели на предсказаниях жесткой
+
+Снижает чувствительность к малым изменениям
+</code></pre>
+<h4 id="input-validation">Input Validation</h4>
+<pre><code>Детекция аномальных входов
+
+Методы:
+- Statistical tests
+- Autoencoder reconstruction error
+- Out-of-distribution detection
+</code></pre>
+<h4 id="differential-privacy">Differential Privacy</h4>
+<pre><code>Гарантия, что выход не зависит от отдельных примеров
+
+(ε, δ)-differential privacy:
+P(M(D) ∈ S) ≤ e^ε · P(M(D') ∈ S) + δ
+
+Техники:
+- Добавление шума к градиентам
+- Gradient clipping
+</code></pre>
+<h2 id="4-privacy">4. Privacy (Приватность)</h2>
+<h3 id="_250">Риски приватности</h3>
+<h4 id="data-leakage">Data Leakage</h4>
+<pre><code>- Случайное включение таргета в признаки
+- Информация из будущего в train
+- Идентифицирующая информация
+</code></pre>
+<h4 id="model-inversion">Model Inversion</h4>
+<pre><code>Восстановление тренировочных данных из модели
+
+Пример:
+- Восстановление лиц из facial recognition модели
+</code></pre>
+<h3 id="_251">Техники защиты</h3>
+<h4 id="federated-learning">Federated Learning</h4>
+<pre><code>Обучение без централизации данных
+
+Принцип:
+1. Модель отправляется на устройства
+2. Обучение локально
+3. Только обновления градиентов отправляются
+4. Агрегация на сервере
+
+Применение:
+- Мобильные клавиатуры
+- Медицинские данные
+</code></pre>
+<h4 id="homomorphic-encryption">Homomorphic Encryption</h4>
+<pre><code>Вычисления на зашифрованных данных
+
+Типы:
+- Partially homomorphic (одна операция)
+- Somewhat homomorphic (ограниченное число)
+- Fully homomorphic (любые операции)
+
+Минусы:
+- Вычислительная сложность
+</code></pre>
+<h4 id="secure-multi-party-computation">Secure Multi-Party Computation</h4>
+<pre><code>Совместные вычисления без раскрытия данных
+
+Принцип:
+- Данные разделены между сторонами
+- Вычисления без восстановления исходных данных
+</code></pre>
+<h2 id="5-regulatory-compliance">5. Regulatory Compliance</h2>
+<h3 id="gdpr-eu">GDPR (EU)</h3>
+<pre><code>Key provisions:
+- Right to explanation
+- Right to erasure
+- Data minimization
+- Purpose limitation
+
+Штрафы: до 4% глобального оборота
+</code></pre>
+<h3 id="ccpa-california">CCPA (California)</h3>
+<pre><code>- Right to know
+- Right to delete
+- Right to opt-out
+- Non-discrimination
+</code></pre>
+<h3 id="ai-act-eu-proposed">AI Act (EU, proposed)</h3>
+<pre><code>Risk-based approach:
+
+Unacceptable risk: banned
+- Social scoring
+- Real-time remote biometric identification
+
+High risk: strict requirements
+- Critical infrastructure
+- Employment decisions
+- Law enforcement
+
+Limited risk: transparency obligations
+Minimal risk: no obligations
+</code></pre>
+<h3 id="best-practices">Best Practices</h3>
+<pre><code>1. Documentation
+   - Model cards
+   - Datasheets for datasets
+
+2. Auditing
+   - Regular fairness audits
+   - Security assessments
+
+3. Governance
+   - Ethics review boards
+   - Clear accountability
+
+4. Transparency
+   - Explain predictions to users
+   - Disclose AI usage
+</code></pre>
+</body>
+</html>
